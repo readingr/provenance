@@ -1,0 +1,7 @@
+Project Spec.
+
+The application should:
+
+	Allow you to upload reports in doc files (not server side) match phrases, determine what type of phrase they are and add them into the database.
+
+	The application should then be able to use those phrases with minimal information from the user to generate new reports and save them as word files to the users desktop.
