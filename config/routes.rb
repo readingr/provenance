@@ -1,5 +1,11 @@
 Provenance::Application.routes.draw do
 
+  resources :downloaded_data
+
+  resources :data_provider_users
+
+  resources :data_providers
+
   devise_for :users do
     get "sign_in", :to => "devise/sessions#new"
   end

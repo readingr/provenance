@@ -1,0 +1,33 @@
+<%= form_for(@data_provider_user) do |f| %>
+  <% if @data_provider_user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@data_provider_user.errors.count, "error") %> prohibited this data_provider_user from being saved:</h2>
+
+      <ul>
+      <% @data_provider_user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :data_provider_id %><br />
+    <%= f.number_field :data_provider_id %>
+  </div>
+  <div class="field">
+    <%= f.label :username %><br />
+    <%= f.text_field :username %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.text_field :password %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

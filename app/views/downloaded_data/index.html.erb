@@ -1,0 +1,27 @@
+<h1>Listing downloaded_data</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Data</th>
+    <th>Annotation</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @downloaded_data.each do |downloaded_datum| %>
+  <tr>
+    <td><%= downloaded_datum.name %></td>
+    <td><%= downloaded_datum.data %></td>
+    <td><%= downloaded_datum.annotation %></td>
+    <td><%= link_to 'Show', downloaded_datum %></td>
+    <td><%= link_to 'Edit', edit_downloaded_datum_path(downloaded_datum) %></td>
+    <td><%= link_to 'Destroy', downloaded_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Downloaded datum', new_downloaded_datum_path %>

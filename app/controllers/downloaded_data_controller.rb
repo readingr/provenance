@@ -1,0 +1,83 @@
+class DownloadedDataController < ApplicationController
+  # GET /downloaded_data
+  # GET /downloaded_data.json
+  def index
+    @downloaded_data = DownloadedDatum.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @downloaded_data }
+    end
+  end
+
+  # GET /downloaded_data/1
+  # GET /downloaded_data/1.json
+  def show
+    @downloaded_datum = DownloadedDatum.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @downloaded_datum }
+    end
+  end
+
+  # GET /downloaded_data/new
+  # GET /downloaded_data/new.json
+  def new
+    @downloaded_datum = DownloadedDatum.new
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @downloaded_datum }
+    end
+  end
+
+  # GET /downloaded_data/1/edit
+  def edit
+    @downloaded_datum = DownloadedDatum.find(params[:id])
+  end
+
+  # POST /downloaded_data
+  # POST /downloaded_data.json
+  def create
+    @downloaded_datum = DownloadedDatum.new(params[:downloaded_datum])
+
+    respond_to do |format|
+      if @downloaded_datum.save
+        format.html { redirect_to @downloaded_datum, notice: 'Downloaded datum was successfully created.' }
+        format.json { render json: @downloaded_datum, status: :created, location: @downloaded_datum }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @downloaded_datum.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PUT /downloaded_data/1
+  # PUT /downloaded_data/1.json
+  def update
+    @downloaded_datum = DownloadedDatum.find(params[:id])
+
+    respond_to do |format|
+      if @downloaded_datum.update_attributes(params[:downloaded_datum])
+        format.html { redirect_to @downloaded_datum, notice: 'Downloaded datum was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @downloaded_datum.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /downloaded_data/1
+  # DELETE /downloaded_data/1.json
+  def destroy
+    @downloaded_datum = DownloadedDatum.find(params[:id])
+    @downloaded_datum.destroy
+
+    respond_to do |format|
+      format.html { redirect_to downloaded_data_url }
+      format.json { head :no_content }
+    end
+  end
+end

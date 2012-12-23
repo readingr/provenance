@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @downloaded_datum.name %>
+</p>
+
+<p>
+  <b>Data:</b>
+  <%= @downloaded_datum.data %>
+</p>
+
+<p>
+  <b>Annotation:</b>
+  <%= @downloaded_datum.annotation %>
+</p>
+
+
+<%= link_to 'Edit', edit_downloaded_datum_path(@downloaded_datum) %> |
+<%= link_to 'Back', downloaded_data_path %>

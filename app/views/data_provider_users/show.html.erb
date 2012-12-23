@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @data_provider_user.user_id %>
+</p>
+
+<p>
+  <b>Data provider:</b>
+  <%= @data_provider_user.data_provider_id %>
+</p>
+
+<p>
+  <b>Username:</b>
+  <%= @data_provider_user.username %>
+</p>
+
+<p>
+  <b>Password:</b>
+  <%= @data_provider_user.password %>
+</p>
+
+
+<%= link_to 'Edit', edit_data_provider_user_path(@data_provider_user) %> |
+<%= link_to 'Back', data_provider_users_path %>
