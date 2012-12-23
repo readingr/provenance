@@ -1,0 +1,25 @@
+{
+	"prefix": {
+		"ex": "http://www.example.com/"
+	},
+	"entity": {
+		"ex:post": {
+		}
+	},
+	"activity": {
+		"ex:publicationActivity": {
+		}
+	},
+	"wasGeneratedBy": {
+		"_:wGB1": {
+			"entity": "post",
+			"activity": "ex:publicationActivity"
+		}
+	},
+	"hadParticipant": {
+		"_:hP1": {
+			"entity": "ex:paul",
+			"activity": "ex:publicationActivity"
+		}
+	}
+}

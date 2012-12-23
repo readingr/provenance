@@ -1,4 +1,5 @@
-Reports::Application.routes.draw do
+Provenance::Application.routes.draw do
+
   devise_for :users do
     get "sign_in", :to => "devise/sessions#new"
   end
@@ -7,8 +8,9 @@ Reports::Application.routes.draw do
 
   resources :users
 
-  root :to => 'users#index'
 
+  root :to => 'users#index'
+  # match '/profile', :to => 'users#show'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

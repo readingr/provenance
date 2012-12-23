@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Reports::Application.load_tasks
+Provenance::Application.load_tasks
