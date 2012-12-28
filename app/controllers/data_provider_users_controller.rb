@@ -41,6 +41,7 @@ class DataProviderUsersController < ApplicationController
   # POST /data_provider_users.json
   def create
     @data_provider_user = DataProviderUser.new(params[:data_provider_user])
+    @data_provider_user.user_id = current_user #this associates the given data_provider_user with the user that's creating it.
 
     respond_to do |format|
       if @data_provider_user.save

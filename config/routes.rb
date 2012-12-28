@@ -15,7 +15,7 @@ Provenance::Application.routes.draw do
   resources :users
 
 
-  root :to => 'users#index'
+  root :to => 'data_provider_users#index'
   # match '/profile', :to => 'users#show'
 
   # The priority is based upon order of creation:
