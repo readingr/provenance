@@ -66,6 +66,20 @@
             button.innerHTML = 'Logout';
             showLoader(false);
             document.getElementById('other').style.display = "block";
+
+            $.ajax({
+              url: '/data_provider_users/8/facebook_oauth?access_token='+ accessToken,
+              // url: '/messages/' + message_id +'/semantic_preview/',
+              // data: {format: "js"},
+              dataType: 'html',
+              success: function(data){
+                // $('#preview-'+message_id).append(data);
+                console.log("WELL DONE");
+              },
+              error: function(data){
+                console.log("ERROR");
+              },
+            });
         }
     }
 
@@ -83,14 +97,19 @@
             showLoader(false);
             
             //http://developers.facebook.com/docs/reference/fql/user/
-            var query       =  FB.Data.query('select name, profile_url, sex, pic_small from user where uid={0}', response.id);
+            var query       =  FB.Data.query('select name, profile_url, sex, pic_small, about_me, friend_count, inspirational_people, username from user where uid={0}', response.id);
             query.wait(function(rows) {
                document.getElementById('debug').innerHTML =  
                  'FQL Information: '+  "<br />" + 
                  'Your name: '      +  rows[0].name                                                            + "<br />" +
                  'Your Sex: '       +  (rows[0].sex!= undefined ? rows[0].sex : "")                            + "<br />" +
                  'Your Profile: '   +  "<a href='" + rows[0].profile_url + "'>" + rows[0].profile_url + "</a>" + "<br />" +
-                 '<img src="'       +  rows[0].pic_small + '" alt="" />' + "<br />";
+                 '<img src="'       +  rows[0].pic_small + '" alt="" />'                                       + "<br />" +
+                 'About you: '       +  rows[0].about_me                                                        + "<br />" +
+                 'Friend Count: '    +  rows[0].friend_count                                                    + "<br />" +
+                 'Inspirational people: '+ (rows[0].inspirational_people)                                         + "<br />" +
+                 'id'   + response.id + "<br />"+
+                 'Username: ' + rows[0].username;
              });
         });
     }

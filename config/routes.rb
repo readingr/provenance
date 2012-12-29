@@ -2,7 +2,17 @@ Provenance::Application.routes.draw do
 
   resources :downloaded_data
 
-  resources :data_provider_users
+  resources :data_provider_users do
+    # collection do 
+    #   delete :destroy2
+    # end
+    member do
+      get :update_facebook
+      get :facebook_oauth
+    end
+  end
+
+  # match '/facebook', to:  'data_provider_users#update_facebook'
 
   resources :data_providers
 

@@ -1,8 +1,10 @@
 source 'https://rubygems.org'
 
 gem 'devise'
+gem 'fql'
 gem 'jquery-rails'
 gem 'mysql2'
+gem 'oauth2'
 gem 'rails', '3.2.8'
 
 

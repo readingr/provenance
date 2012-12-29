@@ -81,4 +81,36 @@ class DataProviderUsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def update_facebook
+
+    @data_provider_user = DataProviderUser.find(params[:id])
+
+    #validation needed here if there is no facebook login.    
+    options = { :access_token => "AAAEY0v0jyfwBAIg7nbUPZAwLGZBYfhpyC6cSj4vEYo5eMGa0aeUI7SlZA8D6s7frFvLrVcsefWxPMU7cpwVZCPsueGp0NzcVZBFNR9Ylveq5OR10xnCAE" }
+    query = Fql.execute({"query1" => 'SELECT first_name, last_name, profile_url, sex, pic_small, about_me, friend_count, inspirational_people, username FROM user WHERE uid = 1144492288'}, options)
+    results = (query[0].values[1])[0]
+    debugger
+
+    respond_to do |format|
+      format.html { redirect_to data_provider_users_url }
+      format.json { head :no_content }
+    end
+  end
+
+  def facebook_oauth
+    # debugger
+    #this will be needed in the future https://developers.facebook.com/docs/howtos/login/extending-tokens/
+    
+    client = OAuth2::Client.new('308769445890556', 'acf570bff4de2f66da870a58d8116f47', :site => 'https://graph.facebook.com')
+    token = OAuth2::AccessToken.new client, params[:access_token]
+    token.get('/me')
+    debugger
+
+    respond_to do |format|
+      format.html { redirect_to data_provider_users_url }
+      format.json { head :no_content }
+    end
+  end
+
 end
