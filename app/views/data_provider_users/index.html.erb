@@ -123,7 +123,7 @@
     
 </script>
 
-<h3>New JavaScript SDK & OAuth 2.0 based FBConnect Tutorial | Thinkdiff.net</h3>
+<h3>Facebook</h3>
 <button id="fb-auth">Login</button>
 <div id="loader" style="display:none">
     <img src="ajax-loader.gif" alt="loading" />
@@ -158,6 +158,7 @@ Welcome, this is your personal data repository
     <th>Password</th>
     <th></th>
     <th></th>
+    <th></th>
   </tr>
 
 <% @data_provider_users.each do |data_provider_user| %>
@@ -166,6 +167,7 @@ Welcome, this is your personal data repository
     <td><%= data_provider_user.data_provider.name %></td>
     <td><%= data_provider_user.username %></td>
     <td><%= data_provider_user.password %></td>
+    <td><%= link_to 'Update', update_facebook_data_provider_user_path(data_provider_user)%></td> <!-- this will need to be changed to a generic path -->
     <td><%= link_to 'Edit', edit_data_provider_user_path(data_provider_user) %></td>
     <td><%= link_to 'Destroy', data_provider_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
