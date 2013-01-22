@@ -1,0 +1,118 @@
+<%= puts @data_provider_user %>
+<%= puts "***********************" %>
+<h3> COOL STUFF </h3>
+
+<% if @data_provider_user.data_provider.name == "Facebook" %>
+<div id="fb-root"></div> 
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+   // if ($(data_provider_user_data_provider_id).val() == 3){
+    facebook()
+   // }
+
+});
+
+function facebook(){
+      var button;
+      var userInfo;
+      
+      window.fbAsyncInit = function() {
+          FB.init({ appId: '308769445890556', //change the appId to your appId
+              status: true, 
+              cookie: true,
+              xfbml: true,
+              oauth: true});
+
+         // showLoader(true);
+         
+         function updateButton(response) {
+              button       =   document.getElementById('fb-auth');
+              userInfo     =   document.getElementById('user-info');
+              
+              if (response.authResponse) {
+                  //user is already logged in and connected
+                  FB.api('/me', function(info) {
+                      login(response, info);
+                  });
+                  
+                  button.onclick = function() {
+                      FB.logout(function(response) {
+                          logout(response);
+                      });
+                  };
+              } else {
+                  //user is not connected to your app or logged out
+                  button.innerHTML = 'Login';
+                  button.onclick = function() {
+                      FB.login(function(response) {
+                          if (response.authResponse) {
+                              FB.api('/me', function(info) {
+                                  login(response, info);
+                              });    
+                          } else {
+                              //user cancelled login or did not grant authorization
+                          }
+                      }, {scope:'email,user_birthday,status_update,publish_stream,user_about_me'});   
+                  }
+              }
+          }
+          
+          // run once with current status and whenever the status changes
+          FB.getLoginStatus(updateButton);
+          FB.Event.subscribe('auth.statusChange', updateButton);  
+      };
+      (function() {
+          var e = document.createElement('script'); e.async = true;
+          e.src = document.location.protocol 
+              + '//connect.facebook.net/en_US/all.js';
+          document.getElementById('fb-root').appendChild(e);
+      }());
+      
+      
+      function login(response, info){
+          if (response.authResponse) {
+              var accessToken=   response.authResponse.accessToken;
+              userInfo.innerHTML= '<img src="https://graph.facebook.com/' + info.id + '/picture">' + info.name + "<br /> Your Access Token: " + accessToken;
+              button.innerHTML = 'Logout';
+
+              $.ajax({
+                url: '/data_provider_users/8/facebook_get_oauth_token?access_token='+ accessToken,
+                // url: '/messages/' + message_id +'/semantic_preview/',
+                // data: {format: "js"},
+                dataType: 'html',
+                success: function(data){
+                  // Somehow change this because VERY HACKY
+                  document.location.href='/';
+                },
+                error: function(data){
+                  // console.log("ERROR");
+                },
+              });
+          }
+      }
+
+      function logout(response){
+          userInfo.innerHTML                             =   "";
+          document.getElementById('debug').innerHTML     =   "";
+      }
+
+}
+
+
+
+
+
+</script>
+
+<h3>Facebook</h3>
+<button id="fb-auth">Login</button>
+<br />
+<div id="user-info"></div>
+<br />
+<div id="debug"></div>
+
+
+
+<%end%>
+

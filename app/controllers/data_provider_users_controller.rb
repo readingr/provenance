@@ -82,6 +82,18 @@ class DataProviderUsersController < ApplicationController
     end
   end
 
+
+
+
+  def login
+    @data_provider_user = DataProviderUser.find(params[:id])
+    
+    # respond_to do |format|
+    #   format.html { redirect_to data_provider_users_url }
+    #   format.json { head :no_content }
+    # end
+  end
+
   def update_facebook
     # puts "*******************************************"
     
@@ -165,7 +177,8 @@ class DataProviderUsersController < ApplicationController
 
     token = response.body.match(/=(.*)&e/)[1]
 
-    @data_provider_user = DataProviderUser.find(current_user.data_provider_users.first.id);
+    # @data_provider_user = DataProviderUser.find(current_user.data_provider_users.first.id);
+    @data_provider_user = DataProviderUser.find(params[:id])
     @data_provider_user.access_token = token
     @data_provider_user.save
 
