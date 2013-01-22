@@ -83,18 +83,42 @@ class DataProviderUsersController < ApplicationController
   end
 
   def update_facebook
-    puts "*******************************************"
+    # puts "*******************************************"
     
     @data_provider_user = DataProviderUser.find(params[:id])
-    
+   
+
+#This is an alternative way of doing it.
+
+    # require 'net/http'
+    # require 'uri'
+
+    # uri = URI.parse("https://api.facebook.com/method/fql.query")
+
+    # param = {'query'=> 'SELECT first_name, last_name, profile_url, sex, pic_small, about_me, friend_count, inspirational_people, username FROM user WHERE uid = 1144492288', 'format' =>'json', 'access_token'=> @data_provider_user.access_token}
+
+    # # debugger
+    # http = Net::HTTP.new(uri.host, uri.port) 
+    # http.use_ssl = true
+    # http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+    # request = Net::HTTP::Get.new(uri.path) 
+    # request.set_form_data( param )
+
+    # # instantiate a new Request object
+    # request = Net::HTTP::Get.new( uri.path+ '?' + request.body ) 
+
+    # response = http.request(request)
+
+
     # debugger
     #validation needed here if there is no facebook login.    
-    options = { :access_token => @data_provider_user.access_token }
+    options = { :access_token => @data_provider_user.access_token, :format => 'json' }
     query = Fql.execute({"query1" => 'SELECT first_name, last_name, profile_url, sex, pic_small, about_me, friend_count, inspirational_people, username FROM user WHERE uid = 1144492288'}, options)
     results = (query[0].values[1])[0]
 
     json_results = results.to_json
-    debugger
+    # debugger
 
     # puts results
 
@@ -112,7 +136,9 @@ class DataProviderUsersController < ApplicationController
     end   
   end
 
-  def facebook_oauth
+
+
+  def facebook_get_oauth_token
 
     require 'net/http'
     require 'uri'

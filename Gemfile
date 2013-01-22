@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 gem 'devise'
 gem 'fql'
-gem 'httparty'
 gem 'jquery-rails'
 gem 'mysql2'
 gem 'oauth2'
