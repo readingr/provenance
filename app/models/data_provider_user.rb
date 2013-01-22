@@ -3,6 +3,7 @@ class DataProviderUser < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :data_provider
+  has_many :downloaded_datum
 
 
   # def update_facebook

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121229142248) do
+ActiveRecord::Schema.define(:version => 20130101141716) do
 
   create_table "data_provider_users", :force => true do |t|
     t.integer  "user_id"
@@ -32,10 +32,11 @@ ActiveRecord::Schema.define(:version => 20121229142248) do
 
   create_table "downloaded_data", :force => true do |t|
     t.string   "name"
-    t.string   "data"
+    t.text     "data"
     t.string   "annotation"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+    t.integer  "data_provider_user_id"
   end
 
   create_table "reports", :force => true do |t|

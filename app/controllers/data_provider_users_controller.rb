@@ -96,25 +96,53 @@ class DataProviderUsersController < ApplicationController
     json_results = results.to_json
     debugger
 
-    puts results
+    # puts results
+
+    @downloaded_datum = DownloadedDatum.new(name: "Facebook", data: json_results, data_provider_user_id: @data_provider_user.id)
+
 
     respond_to do |format|
-      format.html { redirect_to data_provider_users_url }
-      format.json { head :no_content }
-    end
+      if @downloaded_datum.save
+        format.html { redirect_to @downloaded_datum, notice: 'Downloaded datum was successfully created.' }
+        format.json { render json: @downloaded_datum, status: :created, location: @downloaded_datum }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @downloaded_datum.errors, status: :unprocessable_entity }
+      end
+    end   
   end
 
   def facebook_oauth
-    # debugger
-    #this will be needed in the future https://developers.facebook.com/docs/howtos/login/extending-tokens/
 
-    client = OAuth2::Client.new('308769445890556', 'acf570bff4de2f66da870a58d8116f47', :site => 'https://graph.facebook.com')
-    token = OAuth2::AccessToken.new client, params[:access_token]
-    token.get('/me')
-    @data_provider_user = DataProviderUser.find(current_user.data_provider_users.first.id);
-    @data_provider_user.access_token = token.token
-    @data_provider_user.save
+    require 'net/http'
+    require 'uri'
+
+    uri = URI.parse("https://graph.facebook.com/oauth/access_token")
+
+    param = {'grant_type'=> 'fb_exchange_token', 'client_id' =>'308769445890556', 'client_secret'=>'acf570bff4de2f66da870a58d8116f47', 'fb_exchange_token'=> params[:access_token]}
+
     # debugger
+    http = Net::HTTP.new(uri.host, uri.port) 
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+    request = Net::HTTP::Get.new(uri.path) 
+    request.set_form_data( param )
+
+    # instantiate a new Request object
+    request = Net::HTTP::Get.new( uri.path+ '?' + request.body ) 
+
+    response = http.request(request)
+    # puts "***************"
+    # puts response.body
+    # puts "***************"
+
+    token = response.body.match(/=(.*)&e/)[1]
+
+    @data_provider_user = DataProviderUser.find(current_user.data_provider_users.first.id);
+    @data_provider_user.access_token = token
+    @data_provider_user.save
+
 
     respond_to do |format|
       format.html { redirect_to data_provider_users_url }
