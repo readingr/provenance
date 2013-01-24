@@ -1,8 +1,9 @@
 class DataProviderUsersController < ApplicationController
+
   # GET /data_provider_users
   # GET /data_provider_users.json
   def index
-    @data_provider_users = DataProviderUser.all
+    @data_provider_users = DataProviderUser.where(user_id: current_user.id)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -41,11 +42,11 @@ class DataProviderUsersController < ApplicationController
   # POST /data_provider_users.json
   def create
     @data_provider_user = DataProviderUser.new(params[:data_provider_user])
-    @data_provider_user.user_id = current_user #this associates the given data_provider_user with the user that's creating it.
+    @data_provider_user.user_id = current_user.id #this associates the given data_provider_user with the user that's creating it.
 
     respond_to do |format|
       if @data_provider_user.save
-        format.html { redirect_to @data_provider_user, notice: 'Data provider user was successfully created.' }
+        format.html { redirect_to login_data_provider_user_path(@data_provider_user), notice: 'Data provider user was successfully created.' }
         format.json { render json: @data_provider_user, status: :created, location: @data_provider_user }
       else
         format.html { render action: "new" }
@@ -87,11 +88,7 @@ class DataProviderUsersController < ApplicationController
 
   def login
     @data_provider_user = DataProviderUser.find(params[:id])
-    
-    # respond_to do |format|
-    #   format.html { redirect_to data_provider_users_url }
-    #   format.json { head :no_content }
-    # end
+
   end
 
   def update_facebook

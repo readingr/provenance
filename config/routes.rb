@@ -2,18 +2,20 @@ Provenance::Application.routes.draw do
 
 
   resources :data_provider_users do
-    # collection do 
-    #   delete :destroy2
-    # end
+
     member do
       get :update_facebook
       get :facebook_get_oauth_token
       get :login
-      resources :downloaded_data
+
+      resources :downloaded_data do
+        member do
+          get :return_data
+        end
+      end
+      
     end
   end
-
-  # match '/facebook', to:  'data_provider_users#update_facebook'
 
   resources :data_providers
 
@@ -21,7 +23,7 @@ Provenance::Application.routes.draw do
     get "sign_in", :to => "devise/sessions#new"
   end
 
-
+  match '*path' => redirect('/')
 
   resources :users
 

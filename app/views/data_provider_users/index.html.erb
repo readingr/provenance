@@ -21,7 +21,11 @@ Welcome, this is your personal data repository
 <% @data_provider_users.each do |data_provider_user| %>
   <tr>
     <td><%= data_provider_user.data_provider.name %></td>
+    <% if !data_provider_user.downloaded_datum.blank? %>  
     <td> <%=  data_provider_user.downloaded_datum.last.updated_at %> </td>
+    <%else %>
+    <td>N/A</td>
+    <% end %>
     <td> <%= link_to 'View Data', downloaded_data_path(data_provider_user)%> </td>
     <td><%= link_to 'Update', update_facebook_data_provider_user_path(data_provider_user)%></td> <!-- this will need to be changed to a generic path -->
     <td><%= link_to 'Edit', edit_data_provider_user_path(data_provider_user) %></td>

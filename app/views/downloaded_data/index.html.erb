@@ -1,27 +1,158 @@
+<%= stylesheet_link_tag 'jsondiffpatch.html.css' %>
+<script type="text/javascript">
+
+
+$(document).ready(function(){ 
+
+  if($('#myvisualdiffcontainer').length >0){
+    //global intentionally
+    dataProviderID = location.pathname.match(/\/data_provider_users\/(\d)/)[1]
+
+    // console.log(dataProviderID)
+
+    $.ajax({
+      url: '/data_provider_users/'+dataProviderID+'/downloaded_data/'+$('#id_data').val()+'/return_data',
+      dataType: 'html',
+      success: function(data){
+        json1 = JSON.parse(data);
+
+
+
+        $.ajax({
+          url: '/data_provider_users/'+dataProviderID+'/downloaded_data/'+$('#id_updated_at').val()+'/return_data',
+          dataType: 'html',
+          success: function(data){
+            json2 = JSON.parse(data);
+
+
+            //this displays the pretty json diff
+            var d = jsondiffpatch.diff(json1, json2);
+            //i.e. if there is a diff
+            if(d != undefined){
+              $('#myvisualdiffcontainer').empty().append(jsondiffpatch.html.diffToHtml(json1, json2, d));
+            }
+            else{
+              $('#myvisualdiffcontainer').empty().append("There is no difference");
+            }
+
+
+
+          },
+          error: function(data){
+            console.log("ERROR");
+          },
+        });
+
+
+
+      },
+      error: function(data){
+        console.log("ERROR");
+      },
+    });
+
+
+
+    $('#id_updated_at').change(function(){
+      $.ajax({
+        url: '/data_provider_users/'+dataProviderID+'/downloaded_data/'+$('#id_updated_at').val()+'/return_data',
+        dataType: 'html',
+        success: function(data){
+          json2 = JSON.parse(data);
+          //this displays the pretty json diff
+          var d = jsondiffpatch.diff(json1, json2);
+          //i.e. if there is a diff
+          if(d != undefined){
+            $('#myvisualdiffcontainer').empty().append(jsondiffpatch.html.diffToHtml(json1, json2, d));
+          }
+          else{
+            $('#myvisualdiffcontainer').empty().append("There is no difference");
+          }
+        },
+        error: function(data){
+          console.log("ERROR");
+        },
+      });  
+    });
+
+
+    $('#id_data').change(function(){
+      $.ajax({
+        url: '/data_provider_users/'+dataProviderID+'/downloaded_data/'+$('#id_data').val()+'/return_data',
+        dataType: 'html',
+        success: function(data){
+          json1 = JSON.parse(data);
+          //this displays the pretty json diff
+          var d = jsondiffpatch.diff(json1, json2);
+          //i.e. if there is a diff
+          if(d != undefined){
+            $('#myvisualdiffcontainer').empty().append(jsondiffpatch.html.diffToHtml(json1, json2, d));
+          }
+          else{
+            $('#myvisualdiffcontainer').empty().append("There is no difference");
+          }
+        },
+        error: function(data){
+          console.log("ERROR");
+        },
+      });  
+    });
+  }
+
+});
+
+</script>
+
 <h1>Listing Downloaded Data</h1>
 
 <table>
   <tr>
     <th>Name</th>
-    <th>Data</th>
+    <!-- <th>Data</th> -->
     <th>Annotation</th>
+    <th>Last Updated At</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
 
 <% @downloaded_data.each do |downloaded_datum| %>
+  <% if can? :show, downloaded_datum %>
   <tr>
     <td><%= downloaded_datum.name %></td>
-    <td><%= downloaded_datum.data %></td>
+    <!-- <td><%= downloaded_datum.data %></td> -->
     <td><%= downloaded_datum.annotation %></td>
+    <td><%= downloaded_datum.updated_at %></td>
     <td><%= link_to 'Show', downloaded_datum %></td>
     <td><%= link_to 'Edit', edit_downloaded_datum_path(downloaded_datum) %></td>
     <td><%= link_to 'Destroy', downloaded_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
+  <%end%>
+
 <% end %>
 </table>
 
 <br />
 
 <%= link_to 'New Downloaded datum', new_downloaded_datum_path %>
+
+<%unless @downloaded_data.blank? %>
+<% if can? :show, @downloaded_data.first %>
+<p/>
+<h3> JSON Diff </h3>
+<p/>
+<br/>
+<%= collection_select(:id, :data, @downloaded_data.order('updated_at DESC'), :id, :updated_at ) %>
+
+with
+
+<%= collection_select(:id, :updated_at, @downloaded_data.order('updated_at DESC'), :id, :updated_at ) %>
+
+<div id="myvisualdiffcontainer"></div>
+<%else%>
+<script type="text/javascript">
+  window.location.href="/"  // put your correct path in a string here
+</script>  
+<%end%>
+<%end%>
+

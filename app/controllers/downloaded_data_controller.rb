@@ -1,8 +1,11 @@
 class DownloadedDataController < ApplicationController
+  # load_and_authorize_resource :data_provider_user
+  # load_and_authorize_resource :downloaded_data, :through => :data_provider_user
+
   # GET /downloaded_data
   # GET /downloaded_data.json
   def index
-    @downloaded_data = DownloadedDatum.all
+    @downloaded_data = DownloadedDatum.where(data_provider_user_id: params[:id])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -78,6 +81,15 @@ class DownloadedDataController < ApplicationController
     respond_to do |format|
       format.html { redirect_to downloaded_data_url }
       format.json { head :no_content }
+    end
+  end
+
+
+  def return_data
+    @downloaded_datum = DownloadedDatum.find(params[:id])
+
+    respond_to do |format|
+      format.json { render json: @downloaded_datum.data}
     end
   end
 end
