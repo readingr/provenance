@@ -45,6 +45,7 @@ class Ability
 
     can :manage, DownloadedDatum, :data_provider_user => { user_id: user.id }
 
+    can :manage, User, id: user.id
         
     # can [:show, :new, :edit, :create, :update, :destroy, :return_data], DownloadedDatum do |data|
     #     data.data_provider_user.user_id == user.id
