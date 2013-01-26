@@ -142,11 +142,13 @@ $(document).ready(function(){
 <h3> JSON Diff </h3>
 <p/>
 <br/>
-<%= collection_select(:id, :data, @downloaded_data.order('updated_at DESC'), :id, :updated_at ) %>
 
-with
 
+<h4> Old </h4>
 <%= collection_select(:id, :updated_at, @downloaded_data.order('updated_at DESC'), :id, :updated_at ) %>
+<p/>
+<h4> New </h4>
+<%= collection_select(:id, :data, @downloaded_data.order('updated_at DESC'), :id, :updated_at ) %>
 
 <div id="myvisualdiffcontainer"></div>
 <%else%>
