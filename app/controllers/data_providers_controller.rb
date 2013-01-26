@@ -1,4 +1,6 @@
 class DataProvidersController < ApplicationController
+ load_and_authorize_resource
+
   # GET /data_providers
   # GET /data_providers.json
   def index

@@ -23,12 +23,17 @@ Provenance::Application.routes.draw do
     get "sign_in", :to => "devise/sessions#new"
   end
 
+
+  resources :users do 
+    collection do
+      get :prov_login
+    end
+  end
+  
+  root :to => 'data_provider_users#index'
+
   match '*path' => redirect('/')
 
-  resources :users
-
-
-  root :to => 'data_provider_users#index'
   # match '/profile', :to => 'users#show'
 
   # The priority is based upon order of creation:

@@ -1,4 +1,5 @@
 class DataProviderUsersController < ApplicationController
+  load_and_authorize_resource
 
   # GET /data_provider_users
   # GET /data_provider_users.json

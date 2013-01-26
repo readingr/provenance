@@ -1,4 +1,6 @@
 class DownloadedDataController < ApplicationController
+  load_and_authorize_resource
+
   # load_and_authorize_resource :data_provider_user
   # load_and_authorize_resource :downloaded_data, :through => :data_provider_user
 

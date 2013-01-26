@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  load_and_authorize_resource
 
 
   # GET /users
@@ -82,4 +83,17 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+  def prov_login
+    debugger
+
+    puts "************************"
+
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.json { head :no_content }
+    end
+  end
+
 end
