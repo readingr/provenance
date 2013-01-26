@@ -20,24 +20,25 @@ require 'spec_helper'
 
 describe DownloadedDataController do
 
+
+  before (:each) do
+      @user = Factory.create(:user)
+      sign_in @user
+  end
+
   # This should return the minimal set of attributes required to create a valid
   # DownloadedDatum. As you add validations to DownloadedDatum, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    { "name" => "MyString" }
+    { "name" => @user.first_name }
   end
 
-  # This should return the minimal set of values that should be in the session
-  # in order to pass any filters (e.g. authentication) defined in
-  # DownloadedDataController. Be sure to keep this updated too.
-  def valid_session
-    {}
-  end
+
 
   describe "GET index" do
     it "assigns all downloaded_data as @downloaded_data" do
       downloaded_datum = DownloadedDatum.create! valid_attributes
-      get :index, {}, valid_session
+      get :index, {}
       assigns(:downloaded_data).should eq([downloaded_datum])
     end
   end
@@ -45,14 +46,14 @@ describe DownloadedDataController do
   describe "GET show" do
     it "assigns the requested downloaded_datum as @downloaded_datum" do
       downloaded_datum = DownloadedDatum.create! valid_attributes
-      get :show, {:id => downloaded_datum.to_param}, valid_session
+      get :show, {:id => downloaded_datum.to_param}
       assigns(:downloaded_datum).should eq(downloaded_datum)
     end
   end
 
   describe "GET new" do
     it "assigns a new downloaded_datum as @downloaded_datum" do
-      get :new, {}, valid_session
+      get :new, {}
       assigns(:downloaded_datum).should be_a_new(DownloadedDatum)
     end
   end
@@ -60,7 +61,7 @@ describe DownloadedDataController do
   describe "GET edit" do
     it "assigns the requested downloaded_datum as @downloaded_datum" do
       downloaded_datum = DownloadedDatum.create! valid_attributes
-      get :edit, {:id => downloaded_datum.to_param}, valid_session
+      get :edit, {:id => downloaded_datum.to_param}
       assigns(:downloaded_datum).should eq(downloaded_datum)
     end
   end
@@ -69,18 +70,18 @@ describe DownloadedDataController do
     describe "with valid params" do
       it "creates a new DownloadedDatum" do
         expect {
-          post :create, {:downloaded_datum => valid_attributes}, valid_session
+          post :create, {:downloaded_datum => valid_attributes}
         }.to change(DownloadedDatum, :count).by(1)
       end
 
       it "assigns a newly created downloaded_datum as @downloaded_datum" do
-        post :create, {:downloaded_datum => valid_attributes}, valid_session
+        post :create, {:downloaded_datum => valid_attributes}
         assigns(:downloaded_datum).should be_a(DownloadedDatum)
         assigns(:downloaded_datum).should be_persisted
       end
 
       it "redirects to the created downloaded_datum" do
-        post :create, {:downloaded_datum => valid_attributes}, valid_session
+        post :create, {:downloaded_datum => valid_attributes}
         response.should redirect_to(DownloadedDatum.last)
       end
     end
@@ -89,14 +90,14 @@ describe DownloadedDataController do
       it "assigns a newly created but unsaved downloaded_datum as @downloaded_datum" do
         # Trigger the behavior that occurs when invalid params are submitted
         DownloadedDatum.any_instance.stub(:save).and_return(false)
-        post :create, {:downloaded_datum => { "name" => "invalid value" }}, valid_session
+        post :create, {:downloaded_datum => { "name" => "invalid value" }}
         assigns(:downloaded_datum).should be_a_new(DownloadedDatum)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         DownloadedDatum.any_instance.stub(:save).and_return(false)
-        post :create, {:downloaded_datum => { "name" => "invalid value" }}, valid_session
+        post :create, {:downloaded_datum => { "name" => "invalid value" }}
         response.should render_template("new")
       end
     end
@@ -111,18 +112,18 @@ describe DownloadedDataController do
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
         DownloadedDatum.any_instance.should_receive(:update_attributes).with({ "name" => "MyString" })
-        put :update, {:id => downloaded_datum.to_param, :downloaded_datum => { "name" => "MyString" }}, valid_session
+        put :update, {:id => downloaded_datum.to_param, :downloaded_datum => { "name" => "MyString" }}
       end
 
       it "assigns the requested downloaded_datum as @downloaded_datum" do
         downloaded_datum = DownloadedDatum.create! valid_attributes
-        put :update, {:id => downloaded_datum.to_param, :downloaded_datum => valid_attributes}, valid_session
+        put :update, {:id => downloaded_datum.to_param, :downloaded_datum => valid_attributes}
         assigns(:downloaded_datum).should eq(downloaded_datum)
       end
 
       it "redirects to the downloaded_datum" do
         downloaded_datum = DownloadedDatum.create! valid_attributes
-        put :update, {:id => downloaded_datum.to_param, :downloaded_datum => valid_attributes}, valid_session
+        put :update, {:id => downloaded_datum.to_param, :downloaded_datum => valid_attributes}
         response.should redirect_to(downloaded_datum)
       end
     end
@@ -132,7 +133,7 @@ describe DownloadedDataController do
         downloaded_datum = DownloadedDatum.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         DownloadedDatum.any_instance.stub(:save).and_return(false)
-        put :update, {:id => downloaded_datum.to_param, :downloaded_datum => { "name" => "invalid value" }}, valid_session
+        put :update, {:id => downloaded_datum.to_param, :downloaded_datum => { "name" => "invalid value" }}
         assigns(:downloaded_datum).should eq(downloaded_datum)
       end
 
@@ -140,7 +141,7 @@ describe DownloadedDataController do
         downloaded_datum = DownloadedDatum.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         DownloadedDatum.any_instance.stub(:save).and_return(false)
-        put :update, {:id => downloaded_datum.to_param, :downloaded_datum => { "name" => "invalid value" }}, valid_session
+        put :update, {:id => downloaded_datum.to_param, :downloaded_datum => { "name" => "invalid value" }}
         response.should render_template("edit")
       end
     end
@@ -150,13 +151,13 @@ describe DownloadedDataController do
     it "destroys the requested downloaded_datum" do
       downloaded_datum = DownloadedDatum.create! valid_attributes
       expect {
-        delete :destroy, {:id => downloaded_datum.to_param}, valid_session
+        delete :destroy, {:id => downloaded_datum.to_param}
       }.to change(DownloadedDatum, :count).by(-1)
     end
 
     it "redirects to the downloaded_data list" do
       downloaded_datum = DownloadedDatum.create! valid_attributes
-      delete :destroy, {:id => downloaded_datum.to_param}, valid_session
+      delete :destroy, {:id => downloaded_datum.to_param}
       response.should redirect_to(downloaded_data_url)
     end
   end

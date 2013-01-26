@@ -20,24 +20,23 @@ require 'spec_helper'
 
 describe DataProvidersController do
 
+  before (:each) do
+      @user = Factory.create(:user)
+      sign_in @user
+  end
+
   # This should return the minimal set of attributes required to create a valid
   # DataProvider. As you add validations to DataProvider, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    { "name" => "MyString" }
+    { "name" => @user.first_name }
   end
 
-  # This should return the minimal set of values that should be in the session
-  # in order to pass any filters (e.g. authentication) defined in
-  # DataProvidersController. Be sure to keep this updated too.
-  def valid_session
-    {}
-  end
 
   describe "GET index" do
     it "assigns all data_providers as @data_providers" do
       data_provider = DataProvider.create! valid_attributes
-      get :index, {}, valid_session
+      get :index, {}
       assigns(:data_providers).should eq([data_provider])
     end
   end
@@ -45,14 +44,14 @@ describe DataProvidersController do
   describe "GET show" do
     it "assigns the requested data_provider as @data_provider" do
       data_provider = DataProvider.create! valid_attributes
-      get :show, {:id => data_provider.to_param}, valid_session
+      get :show, {:id => data_provider.to_param}
       assigns(:data_provider).should eq(data_provider)
     end
   end
 
   describe "GET new" do
     it "assigns a new data_provider as @data_provider" do
-      get :new, {}, valid_session
+      get :new, {}
       assigns(:data_provider).should be_a_new(DataProvider)
     end
   end
@@ -60,7 +59,7 @@ describe DataProvidersController do
   describe "GET edit" do
     it "assigns the requested data_provider as @data_provider" do
       data_provider = DataProvider.create! valid_attributes
-      get :edit, {:id => data_provider.to_param}, valid_session
+      get :edit, {:id => data_provider.to_param}
       assigns(:data_provider).should eq(data_provider)
     end
   end
@@ -69,18 +68,18 @@ describe DataProvidersController do
     describe "with valid params" do
       it "creates a new DataProvider" do
         expect {
-          post :create, {:data_provider => valid_attributes}, valid_session
+          post :create, {:data_provider => valid_attributes}
         }.to change(DataProvider, :count).by(1)
       end
 
       it "assigns a newly created data_provider as @data_provider" do
-        post :create, {:data_provider => valid_attributes}, valid_session
+        post :create, {:data_provider => valid_attributes}
         assigns(:data_provider).should be_a(DataProvider)
         assigns(:data_provider).should be_persisted
       end
 
       it "redirects to the created data_provider" do
-        post :create, {:data_provider => valid_attributes}, valid_session
+        post :create, {:data_provider => valid_attributes}
         response.should redirect_to(DataProvider.last)
       end
     end
@@ -89,14 +88,14 @@ describe DataProvidersController do
       it "assigns a newly created but unsaved data_provider as @data_provider" do
         # Trigger the behavior that occurs when invalid params are submitted
         DataProvider.any_instance.stub(:save).and_return(false)
-        post :create, {:data_provider => { "name" => "invalid value" }}, valid_session
+        post :create, {:data_provider => { "name" => "invalid value" }}
         assigns(:data_provider).should be_a_new(DataProvider)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         DataProvider.any_instance.stub(:save).and_return(false)
-        post :create, {:data_provider => { "name" => "invalid value" }}, valid_session
+        post :create, {:data_provider => { "name" => "invalid value" }}
         response.should render_template("new")
       end
     end
@@ -111,18 +110,18 @@ describe DataProvidersController do
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
         DataProvider.any_instance.should_receive(:update_attributes).with({ "name" => "MyString" })
-        put :update, {:id => data_provider.to_param, :data_provider => { "name" => "MyString" }}, valid_session
+        put :update, {:id => data_provider.to_param, :data_provider => { "name" => "MyString" }}
       end
 
       it "assigns the requested data_provider as @data_provider" do
         data_provider = DataProvider.create! valid_attributes
-        put :update, {:id => data_provider.to_param, :data_provider => valid_attributes}, valid_session
+        put :update, {:id => data_provider.to_param, :data_provider => valid_attributes}
         assigns(:data_provider).should eq(data_provider)
       end
 
       it "redirects to the data_provider" do
         data_provider = DataProvider.create! valid_attributes
-        put :update, {:id => data_provider.to_param, :data_provider => valid_attributes}, valid_session
+        put :update, {:id => data_provider.to_param, :data_provider => valid_attributes}
         response.should redirect_to(data_provider)
       end
     end
@@ -132,7 +131,7 @@ describe DataProvidersController do
         data_provider = DataProvider.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         DataProvider.any_instance.stub(:save).and_return(false)
-        put :update, {:id => data_provider.to_param, :data_provider => { "name" => "invalid value" }}, valid_session
+        put :update, {:id => data_provider.to_param, :data_provider => { "name" => "invalid value" }}
         assigns(:data_provider).should eq(data_provider)
       end
 
@@ -140,7 +139,7 @@ describe DataProvidersController do
         data_provider = DataProvider.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         DataProvider.any_instance.stub(:save).and_return(false)
-        put :update, {:id => data_provider.to_param, :data_provider => { "name" => "invalid value" }}, valid_session
+        put :update, {:id => data_provider.to_param, :data_provider => { "name" => "invalid value" }}
         response.should render_template("edit")
       end
     end
@@ -150,13 +149,13 @@ describe DataProvidersController do
     it "destroys the requested data_provider" do
       data_provider = DataProvider.create! valid_attributes
       expect {
-        delete :destroy, {:id => data_provider.to_param}, valid_session
+        delete :destroy, {:id => data_provider.to_param}
       }.to change(DataProvider, :count).by(-1)
     end
 
     it "redirects to the data_providers list" do
       data_provider = DataProvider.create! valid_attributes
-      delete :destroy, {:id => data_provider.to_param}, valid_session
+      delete :destroy, {:id => data_provider.to_param}
       response.should redirect_to(data_providers_url)
     end
   end
