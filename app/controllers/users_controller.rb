@@ -87,41 +87,6 @@ class UsersController < ApplicationController
 
   #this creates the provenance when the user logs in and sends it to the store
   def prov_login
-    # debugger
-
-    # puts "************************"
-
-    # require 'net/http'
-    # require 'uri'
-
-    # uri = URI.parse("https://graph.facebook.com/oauth/access_token")
-
-    # param = {'grant_type'=> 'fb_exchange_token', 'client_id' =>'308769445890556', 'client_secret'=>'acf570bff4de2f66da870a58d8116f47', 'fb_exchange_token'=> params[:access_token]}
-
-    # # debugger
-    # http = Net::HTTP.new(uri.host, uri.port) 
-    # http.use_ssl = true
-    # http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-
-    # request = Net::HTTP::Get.new(uri.path) 
-    # request.set_form_data( param )
-
-    # # instantiate a new Request object
-    # request = Net::HTTP::Get.new( uri.path+ '?' + request.body ) 
-
-    # response = http.request(request)
-    # # puts "***************"
-    # # puts response.body
-    # # puts "***************"
-
-    # token = response.body.match(/=(.*)&e/)[1]
-
-    # # @data_provider_user = DataProviderUser.find(current_user.data_provider_users.first.id);
-    # @data_provider_user = DataProviderUser.find(params[:id])
-    # @data_provider_user.access_token = token
-    # @data_provider_user.save
-
-
 
 
     respond_to do |format|
