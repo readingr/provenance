@@ -10,3 +10,50 @@ $.ajax({
             console.log(data);
      } 
 });
+
+
+
+
+
+
+
+
+var user = 'richard'; 
+var pass = '53ba3c6f3f106162f0765424275be7d9461afd4a'; 
+var tok = user + ':' + pass; 
+var auth = 'ApiKey ' + tok;
+
+
+
+bundle = {
+    "prefix": {
+        "ex": "http://example"
+    }, 
+    "entity": {
+        "ex:e1": {}
+    }
+}
+
+
+     var l = ['mi'];
+     var account = {
+               "rec_id": "#agentswitch-mockup",
+               "public": "True",
+               "licenses": l,
+               "content": bundle,
+               "url": "https://dl.dropbox.com/u/13708408/test.json"      
+          };
+     $.ajax({
+            type: 'POST',
+            url: 'http://127.0.0.1:8000/api/v0/bundle/',
+            data: JSON.stringify(account),
+            contentType: 'application/json',
+            beforeSend: function(req) {
+               req.setRequestHeader('Authorization', auth);
+               },
+            success: function(data) {
+                 console.log(data);
+               }
+          });
+
+
