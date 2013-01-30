@@ -87,35 +87,37 @@ class UsersController < ApplicationController
 
   #this creates the provenance when the user logs in and sends it to the store
   def prov_login
+    require 'ProvRequests'
+    ProvRequests.rand_range(18)
 
-    require 'net/http'
-    require 'uri'
+    # require 'net/http'
+    # require 'uri'
 
-    uri = URI.parse("http://127.0.0.1:8000/api/v0/bundle/2")
+    # uri = URI.parse("http://127.0.0.1:8000/api/v0/bundle/2")
 
-    # debugger
-    http = Net::HTTP.new(uri.host, uri.port) 
-    # http.use_ssl = true
-    # http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+    # # debugger
+    # http = Net::HTTP.new(uri.host, uri.port) 
+    # # http.use_ssl = true
+    # # http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
-    request = Net::HTTP::Get.new(uri.path) 
-    request.add_field("Authorization", "ApiKey richard:53ba3c6f3f106162f0765424275be7d9461afd4a")
+    # request = Net::HTTP::Get.new(uri.path) 
+    # request.add_field("Authorization", "ApiKey richard:53ba3c6f3f106162f0765424275be7d9461afd4a")
 
-    response = http.request(request)
-    case response 
+    # response = http.request(request)
+    # case response 
 
-    when Net::HTTPRedirection then
-      uri = URI.parse(response['location'])
-      http = Net::HTTP.new(uri.host, uri.port) 
-      request = Net::HTTP::Get.new(uri.path) 
-      request.add_field("Authorization", "ApiKey richard:53ba3c6f3f106162f0765424275be7d9461afd4a")
-      response = http.request(request)
-    end
-    # debugger
+    # when Net::HTTPRedirection then
+    #   uri = URI.parse(response['location'])
+    #   http = Net::HTTP.new(uri.host, uri.port) 
+    #   request = Net::HTTP::Get.new(uri.path) 
+    #   request.add_field("Authorization", "ApiKey richard:53ba3c6f3f106162f0765424275be7d9461afd4a")
+    #   response = http.request(request)
+    # end
+    # # debugger
 
-    puts "***************"
-    puts response.body
-    puts "***************"
+    # puts "***************"
+    # puts response.body
+    # puts "***************"
 
 
 

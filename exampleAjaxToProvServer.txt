@@ -35,7 +35,7 @@ bundle = {
 }
 
 
-     var l = ['mi'];
+     var l = ['mit'];
      var account = {
                "rec_id": "#agentswitch-mockup",
                "public": "True",
