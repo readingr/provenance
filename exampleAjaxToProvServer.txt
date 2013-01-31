@@ -1,3 +1,10 @@
+var user = 'richard'; 
+var pass = '53ba3c6f3f106162f0765424275be7d9461afd4a'; 
+var tok = user + ':' + pass; 
+var auth = 'ApiKey ' + tok;
+
+
+
 $.ajax({ 
      type: 'GET',
      contentType: 'application/json',
@@ -14,7 +21,7 @@ $.ajax({
 
 
 
-
+{"rec_id": "2","public": "True","content": "bundle","url": "https://dl.dropbox.com/u/13708408/test.json" }
 
 
 
@@ -37,7 +44,7 @@ bundle = {
 
      var l = ['mit'];
      var account = {
-               "rec_id": "#agentswitch-mockup",
+               "rec_id": "#bbc",
                "public": "True",
                "licenses": l,
                "content": bundle,
