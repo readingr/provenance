@@ -128,16 +128,13 @@ class DataProviderUsersController < ApplicationController
     results = (query[0].values[1])[0]
 
     json_results = results.to_json
-    # debugger
-
-    # puts results
 
     @downloaded_datum = DownloadedDatum.new(name: "Facebook", data: json_results, data_provider_user_id: @data_provider_user.id)
 
 
     respond_to do |format|
       if @downloaded_datum.save
-        format.html { redirect_to @downloaded_datum, notice: 'Downloaded datum was successfully created.' }
+        format.html { redirect_to data_provider_user_downloaded_datum_path(@data_provider_user.id, @downloaded_datum.id), notice: 'Downloaded datum was successfully created.' }
         format.json { render json: @downloaded_datum, status: :created, location: @downloaded_datum }
       else
         format.html { render action: "new" }

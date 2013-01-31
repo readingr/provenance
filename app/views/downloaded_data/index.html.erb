@@ -123,9 +123,9 @@ $(document).ready(function(){
     <!-- <td><%= downloaded_datum.data %></td> -->
     <td><%= downloaded_datum.annotation %></td>
     <td><%= downloaded_datum.updated_at %></td>
-    <td><%= link_to 'Show', downloaded_datum %></td>
-    <td><%= link_to 'Edit', edit_downloaded_datum_path(downloaded_datum) %></td>
-    <td><%= link_to 'Destroy', downloaded_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', data_provider_user_downloaded_datum_path(downloaded_datum.data_provider_user.id, downloaded_datum.id) %></td>
+    <td><%= link_to 'Edit', edit_data_provider_user_downloaded_datum_path(downloaded_datum.data_provider_user.id, downloaded_datum) %></td>
+    <td><%= link_to 'Destroy', [downloaded_datum.data_provider_user, downloaded_datum], method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
   <%end%>
 
@@ -134,7 +134,7 @@ $(document).ready(function(){
 
 <br />
 
-<%= link_to 'New Downloaded datum', new_downloaded_datum_path %>
+<%#= link_to 'New Downloaded datum', new_data_provider_user_downloaded_datum_path %>
 
 <%unless @downloaded_data.blank? %>
 <% if can? :show, @downloaded_data.first %>

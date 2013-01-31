@@ -7,7 +7,7 @@ class DownloadedDataController < ApplicationController
   # GET /downloaded_data
   # GET /downloaded_data.json
   def index
-    @downloaded_data = DownloadedDatum.where(data_provider_user_id: params[:id])
+    @downloaded_data = DownloadedDatum.where(data_provider_user_id: params[:data_provider_user_id])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -81,12 +81,15 @@ class DownloadedDataController < ApplicationController
     @downloaded_datum.destroy
 
     respond_to do |format|
-      format.html { redirect_to downloaded_data_url }
+      format.html { redirect_to data_provider_user_downloaded_data_url }
       format.json { head :no_content }
     end
   end
 
 
+
+  #this method is used to get data from the database.
+  #this is done so that the JSON diff can retrieve the data and compare it
   def return_data
     @downloaded_datum = DownloadedDatum.find(params[:id])
 

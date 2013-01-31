@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @downloaded_datum %> |
-<%= link_to 'Back', downloaded_data_path %>
+<%= link_to 'Show', data_provider_user_downloaded_datum_path(@downloaded_datum.data_provider_user.id, @downloaded_datum.id) %> |
+<%= link_to 'Back', data_provider_user_downloaded_data_path %>

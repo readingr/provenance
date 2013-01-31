@@ -3,17 +3,16 @@ Provenance::Application.routes.draw do
 
   resources :data_provider_users do
 
+    resources :downloaded_data do
+      member do
+        get :return_data
+      end
+    end
+
     member do
       get :update_facebook
       get :facebook_get_oauth_token
-      get :login
-
-      resources :downloaded_data do
-        member do
-          get :return_data
-        end
-      end
-      
+      get :login      
     end
   end
 
