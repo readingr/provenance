@@ -6,6 +6,7 @@ Provenance::Application.routes.draw do
     resources :downloaded_data do
       member do
         get :return_data
+        get :generate_provenance
       end
     end
 

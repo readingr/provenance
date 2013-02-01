@@ -88,6 +88,24 @@ class DownloadedDataController < ApplicationController
 
 
 
+
+  #this generates the provenance for downloaded data
+  def generate_provenance
+
+    @downloaded_datum = DownloadedDatum.find(params[:id])
+
+    @downloaded_datum.generate_provenance
+
+
+    respond_to do |format|
+      format.html { redirect_to data_provider_user_downloaded_datum_path(params[:data_provider_user_id], @downloaded_datum.id), notice: 'Downloaded datum was successfully created.' }
+      format.json { render json: @downloaded_datum, status: :created, location: @downloaded_datum }
+    end   
+  end
+
+
+
+
   #this method is used to get data from the database.
   #this is done so that the JSON diff can retrieve the data and compare it
   def return_data

@@ -94,32 +94,11 @@ class DataProviderUsersController < ApplicationController
 
   def update_facebook
     # puts "*******************************************"
-    
+    require 'ProvRequests'
+
     @data_provider_user = DataProviderUser.find(params[:id])
    
-
-#This is an alternative way of doing it.
-
-    # require 'net/http'
-    # require 'uri'
-
-    # uri = URI.parse("https://api.facebook.com/method/fql.query")
-
-    # param = {'query'=> 'SELECT first_name, last_name, profile_url, sex, pic_small, about_me, friend_count, inspirational_people, username FROM user WHERE uid = 1144492288', 'format' =>'json', 'access_token'=> @data_provider_user.access_token}
-
-    # # debugger
-    # http = Net::HTTP.new(uri.host, uri.port) 
-    # http.use_ssl = true
-    # http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-
-    # request = Net::HTTP::Get.new(uri.path) 
-    # request.set_form_data( param )
-
-    # # instantiate a new Request object
-    # request = Net::HTTP::Get.new( uri.path+ '?' + request.body ) 
-
-    # response = http.request(request)
-
+  
 
     # debugger
     #validation needed here if there is no facebook login.    
@@ -132,9 +111,13 @@ class DataProviderUsersController < ApplicationController
     @downloaded_datum = DownloadedDatum.new(name: "Facebook", data: json_results, data_provider_user_id: @data_provider_user.id)
 
 
+    # debugger
+
+
+
     respond_to do |format|
       if @downloaded_datum.save
-        format.html { redirect_to data_provider_user_downloaded_datum_path(@data_provider_user.id, @downloaded_datum.id), notice: 'Downloaded datum was successfully created.' }
+        format.html { redirect_to generate_provenance_data_provider_user_downloaded_datum_path(@data_provider_user.id, @downloaded_datum.id), notice: 'Downloaded datum was successfully created.' }
         format.json { render json: @downloaded_datum, status: :created, location: @downloaded_datum }
       else
         format.html { render action: "new" }
@@ -144,7 +127,7 @@ class DataProviderUsersController < ApplicationController
   end
 
 
-
+#this gets the initial access token (is it really oauth??) and extends it for 60 days.
   def facebook_get_oauth_token
 
     require 'net/http'
