@@ -7,6 +7,8 @@ class DataProviderUser < ActiveRecord::Base
 
 
 
- 
+ def facebook?
+  return self.data_provider.name == "Facebook"
+ end
   
 end
