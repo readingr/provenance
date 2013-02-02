@@ -4,7 +4,7 @@ module DataProviderUsersHelper
 
 		#if the dataprovider user is facebook return that code
 		if(dpu.facebook?)
-			return '<td><a href="/data_provider_users/8/update_facebook">Update</a></td>'.html_safe
+			return "<td><a href=\"/data_provider_users/#{dpu.id.to_s}/update_facebook\">Update</a></td>".html_safe
 		else
 
 		end

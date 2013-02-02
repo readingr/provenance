@@ -104,7 +104,9 @@ class DataProviderUsersController < ApplicationController
     #validation needed here if there is no facebook login.    
     options = { :access_token => @data_provider_user.access_token, :format => 'json' }
     query = Fql.execute({"query1" => 'SELECT first_name, last_name, profile_url, sex, pic_small, about_me, friend_count, inspirational_people, username FROM user WHERE uid = 1144492288'}, options)
+    # query = Fql.execute({"query1" => 'SELECT message FROM status WHERE uid = 1144492288'}, options)
     results = (query[0].values[1])[0]
+
 
     json_results = results.to_json
 
