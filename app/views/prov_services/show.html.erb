@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Username:</b>
+  <%= @prov_service.username %>
+</p>
+
+<p>
+  <b>Access token:</b>
+  <%= @prov_service.access_token %>
+</p>
+
+
+<%= link_to 'Edit', edit_prov_service_path(@prov_service) %> |
+<%= link_to 'Back', prov_services_path %>

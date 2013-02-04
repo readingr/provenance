@@ -1,6 +1,8 @@
 Provenance::Application.routes.draw do
 
 
+  resources :prov_services
+
   resources :data_provider_users do
 
     resources :downloaded_data do
