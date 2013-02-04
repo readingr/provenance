@@ -27,18 +27,17 @@ def self.get_request(username, apikey, bundle_number)
 	  request.add_field("Authorization", "ApiKey "+username+":"+apikey.to_s)
 	  response = http.request(request)
 	end
-	# debugger
 
 	# puts "***************"
 	# puts response.body
 	# puts "***************"
 
-
+	# debugger
 	#return the body of the response.
 	return response.body
 end
 
-
+#pass in @user.prov_username, @user.access_token, the JSON bundle you wish to send and the name of the file
 def self.post_request(username, apikey, bundle, rec_id)
 
 	# username = current_user.prov_username
@@ -58,7 +57,7 @@ def self.post_request(username, apikey, bundle, rec_id)
 	request["Content-Type"] = "application/json"
 
 	response = Net::HTTP.start(uri.hostname, uri.port) do |http|
-	http.request(request)
+		http.request(request)
 	end
 
 	# puts "***************"
@@ -66,6 +65,7 @@ def self.post_request(username, apikey, bundle, rec_id)
 	# puts "***************"
 
 	# debugger
+	#return the body of the response.
 	return response.body
 
 end
