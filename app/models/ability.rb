@@ -43,6 +43,9 @@ class Ability
 
     can :manage, DataProviderUser, user_id: user.id
 
+    # can :manage, ProvService, :user => {id: user.id}
+    # can :new, ProvService, user_id: user.id
+
     # can :facebook_get_oauth_token, DataProviderUser
 
     can :manage, DownloadedDatum, :data_provider_user => { user_id: user.id }

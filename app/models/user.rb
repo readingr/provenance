@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   validates :first_name, :last_name, :presence => true
 
   has_many :data_provider_users
+  has_one :prov_service
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

@@ -1,4 +1,4 @@
-<%= form_for(@prov_service) do |f| %>
+<%= form_for [@user, @prov_service] do |f| %>
   <% if @prov_service.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@prov_service.errors.count, "error") %> prohibited this prov_service from being saved:</h2>

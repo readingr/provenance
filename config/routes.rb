@@ -1,7 +1,6 @@
 Provenance::Application.routes.draw do
 
 
-  resources :prov_services
 
   resources :data_provider_users do
 
@@ -27,9 +26,13 @@ Provenance::Application.routes.draw do
 
 
   resources :users do 
+    resources :prov_services
+
     collection do
       get :prov_login
     end
+
+
   end
   
   root :to => 'data_provider_users#index'

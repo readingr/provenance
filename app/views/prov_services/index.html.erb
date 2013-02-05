@@ -1,6 +1,9 @@
-<h1>Listing prov_services</h1>
+<h1>Your Prov Web Service</h1>
 
-<table>
+
+<h4>Insert nice documentation here with instructions to sign up</h4> 
+
+<table class="table">
   <tr>
     <th>Username</th>
     <th>Access token</th>
@@ -13,13 +16,15 @@
   <tr>
     <td><%= prov_service.username %></td>
     <td><%= prov_service.access_token %></td>
-    <td><%= link_to 'Show', prov_service %></td>
-    <td><%= link_to 'Edit', edit_prov_service_path(prov_service) %></td>
-    <td><%= link_to 'Destroy', prov_service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', user_prov_service_path(prov_service.user_id, prov_service.id) %></td>
+    <td><%= link_to 'Edit', edit_user_prov_service_path(prov_service.user_id, prov_service.id) %></td>
+    <td><%= link_to 'Destroy', [prov_service.user, prov_service], method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Prov service', new_prov_service_path %>
+<% if @prov_service.nil? %>
+<%= link_to 'New Prov service', new_user_prov_service_path %>
+<% end %>
