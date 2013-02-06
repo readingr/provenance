@@ -93,7 +93,6 @@ class DataProviderUsersController < ApplicationController
   end
 
   def update_facebook
-    # puts "*******************************************"
     require 'ProvRequests'
 
     @data_provider_user = DataProviderUser.find(params[:id])

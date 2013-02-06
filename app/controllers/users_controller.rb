@@ -89,15 +89,17 @@ class UsersController < ApplicationController
   def prov_login
     require 'ProvRequests'
 
-    #if the user has signed up to the prov web service
-    if current_user.prov_username != nil and current_user.access_token != nil
-      # test = ProvRequests.get_request(current_user.prov_username, current_user.access_token, 2)
-    
-      bundle = {'prefix'=>{'ex'=>'http://example'}, 'entity'=>{'ex:e1'=>{}}} 
-      rec_id = "YESITWORKKKKKKED"
-      test = ProvRequests.post_request(current_user.prov_username, current_user.access_token, bundle, rec_id)
-    end
 
+    #if the user has signed up to the prov web service
+    if !current_user.prov_service.nil?
+      if current_user.prov_service.username != nil and current_user.prov_service.access_token != nil
+        # test = ProvRequests.get_request(current_user.prov_username, current_user.access_token, 2)
+      
+        bundle = {'prefix'=>{'ex'=>'http://example'}, 'entity'=>{'ex:e1'=>{}}} 
+        rec_id = "PROV-LOGIN-STUFF"
+        test = ProvRequests.post_request(current_user.prov_service.username, current_user.prov_service.access_token, bundle, rec_id)
+      end
+    end
 
     respond_to do |format|
       format.html { redirect_to root_path }
