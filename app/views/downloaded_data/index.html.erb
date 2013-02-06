@@ -134,10 +134,12 @@ $(document).ready(function(){
 
 <br />
 
-<%#= link_to 'New Downloaded datum', new_data_provider_user_downloaded_datum_path %>
+
+<%= update_link(@downloaded_data.first.data_provider_user) %>
 
 <%unless @downloaded_data.blank? %>
 <% if can? :show, @downloaded_data.first %>
+
 <p/>
 <h3> JSON Diff </h3>
 <p/>
