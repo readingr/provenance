@@ -7,7 +7,7 @@ gem 'jquery-rails'
 gem 'mysql2'
 gem 'oauth2'
 gem 'rails', '3.2.8'
-
+gem 'whenever'
 
 # Gems used only for assets and not required
 # in production environments by default.
