@@ -6,9 +6,16 @@ class DataProviderUser < ActiveRecord::Base
   has_many :downloaded_datum, :dependent => :destroy
 
 
-
+#checks to see whether it's facebook
  def facebook?
   return self.data_provider.name == "Facebook"
+ end
+
+#class method
+ def self.test
+ 	puts "*****************"
+ 	puts "TESTING"
+ 	puts ""
  end
   
 end

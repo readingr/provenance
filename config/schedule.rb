@@ -18,3 +18,9 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
+set :environment, "development"
+set :output, 'log/cron.log'
+
+every '*/1 * * * *' do
+	runner "DataProviderUser.test"
+end
