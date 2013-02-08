@@ -135,7 +135,8 @@ $(document).ready(function(){
 <br />
 
 
-<%= update_link(@downloaded_data.first.data_provider_user) %>
+<%= update_link(@data_provider_user) %>
+
 
 <%unless @downloaded_data.blank? %>
 <% if can? :show, @downloaded_data.first %>

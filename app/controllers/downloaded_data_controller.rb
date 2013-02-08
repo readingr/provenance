@@ -8,6 +8,7 @@ class DownloadedDataController < ApplicationController
   # GET /downloaded_data.json
   def index
     @downloaded_data = DownloadedDatum.where(data_provider_user_id: params[:data_provider_user_id])
+    @data_provider_user = DataProviderUser.find(params[:data_provider_user_id])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -93,18 +94,19 @@ class DownloadedDataController < ApplicationController
   def generate_provenance
 
     #select the downloaded data for the data provider user
-    @dd = DownloadedDatum.where(data_provider_user_id: params[:data_provider_user_id])
+    # @dd = DownloadedDatum.where(data_provider_user_id: params[:data_provider_user_id])
     @downloaded_datum = DownloadedDatum.find(params[:id])
+    @downloaded_datum.generate_provenance
 
 
     #select the second last downloaded data. This is so we can use the 
-    if @dd.count >= 2
-      #perhaps pass all the data to them so if one doesn't have provenance, it can use the next one??
-      @last_downloaded_data = @dd.order("created_at DESC").limit(1).offset(1)
-      @downloaded_datum.generate_provenance(@last_downloaded_data.first)
-    else
-      @downloaded_datum.generate_provenance(nil)
-    end
+    # if @dd.count >= 2
+    #   #perhaps pass all the data to them so if one doesn't have provenance, it can use the next one??
+    #   @last_downloaded_data = @dd.order("created_at DESC").limit(1).offset(1)
+    #   @downloaded_datum.generate_provenance(@last_downloaded_data.first)
+    # else
+    #   @downloaded_datum.generate_provenance(nil)
+    # end
 
 
     respond_to do |format|
