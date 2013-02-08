@@ -137,6 +137,9 @@ $(document).ready(function(){
 
 <%= update_link(@data_provider_user) %>
 
+<!-- <h3> Update frequency </h3> -->
+
+<%#= collection_select(@data_provider_user) %>
 
 <%unless @downloaded_data.blank? %>
 <% if can? :show, @downloaded_data.first %>

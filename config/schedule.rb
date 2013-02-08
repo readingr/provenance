@@ -22,9 +22,9 @@ set :environment, "development"
 set :output, 'log/cron.log'
 
 
-# every :hour do
-# 	runner "DataProviderUser.cron('hourly')"
-# end
+every :hour do
+	runner "DataProviderUser.cron('hourly')"
+end
 
 every :day do
 	runner "DataProviderUser.cron('daily')"
@@ -43,6 +43,6 @@ every :month do
 end
 
 # run minutely for testing
-every '*/1 * * * *' do
-	runner "DataProviderUser.cron('hourly')"
-end
+# every '*/1 * * * *' do
+# 	runner "DataProviderUser.cron('hourly')"
+# end

@@ -92,21 +92,9 @@ class DownloadedDataController < ApplicationController
 
   #this generates the provenance for downloaded data
   def generate_provenance
-
-    #select the downloaded data for the data provider user
-    # @dd = DownloadedDatum.where(data_provider_user_id: params[:data_provider_user_id])
     @downloaded_datum = DownloadedDatum.find(params[:id])
     @downloaded_datum.generate_provenance
 
-
-    #select the second last downloaded data. This is so we can use the 
-    # if @dd.count >= 2
-    #   #perhaps pass all the data to them so if one doesn't have provenance, it can use the next one??
-    #   @last_downloaded_data = @dd.order("created_at DESC").limit(1).offset(1)
-    #   @downloaded_datum.generate_provenance(@last_downloaded_data.first)
-    # else
-    #   @downloaded_datum.generate_provenance(nil)
-    # end
 
 
     respond_to do |format|
@@ -127,4 +115,6 @@ class DownloadedDataController < ApplicationController
       format.json { render json: @downloaded_datum.data}
     end
   end
+
+
 end

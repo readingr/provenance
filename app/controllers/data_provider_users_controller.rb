@@ -86,11 +86,19 @@ class DataProviderUsersController < ApplicationController
 
 
 
-
+  #this provides the facebook login page
   def login
     @data_provider_user = DataProviderUser.find(params[:id])
-
   end
+
+
+  #this method receives the update frequency and sets it for the cron job
+  def update_frequency
+    @data_provider_user = DataProviderUser.find(params[:id])
+    debugger
+  end
+
+
 
   def update_facebook
 
