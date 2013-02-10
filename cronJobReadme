@@ -1,0 +1,17 @@
+Cron Job Functionality
+
+The gem ``whenever'' is used to control the cron functionality.
+
+To start a cron job, use the commands:
+
+``whenever''
+
+``whenever -w''
+
+to clear cron jobs use
+
+``whenever -c''
+
+and to view the cron jobs you can use
+
+``crontab -e'' (technically for editing but you can close without saving)

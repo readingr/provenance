@@ -86,14 +86,21 @@ class DataProviderUsersController < ApplicationController
 
 
 
-
+  #this provides the facebook login page
   def login
     @data_provider_user = DataProviderUser.find(params[:id])
-
   end
 
+
+  #this method receives the update frequency and sets it for the cron job
+  def update_frequency
+    @data_provider_user = DataProviderUser.find(params[:id])
+    debugger
+  end
+
+
+
   def update_facebook
-    require 'ProvRequests'
 
     @data_provider_user = DataProviderUser.find(params[:id])
    
@@ -101,15 +108,9 @@ class DataProviderUsersController < ApplicationController
 
     # debugger
     #validation needed here if there is no facebook login.    
-    options = { :access_token => @data_provider_user.access_token, :format => 'json' }
-    query = Fql.execute({"query1" => 'SELECT first_name, last_name, profile_url, sex, pic_small, about_me, friend_count, inspirational_people, username FROM user WHERE uid = 1144492288'}, options)
-    # query = Fql.execute({"query1" => 'SELECT message FROM status WHERE uid = 1144492288'}, options)
-    results = (query[0].values[1])[0]
 
 
-    json_results = results.to_json
-
-    @downloaded_datum = DownloadedDatum.new(name: "Facebook", data: json_results, data_provider_user_id: @data_provider_user.id)
+    @downloaded_datum = @data_provider_user.update_facebook
 
 
     # debugger

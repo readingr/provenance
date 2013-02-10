@@ -12,6 +12,7 @@ Welcome, this is your personal data repository
   <tr>
     <th>Data provider</th>
     <th>Last Updated </th>
+    <th>Update Frequency</th>
     <th></th>
     <th></th>
     <th/>
@@ -22,6 +23,7 @@ Welcome, this is your personal data repository
   <tr>
     <td><%= data_provider_user.data_provider.name %></td>
     <%= last_updated_time(data_provider_user) %>
+    <td><%= data_provider_user.update_frequency %></td>
     <td> <%= link_to 'View Data', data_provider_user_downloaded_data_path(data_provider_user)%> </td>
     <%= update_link(data_provider_user) %>
     <td><%= link_to 'Edit', edit_data_provider_user_path(data_provider_user) %></td>
