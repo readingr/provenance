@@ -60,12 +60,16 @@ class DataProviderUser < ActiveRecord::Base
  	require 'ProvRequests'
 
  	options = { :access_token => self.access_token, :format => 'json' }
- 	query = Fql.execute({"query1" => 'SELECT first_name, last_name, profile_url, sex, pic_small, about_me, friend_count, inspirational_people, username FROM user WHERE uid = 1144492288'}, options)
- 	# query = Fql.execute({"query1" => 'SELECT message FROM status WHERE uid = 1144492288'}, options)
- 	results = (query[0].values[1])[0]
-
+ 	query = Fql.execute({
+ 		"query1" => 'SELECT status_id, message, time, uid FROM status WHERE uid = 1144492288',
+ 		"query2" => 'SELECT first_name, last_name, profile_url, sex, pic_small, about_me, friend_count, inspirational_people, username FROM user WHERE uid = 1144492288'
+ 	}, options)
+ 	results = (query[0].values[1])[0].merge(query[1].values[1][0])
+ 	debugger
 
  	json_results = results.to_json
+ 	# json_results = ActiveSupport::JSON.decode(response.body)[0].to_json
+ 	# debugger
 
  	return DownloadedDatum.new(name: "Facebook", data: json_results, data_provider_user_id: self.id)
 
