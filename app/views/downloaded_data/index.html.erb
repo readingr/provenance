@@ -152,10 +152,10 @@ $(document).ready(function(){
 
 
 <h4> New </h4>
-<%= collection_select(:id, :updated_at, @downloaded_data.order('updated_at DESC'), :id, :updated_at ) %>
+<%= collection_select(:id, :updated_at, @all_downloaded_data.order('updated_at DESC'), :id, :updated_at ) %>
 <p/>
 <h4> Old </h4>
-<%= collection_select(:id, :data, @downloaded_data.order('updated_at DESC'), :id, :updated_at ) %>
+<%= collection_select(:id, :data, @all_downloaded_data.order('updated_at DESC'), :id, :updated_at ) %>
 
 <div id="myvisualdiffcontainer"></div>
 <%else%>

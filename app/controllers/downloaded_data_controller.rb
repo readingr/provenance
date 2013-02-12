@@ -7,7 +7,8 @@ class DownloadedDataController < ApplicationController
   # GET /downloaded_data
   # GET /downloaded_data.json
   def index
-    @downloaded_data = DownloadedDatum.where(data_provider_user_id: params[:data_provider_user_id]).page(params[:page]).per(10)
+    @downloaded_data = DownloadedDatum.where(data_provider_user_id: params[:data_provider_user_id]).order("updated_at DESC").page(params[:page]).per(10)
+    @all_downloaded_data =  DownloadedDatum.where(data_provider_user_id: params[:data_provider_user_id])
     @data_provider_user = DataProviderUser.find(params[:data_provider_user_id])
 
     respond_to do |format|
