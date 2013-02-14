@@ -11,6 +11,10 @@ class DataProviderUser < ActiveRecord::Base
   return self.data_provider.name == "Facebook"
  end
 
+ def twitter?
+ 	return self.data_provider.name == "Twitter"
+ end
+
 
 #The cron job calls this method which will update 
  def self.cron(time)

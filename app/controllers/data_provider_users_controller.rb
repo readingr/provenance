@@ -88,14 +88,28 @@ class DataProviderUsersController < ApplicationController
 
   #this provides the facebook login page
   def login
+    require 'TwitterOauth'
     @data_provider_user = DataProviderUser.find(params[:id])
+
+    if @data_provider_user.twitter?
+      # debugger
+      @twitter_url = TwitterOauth.request_url
+      # debugger
+      redirect_to @twitter_url.authorize_url
+    end
+  end
+
+  def twitter_oauth
+    request_token = params[:oauth_token]
+    oauth_verifier = params[:oauth_verifier]
+    debugger
+    access_token = request_token.get_access_token(:oauth_verifier => oauth_verifier )
   end
 
 
   #this method receives the update frequency and sets it for the cron job
   def update_frequency
     @data_provider_user = DataProviderUser.find(params[:id])
-    debugger
   end
 
 
@@ -104,17 +118,9 @@ class DataProviderUsersController < ApplicationController
 
     @data_provider_user = DataProviderUser.find(params[:id])
    
-  
-
-    # debugger
     #validation needed here if there is no facebook login.    
 
-
     @downloaded_datum = @data_provider_user.update_facebook
-
-
-    # debugger
-
 
 
     respond_to do |format|

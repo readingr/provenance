@@ -14,7 +14,11 @@ Provenance::Application.routes.draw do
     member do
       get :update_facebook
       get :facebook_get_oauth_token
-      get :login      
+      get :login
+    end
+
+    collection do 
+      get :twitter_oauth          
     end
   end
 
