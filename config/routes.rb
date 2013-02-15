@@ -8,6 +8,7 @@ Provenance::Application.routes.draw do
       member do
         get :return_data
         get :generate_provenance
+        get :download
       end
     end
 

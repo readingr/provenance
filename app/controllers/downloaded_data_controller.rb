@@ -89,6 +89,14 @@ class DownloadedDataController < ApplicationController
   end
 
 
+  def download
+    @downloaded_datum = DownloadedDatum.find(params[:id])
+
+    send_data @downloaded_datum.data,
+      :type => 'text',
+      :disposition => "attachment; filename=#{@downloaded_datum.data_provider_user.data_provider.name+Time.now.to_s}.txt"
+  end
+
 
 
   #this generates the provenance for downloaded data

@@ -51,8 +51,6 @@ class DownloadedDatum < ActiveRecord::Base
 
             "specializationOf"=>{"_spec#{self.id}"=>{"prov:specificEntity"=>"ex:#{self.id}", "prov:generalEntity"=>"ex:#{self.data_provider_user.data_provider.name}"}},
 
-            # "specializationOf"=>{"_spec#{last_downloaded_data.id}"=>{"prov:generalEntity" => "ex:#{last_downloaded_data.data_provider_user.data_provider.name}", "prov:specificEntity"=>"ex:#{self.id}"}},
-
             "wasAssociatedWith"=>{"_:asoc2"=>{"prov:agent"=>"ex:system", "prov:activity"=> "ex:download#{self.id}"}},
             
             "wasGeneratedBy"=>{"_:gen2"=>{"prov:entity"=>"ex:#{self.id}", "prov:activity"=> "ex:download#{self.id}"}},
