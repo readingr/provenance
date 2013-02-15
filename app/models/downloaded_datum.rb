@@ -25,13 +25,13 @@ class DownloadedDatum < ActiveRecord::Base
 
         if last_downloaded_data.nil?
             new_bundle = {"prefix"=>{"ex"=>"http://localhost:3000"}, 
-            "entity"=>{"ex:#{self.id}"=>{}, "ex:Facebook"=>{}}, 
+            "entity"=>{"ex:#{self.id}"=>{}, "ex:#{self.data_provider_user.data_provider.name}"=>{}}, 
 
             "agent"=>{"ex:system"=>{}}, 
 
             "activity"=>{"ex:download#{self.id}"=>{"prov:type"=>"Download #{self.id}"}},
 
-            # "specializationOf"=>{"_spec1"=>{"prov:specializedEntity"=>"ex:#{self.id}", "prov:generalEntity"=>"ex:Facebook"}},
+            "specializationOf"=>{"_spec#{self.id}"=>{"prov:specificEntity"=>"ex:#{self.id}", "prov:generalEntity"=>"ex:#{self.data_provider_user.data_provider.name}"}},
 
             "wasAssociatedWith"=>{"_:asoc2"=>{"prov:agent"=>"ex:system", "prov:activity"=> "ex:download#{self.id}"}},
             
@@ -43,14 +43,15 @@ class DownloadedDatum < ActiveRecord::Base
         else
             # take out of here and put in seperate action/module so we can reuse for other data provider users.
             bundle = {"prefix"=>{"ex"=>"http://localhost:3000"}, 
-            "entity"=>{"ex:#{last_downloaded_data.id}"=>{}, "ex:#{self.id}"=>{}, "ex:Facebook"=>{}}, 
+            "entity"=>{"ex:#{last_downloaded_data.id}"=>{}, "ex:#{self.id}"=>{}, "ex:#{last_downloaded_data.data_provider_user.data_provider.name}"=>{}}, 
 
             "agent"=>{"ex:system"=>{}}, 
 
             "activity"=>{"ex:download#{last_downloaded_data.id}"=>{"prov:type"=>"Download #{last_downloaded_data.id}"}, "ex:download#{self.id}"=>{"prov:type"=>"Download #{self.id}"}},
 
+            "specializationOf"=>{"_spec#{self.id}"=>{"prov:specificEntity"=>"ex:#{self.id}", "prov:generalEntity"=>"ex:#{self.data_provider_user.data_provider.name}"}},
 
-            # "specializationOf"=>{"_spec1"=>{"prov:specializedEntity" => "ex:Facebook", "prov:generalEntity"=>"ex:#{self.id}"}},
+            # "specializationOf"=>{"_spec#{last_downloaded_data.id}"=>{"prov:generalEntity" => "ex:#{last_downloaded_data.data_provider_user.data_provider.name}", "prov:specificEntity"=>"ex:#{self.id}"}},
 
             "wasAssociatedWith"=>{"_:asoc2"=>{"prov:agent"=>"ex:system", "prov:activity"=> "ex:download#{self.id}"}},
             

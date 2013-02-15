@@ -53,12 +53,35 @@ class DataProviderUser < ActiveRecord::Base
  def determine_update
  	if self.facebook?
  		return self.update_facebook
+ 	elsif self.twitter?
+ 		return self.update_twitter
  	else
- 		puts "not facebook"
- 		return self.update_facebook
+ 		puts "not fb/twitter"
+ 		puts "**************"
+ 		debugger
+ 		# return self.update_facebook
  	end
  end
 
+
+
+ def update_twitter
+ 	require 'ProvRequests'
+ 	# puts "******************"
+
+
+ 	Twitter.configure do |config|
+ 	  config.consumer_key = "fYuL73SIEuhw6kgNvs2hA"
+ 	  config.consumer_secret = "49ujIlgckdjJGbuKV8IafH9rKuvO6PlSCuxEVspd4"
+ 	  config.oauth_token = self.access_token
+ 	  config.oauth_token_secret = self.oauth_token_secret 
+ 	end
+ 	 
+ 	# Twitter.update("Hello World!")
+ 	# debugger
+ 	json_results = Twitter.user.to_json
+ 	return DownloadedDatum.new(name: "Twitter", data: json_results, data_provider_user_id: self.id)
+ end
 
  def update_facebook
  	require 'ProvRequests'

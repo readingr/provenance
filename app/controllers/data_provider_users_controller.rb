@@ -143,14 +143,17 @@ class DataProviderUsersController < ApplicationController
 
 
 
-  def update_facebook
+  def update_data
 
     @data_provider_user = DataProviderUser.find(params[:id])
    
     #validation needed here if there is no facebook login.    
 
-    @downloaded_datum = @data_provider_user.update_facebook
-
+    if @data_provider_user.facebook?
+      @downloaded_datum = @data_provider_user.update_facebook
+    elsif @data_provider_user.twitter?
+      @downloaded_datum = @data_provider_user.update_twitter
+    end
 
     respond_to do |format|
       if @downloaded_datum.save

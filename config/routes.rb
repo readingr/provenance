@@ -12,7 +12,7 @@ Provenance::Application.routes.draw do
     end
 
     member do
-      get :update_facebook
+      get :update_data
       get :facebook_get_oauth_token
       get :login
     end

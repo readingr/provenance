@@ -3,10 +3,8 @@ module DataProviderUsersHelper
 	def update_link(dpu)
 
 		#if the dataprovider user is facebook return that code
-		if(dpu.facebook?)
-			return "<td><a href=\"/data_provider_users/#{dpu.id.to_s}/update_facebook\">Update</a></td>".html_safe
-		else
-
+		if(dpu.facebook? or dpu.twitter?)
+			return "<td><a href=\"/data_provider_users/#{dpu.id.to_s}/update_data\">Update</a></td>".html_safe
 		end
 	end
 
