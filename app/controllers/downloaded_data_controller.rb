@@ -88,7 +88,7 @@ class DownloadedDataController < ApplicationController
     end
   end
 
-
+  #this downloads the data to the user
   def download
     @downloaded_datum = DownloadedDatum.find(params[:id])
 
@@ -103,8 +103,6 @@ class DownloadedDataController < ApplicationController
   def generate_provenance
     @downloaded_datum = DownloadedDatum.find(params[:id])
     @downloaded_datum.generate_provenance
-
-
 
     respond_to do |format|
       format.html { redirect_to data_provider_user_downloaded_datum_path(params[:data_provider_user_id], @downloaded_datum.id), notice: 'Downloaded datum was successfully created.' }
