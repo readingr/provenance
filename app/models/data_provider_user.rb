@@ -39,10 +39,6 @@ class DataProviderUser < ActiveRecord::Base
  	if !data_provider_users.empty?
 
  		data_provider_users.each do |dpu|
- 			# puts dpu.user_id
- 			# puts dpu.data_provider.name
-
- 			#need to make a non-generic path
  			downloaded_data = dpu.determine_update
  			downloaded_data.save
  			downloaded_data.generate_provenance
@@ -58,8 +54,6 @@ class DataProviderUser < ActiveRecord::Base
  	else
  		puts "not fb/twitter"
  		puts "**************"
- 		debugger
- 		# return self.update_facebook
  	end
  end
 
@@ -67,8 +61,6 @@ class DataProviderUser < ActiveRecord::Base
 
  def update_twitter
  	require 'ProvRequests'
- 	# puts "******************"
-
 
  	Twitter.configure do |config|
  	  config.consumer_key = "fYuL73SIEuhw6kgNvs2hA"
@@ -76,9 +68,8 @@ class DataProviderUser < ActiveRecord::Base
  	  config.oauth_token = self.access_token
  	  config.oauth_token_secret = self.oauth_token_secret 
  	end
- 	 
- 	# Twitter.update("Hello World!")
- 	# debugger
+	
+	#this parses the results 	 
  	json_results = Twitter.user.to_json
  	return DownloadedDatum.new(name: "Twitter", data: json_results, data_provider_user_id: self.id)
  end
@@ -94,10 +85,8 @@ class DataProviderUser < ActiveRecord::Base
  	results = (query[0].values[1])[0].merge(query[1].values[1][0])
  	debugger
 
- 	json_results = results.to_json
- 	# json_results = ActiveSupport::JSON.decode(response.body)[0].to_json
- 	# debugger
 
+ 	json_results = results.to_json
  	return DownloadedDatum.new(name: "Facebook", data: json_results, data_provider_user_id: self.id)
 
  end

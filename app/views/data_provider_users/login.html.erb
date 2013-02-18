@@ -1,16 +1,10 @@
-<%= puts @data_provider_user %>
-<%= puts "***********************" %>
-<h3> COOL STUFF </h3>
 
 <% if @data_provider_user.facebook? %>
 <div id="fb-root"></div> 
 
 <script type="text/javascript">
 $(document).ready(function(){ 
-   // if ($(data_provider_user_data_provider_id).val() == 3){
     facebook()
-   // }
-
 });
 
 function facebook(){
@@ -79,8 +73,6 @@ function facebook(){
               $.ajax({
                 url: '/data_provider_users/'+location.pathname.match(/\/data_provider_users\/(\d+)/)[1]
 +'/facebook_get_oauth_token?access_token='+ accessToken,
-                // url: '/messages/' + message_id +'/semantic_preview/',
-                // data: {format: "js"},
                 dataType: 'html',
                 success: function(data){
                   // Somehow change this because VERY HACKY
