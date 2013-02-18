@@ -103,26 +103,16 @@ class DataProviderUsersController < ApplicationController
   end
 
   def twitter_oauth
+    require 'TwitterOauth'
 
     @data_provider_user = current_user.data_provider_users.last
-    @consumer = OAuth::Consumer.new("fYuL73SIEuhw6kgNvs2hA", "49ujIlgckdjJGbuKV8IafH9rKuvO6PlSCuxEVspd4", {:site=> "http://twitter.com"} )
 
-    request_token = OAuth::RequestToken.new(@consumer, @data_provider_user.access_token, @data_provider_user.oauth_token_secret)  
-
+    request_token = TwitterOauth.request_token(@data_provider_user.access_token, @data_provider_user.oauth_token_secret)
+    
     @access_token = request_token.get_access_token(:oauth_verifier =>  params[:oauth_verifier] )
+
     @data_provider_user.access_token = @access_token.token
     @data_provider_user.oauth_token_secret = @access_token.secret
-
-
-
-    # Twitter.configure do |config|
-    #   config.consumer_key = "fYuL73SIEuhw6kgNvs2hA"
-    #   config.consumer_secret = "49ujIlgckdjJGbuKV8IafH9rKuvO6PlSCuxEVspd4"
-    #   config.oauth_token = @access_token.token
-    #   config.oauth_token_secret = @access_token.secret 
-    # end
-     
-    # Twitter.update("Hello World!")
 
     respond_to do |format|
       if @data_provider_user.save

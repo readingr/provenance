@@ -85,22 +85,6 @@ describe DataProviderUsersController do
         response.should redirect_to(login_data_provider_user_path(@user.data_provider_users.first.id))
       end
     end
-
-    # describe "with invalid params" do
-    #   it "assigns a newly created but unsaved data_provider_user as @data_provider_user" do
-    #     # Trigger the behavior that occurs when invalid params are submitted
-    #     DataProviderUser.any_instance.stub(:save).and_return(false)
-    #     post :create, {:data_provider_user => { "user_id" => "invalid value" }}
-    #     assigns(:data_provider_user).should be_a_new(DataProviderUser)
-    #   end
-
-    #   it "re-renders the 'new' template" do
-    #     # Trigger the behavior that occurs when invalid params are submitted
-    #     DataProviderUser.any_instance.stub(:save).and_return(false)
-    #     post :create, {:data_provider_user => { "user_id" => "invalid value" }}
-    #     response.should render_template("new")
-    #   end
-    # end
   end
 
   describe "PUT update" do
@@ -160,6 +144,10 @@ describe DataProviderUsersController do
       delete :destroy, {:id => data_provider_user.to_param}
       response.should redirect_to(data_provider_users_url)
     end
+  end
+
+  describe "GET login" do
+    # it "should log the user in"
   end
 
 end
