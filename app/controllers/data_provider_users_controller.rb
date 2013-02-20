@@ -99,7 +99,6 @@ class DataProviderUsersController < ApplicationController
       @data_provider_user.oauth_token_secret = @request_token.secret
       
       if @data_provider_user.save!
-        debugger
         redirect_to @request_token.authorize_url              
       end      
 
