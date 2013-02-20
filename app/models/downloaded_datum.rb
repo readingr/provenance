@@ -24,38 +24,100 @@ class DownloadedDatum < ActiveRecord::Base
             # debugger
 
         if last_downloaded_data.nil?
-            new_bundle = {"prefix"=>{"ex"=>"http://localhost:3000"}, 
-            "entity"=>{"ex:#{self.id}"=>{}, "ex:#{self.data_provider_user.data_provider.name}"=>{}}, 
+            new_bundle = {
+                "prefix"=>{
+                    "ex"=>"http://localhost:3000"
+                }, 
+                "entity"=>{
+                    "ex:#{self.id}"=>{},
+                    "ex:#{self.data_provider_user.data_provider.name}"=>{}
+                }, 
 
-            "agent"=>{"ex:system"=>{}}, 
+                "agent"=>{
+                    "ex:system"=>{}
+                }, 
 
-            "activity"=>{"ex:download#{self.id}"=>{"prov:type"=>"Download #{self.id}"}},
+                "activity"=>{
+                    "ex:download#{self.id}"=>{
+                        "prov:type"=>"Download #{self.id}"
+                    }
+                },
 
-            "specializationOf"=>{"_spec#{self.id}"=>{"prov:specificEntity"=>"ex:#{self.id}", "prov:generalEntity"=>"ex:#{self.data_provider_user.data_provider.name}"}},
+                "specializationOf"=>{
+                    "_:spec#{self.id}"=>{
+                        "prov:specificEntity"=>"ex:#{self.id}",
+                        "prov:generalEntity"=>"ex:#{self.data_provider_user.data_provider.name}"
+                    }
+                },
 
-            "wasAssociatedWith"=>{"_:asoc2"=>{"prov:agent"=>"ex:system", "prov:activity"=> "ex:download#{self.id}"}},
-            
-            "wasGeneratedBy"=>{"_:gen2"=>{"prov:entity"=>"ex:#{self.id}", "prov:activity"=> "ex:download#{self.id}"}},
-
+                "wasAssociatedWith"=>{
+                    "_:asoc2"=>{
+                        "prov:agent"=>"ex:system",
+                        "prov:activity"=> "ex:download#{self.id}"
+                    }
+                },
+                
+                "wasGeneratedBy"=>{
+                    "_:gen2"=>{
+                        "prov:entity"=>"ex:#{self.id}",
+                        "prov:activity"=> "ex:download#{self.id}"
+                    }
+                },
             }
 
             # debugger
         else
             # take out of here and put in seperate action/module so we can reuse for other data provider users.
-            bundle = {"prefix"=>{"ex"=>"http://localhost:3000"}, 
-            "entity"=>{"ex:#{last_downloaded_data.id}"=>{}, "ex:#{self.id}"=>{}, "ex:#{last_downloaded_data.data_provider_user.data_provider.name}"=>{}}, 
+            bundle = {
+                "prefix"=>{
+                    "ex"=>"http://localhost:3000"
+                }, 
+                "entity"=>{
+                    "ex:#{last_downloaded_data.id}"=>{},
+                    "ex:#{self.id}"=>{},
+                    "ex:#{last_downloaded_data.data_provider_user.data_provider.name}"=>{}
+                }, 
 
-            "agent"=>{"ex:system"=>{}}, 
+                "agent"=>{
+                    "ex:system"=>{}
+                }, 
 
-            "activity"=>{"ex:download#{last_downloaded_data.id}"=>{"prov:type"=>"Download #{last_downloaded_data.id}"}, "ex:download#{self.id}"=>{"prov:type"=>"Download #{self.id}"}},
+                "activity"=>{
+                    "ex:download#{last_downloaded_data.id}"=>{
+                        "prov:type"=>"Download #{last_downloaded_data.id}"
+                    },
+                    "ex:download#{self.id}"=>{
+                        "prov:type"=>"Download #{self.id}"
+                    }
+                },
 
-            "specializationOf"=>{"_spec#{self.id}"=>{"prov:specificEntity"=>"ex:#{self.id}", "prov:generalEntity"=>"ex:#{self.data_provider_user.data_provider.name}"}},
+                "specializationOf"=>{
+                    "_:spec#{self.id}"=>{
+                        "prov:specificEntity"=>"ex:#{self.id}", 
+                        "prov:generalEntity"=>"ex:#{self.data_provider_user.data_provider.name}"
+                    }
+                },
 
-            "wasAssociatedWith"=>{"_:asoc2"=>{"prov:agent"=>"ex:system", "prov:activity"=> "ex:download#{self.id}"}},
-            
-            "wasGeneratedBy"=>{"_:gen2"=>{"prov:entity"=>"ex:#{self.id}", "prov:activity"=> "ex:download#{self.id}"}},
+                "wasAssociatedWith"=>{
+                    "_:asoc2"=>{
+                        "prov:agent"=>"ex:system",
+                        "prov:activity"=> "ex:download#{self.id}"
+                    }
+                },
+                
+                "wasGeneratedBy"=>{
+                    "_:gen2"=>{
+                        "prov:entity"=>"ex:#{self.id}",
+                        "prov:activity"=> "ex:download#{self.id}"
+                    }
+                },
 
-            "wasDerivedFrom"=>{"_:der1"=>{"prov:usedEntity"=>"ex:#{last_downloaded_data.id}", "prov:generatedEntity"=>"ex:#{self.id}"}}
+                "wasDerivedFrom"=>{
+                    "_:der1"=>{
+                        "prov:usedEntity"=>"ex:#{last_downloaded_data.id}",
+                        "prov:generatedEntity"=>"ex:#{self.id}"
+                    }
+                }
             } 
 
 
