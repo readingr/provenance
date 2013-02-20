@@ -182,6 +182,7 @@ DEPENDENCIES
   oauth
   oauth2
   rails (= 3.2.8)
+  rspec-mocks
   rspec-rails
   sass-rails (~> 3.2.3)
   twitter

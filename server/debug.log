@@ -1,0 +1,224 @@
+[20/Feb/2013 10:08:22] ERROR [django.request:215] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 89, in get_response
+    response = middleware_method(request)
+  File "/Library/Python/2.7/site-packages/django_debug_toolbar-0.9.4-py2.7.egg/debug_toolbar/middleware.py", line 80, in process_request
+    urlconf = import_module(getattr(request, 'urlconf', settings.ROOT_URLCONF))
+  File "/Library/Python/2.7/site-packages/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+ImportError: No module named server.urls
+[20/Feb/2013 10:08:22] ERROR [django.request:215] Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 89, in get_response
+    response = middleware_method(request)
+  File "/Library/Python/2.7/site-packages/django/middleware/common.py", line 67, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 531, in is_valid_path
+    resolve(path, urlconf)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 420, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 298, in resolve
+    for pattern in self.url_patterns:
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 328, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 323, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/Library/Python/2.7/site-packages/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+ImportError: No module named server.urls
+[20/Feb/2013 10:09:10] ERROR [django.request:215] Internal Server Error: /store/login/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/debug.py", line 69, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/views/decorators/cache.py", line 89, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/contrib/auth/views.py", line 60, in login
+    current_site = get_current_site(request)
+  File "/Library/Python/2.7/site-packages/django/contrib/sites/models.py", line 92, in get_current_site
+    current_site = Site.objects.get_current()
+  File "/Library/Python/2.7/site-packages/django/contrib/sites/models.py", line 25, in get_current
+    current_site = self.get(pk=sid)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 361, in get
+    num = len(clone)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 85, in __len__
+    self._result_cache = list(self.iterator())
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 818, in execute_sql
+    cursor.execute(sql, params)
+  File "/Library/Python/2.7/site-packages/django_debug_toolbar-0.9.4-py2.7.egg/debug_toolbar/utils/tracking/db.py", line 89, in execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Python/2.7/site-packages/django/db/backends/util.py", line 40, in execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Python/2.7/site-packages/django/db/backends/sqlite3/base.py", line 344, in execute
+    return Database.Cursor.execute(self, query, params)
+DatabaseError: no such table: django_site
+[20/Feb/2013 10:09:11] ERROR [django.request:215] Internal Server Error: /store/login/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 188, in get_response
+    response = middleware_method(request, response)
+  File "/Library/Python/2.7/site-packages/django/contrib/sessions/middleware.py", line 36, in process_response
+    request.session.save()
+  File "/Library/Python/2.7/site-packages/django/contrib/sessions/backends/db.py", line 51, in save
+    session_key=self._get_or_create_session_key(),
+  File "/Library/Python/2.7/site-packages/django/contrib/sessions/backends/base.py", line 145, in _get_or_create_session_key
+    self._session_key = self._get_new_session_key()
+  File "/Library/Python/2.7/site-packages/django/contrib/sessions/backends/base.py", line 139, in _get_new_session_key
+    if not self.exists(session_key):
+  File "/Library/Python/2.7/site-packages/django/contrib/sessions/backends/db.py", line 27, in exists
+    return Session.objects.filter(session_key=session_key).exists()
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 565, in exists
+    return self.query.has_results(using=self.db)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 441, in has_results
+    return bool(compiler.execute_sql(SINGLE))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 818, in execute_sql
+    cursor.execute(sql, params)
+  File "/Library/Python/2.7/site-packages/django/db/backends/util.py", line 40, in execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Python/2.7/site-packages/django/db/backends/sqlite3/base.py", line 344, in execute
+    return Database.Cursor.execute(self, query, params)
+DatabaseError: no such table: django_session
+[20/Feb/2013 10:09:34] ERROR [django.request:215] Internal Server Error: /store/bundles/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/Users/Richard/Downloads/server/provserver/views.py", line 153, in list_bundles
+    user = User.objects.get(id=ANONYMOUS_USER_ID)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 361, in get
+    num = len(clone)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 85, in __len__
+    self._result_cache = list(self.iterator())
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 818, in execute_sql
+    cursor.execute(sql, params)
+  File "/Library/Python/2.7/site-packages/django_debug_toolbar-0.9.4-py2.7.egg/debug_toolbar/utils/tracking/db.py", line 89, in execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Python/2.7/site-packages/django/db/backends/util.py", line 40, in execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Python/2.7/site-packages/django/db/backends/sqlite3/base.py", line 344, in execute
+    return Database.Cursor.execute(self, query, params)
+DatabaseError: no such table: auth_user
+[20/Feb/2013 10:16:35] DEBUG [root:169] <MultiValueDict: {}>
+[20/Feb/2013 10:16:35] DEBUG [prov.persistence.models:92] Saving namespaces...
+[20/Feb/2013 10:16:35] DEBUG [prov.persistence.models:197] Saving bundle PROV-LOGIN-STUFF...
+[20/Feb/2013 10:16:35] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:e1)
+[20/Feb/2013 10:16:42] DEBUG [prov.persistence.models:109] Loading bundle id PROV-LOGIN-STUFF
+[20/Feb/2013 10:16:42] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:e1)
+[20/Feb/2013 10:17:06] DEBUG [root:169] <MultiValueDict: {}>
+[20/Feb/2013 10:17:06] DEBUG [prov.persistence.models:92] Saving namespaces...
+[20/Feb/2013 10:17:06] DEBUG [prov.persistence.models:197] Saving bundle Facebook-163...
+[20/Feb/2013 10:17:06] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:Facebook)
+[20/Feb/2013 10:17:06] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:163)
+[20/Feb/2013 10:17:06] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:136)
+[20/Feb/2013 10:17:06] DEBUG [prov.persistence.models:148] Saving PROV record: activity(ex:download136, -, -, [prov:type="Download 136"])
+[20/Feb/2013 10:17:06] DEBUG [prov.persistence.models:148] Saving PROV record: activity(ex:download163, -, -, [prov:type="Download 163"])
+[20/Feb/2013 10:17:06] DEBUG [prov.persistence.models:148] Saving PROV record: agent(ex:system)
+[20/Feb/2013 10:17:07] DEBUG [prov.persistence.models:148] Saving PROV record: wasGeneratedBy(ex:163, ex:download163, -)
+[20/Feb/2013 10:17:07] DEBUG [prov.persistence.models:148] Saving PROV record: wasDerivedFrom(ex:163, ex:136, -, -, -)
+[20/Feb/2013 10:17:07] DEBUG [prov.persistence.models:148] Saving PROV record: wasAssociatedWith(ex:download163, ex:system, -)
+[20/Feb/2013 10:17:07] DEBUG [prov.persistence.models:148] Saving PROV record: specializationOf(_spec163, ex:163, ex:Facebook)
+[20/Feb/2013 10:17:13] DEBUG [prov.persistence.models:109] Loading bundle id Facebook-163
+[20/Feb/2013 10:17:13] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Facebook)
+[20/Feb/2013 10:17:13] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:163)
+[20/Feb/2013 10:17:13] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:136)
+[20/Feb/2013 10:17:13] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download136, -, -, [prov:type="Download 136"])
+[20/Feb/2013 10:17:13] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download163, -, -, [prov:type="Download 163"])
+[20/Feb/2013 10:17:13] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(ex:system)
+[20/Feb/2013 10:17:13] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:163, ex:download163, -)
+[20/Feb/2013 10:17:13] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(ex:163, ex:136, -, -, -)
+[20/Feb/2013 10:17:13] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAssociatedWith(ex:download163, ex:system, -)
+[20/Feb/2013 10:17:13] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(_spec163, ex:163, ex:Facebook)
+[20/Feb/2013 10:19:22] DEBUG [prov.persistence.models:109] Loading bundle id Facebook-163
+[20/Feb/2013 10:19:22] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Facebook)
+[20/Feb/2013 10:19:22] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:163)
+[20/Feb/2013 10:19:22] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:136)
+[20/Feb/2013 10:19:22] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download136, -, -, [prov:type="Download 136"])
+[20/Feb/2013 10:19:22] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download163, -, -, [prov:type="Download 163"])
+[20/Feb/2013 10:19:22] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(ex:system)
+[20/Feb/2013 10:19:22] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:163, ex:download163, -)
+[20/Feb/2013 10:19:22] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(ex:163, ex:136, -, -, -)
+[20/Feb/2013 10:19:22] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAssociatedWith(ex:download163, ex:system, -)
+[20/Feb/2013 10:19:22] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(_spec163, ex:163, ex:Facebook)
+[20/Feb/2013 10:19:27] DEBUG [prov.persistence.models:109] Loading bundle id Facebook-163
+[20/Feb/2013 10:19:27] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Facebook)
+[20/Feb/2013 10:19:27] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:163)
+[20/Feb/2013 10:19:27] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:136)
+[20/Feb/2013 10:19:27] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download136, -, -, [prov:type="Download 136"])
+[20/Feb/2013 10:19:27] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download163, -, -, [prov:type="Download 163"])
+[20/Feb/2013 10:19:27] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(ex:system)
+[20/Feb/2013 10:19:27] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:163, ex:download163, -)
+[20/Feb/2013 10:19:27] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(ex:163, ex:136, -, -, -)
+[20/Feb/2013 10:19:27] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAssociatedWith(ex:download163, ex:system, -)
+[20/Feb/2013 10:19:27] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(_spec163, ex:163, ex:Facebook)
+[20/Feb/2013 10:19:35] DEBUG [prov.persistence.models:109] Loading bundle id Facebook-163
+[20/Feb/2013 10:19:35] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Facebook)
+[20/Feb/2013 10:19:35] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:163)
+[20/Feb/2013 10:19:35] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:136)
+[20/Feb/2013 10:19:35] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download136, -, -, [prov:type="Download 136"])
+[20/Feb/2013 10:19:35] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download163, -, -, [prov:type="Download 163"])
+[20/Feb/2013 10:19:35] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(ex:system)
+[20/Feb/2013 10:19:35] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:163, ex:download163, -)
+[20/Feb/2013 10:19:35] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(ex:163, ex:136, -, -, -)
+[20/Feb/2013 10:19:35] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAssociatedWith(ex:download163, ex:system, -)
+[20/Feb/2013 10:19:35] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(_spec163, ex:163, ex:Facebook)
+[20/Feb/2013 10:19:58] DEBUG [prov.persistence.models:109] Loading bundle id Facebook-163
+[20/Feb/2013 10:19:58] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Facebook)
+[20/Feb/2013 10:19:58] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:163)
+[20/Feb/2013 10:19:58] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:136)
+[20/Feb/2013 10:19:58] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download136, -, -, [prov:type="Download 136"])
+[20/Feb/2013 10:19:58] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download163, -, -, [prov:type="Download 163"])
+[20/Feb/2013 10:19:58] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(ex:system)
+[20/Feb/2013 10:19:58] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:163, ex:download163, -)
+[20/Feb/2013 10:19:58] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(ex:163, ex:136, -, -, -)
+[20/Feb/2013 10:19:58] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAssociatedWith(ex:download163, ex:system, -)
+[20/Feb/2013 10:19:58] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(_spec163, ex:163, ex:Facebook)
+[20/Feb/2013 10:20:00] DEBUG [prov.persistence.models:109] Loading bundle id Facebook-163
+[20/Feb/2013 10:20:01] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Facebook)
+[20/Feb/2013 10:20:01] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:163)
+[20/Feb/2013 10:20:01] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:136)
+[20/Feb/2013 10:20:01] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download136, -, -, [prov:type="Download 136"])
+[20/Feb/2013 10:20:01] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download163, -, -, [prov:type="Download 163"])
+[20/Feb/2013 10:20:01] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(ex:system)
+[20/Feb/2013 10:20:01] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:163, ex:download163, -)
+[20/Feb/2013 10:20:01] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(ex:163, ex:136, -, -, -)
+[20/Feb/2013 10:20:01] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAssociatedWith(ex:download163, ex:system, -)
+[20/Feb/2013 10:20:01] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(_spec163, ex:163, ex:Facebook)
+[20/Feb/2013 10:20:28] DEBUG [prov.persistence.models:109] Loading bundle id Facebook-163
+[20/Feb/2013 10:20:28] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Facebook)
+[20/Feb/2013 10:20:28] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:163)
+[20/Feb/2013 10:20:28] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:136)
+[20/Feb/2013 10:20:28] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download136, -, -, [prov:type="Download 136"])
+[20/Feb/2013 10:20:28] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download163, -, -, [prov:type="Download 163"])
+[20/Feb/2013 10:20:28] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(ex:system)
+[20/Feb/2013 10:20:28] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:163, ex:download163, -)
+[20/Feb/2013 10:20:28] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(ex:163, ex:136, -, -, -)
+[20/Feb/2013 10:20:28] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAssociatedWith(ex:download163, ex:system, -)
+[20/Feb/2013 10:20:28] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(_spec163, ex:163, ex:Facebook)
+[20/Feb/2013 10:20:42] DEBUG [prov.persistence.models:109] Loading bundle id Facebook-163
+[20/Feb/2013 10:20:42] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Facebook)
+[20/Feb/2013 10:20:42] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:163)
+[20/Feb/2013 10:20:42] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:136)
+[20/Feb/2013 10:20:42] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download136, -, -, [prov:type="Download 136"])
+[20/Feb/2013 10:20:42] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download163, -, -, [prov:type="Download 163"])
+[20/Feb/2013 10:20:42] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(ex:system)
+[20/Feb/2013 10:20:42] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:163, ex:download163, -)
+[20/Feb/2013 10:20:42] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(ex:163, ex:136, -, -, -)
+[20/Feb/2013 10:20:42] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAssociatedWith(ex:download163, ex:system, -)
+[20/Feb/2013 10:20:42] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(_spec163, ex:163, ex:Facebook)
+[20/Feb/2013 10:21:12] DEBUG [root:169] <MultiValueDict: {}>
+[20/Feb/2013 10:21:12] DEBUG [prov.persistence.models:92] Saving namespaces...
+[20/Feb/2013 10:21:12] DEBUG [prov.persistence.models:197] Saving bundle PROV-LOGIN-STUFF...
+[20/Feb/2013 10:21:12] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:e1)

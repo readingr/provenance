@@ -86,19 +86,23 @@ class DataProviderUsersController < ApplicationController
 
 
 
-  #this provides the facebook login page
+  #this provides the login page
   def login
     require 'TwitterOauth'
     @data_provider_user = DataProviderUser.find(params[:id])
 
     if @data_provider_user.twitter?
-      # debugger
+
       @request_token = TwitterOauth.request_url
+
       @data_provider_user.access_token = @request_token.token
       @data_provider_user.oauth_token_secret = @request_token.secret
-      @data_provider_user.save
-      # debugger
-      redirect_to @request_token.authorize_url
+      
+      if @data_provider_user.save!
+        debugger
+        redirect_to @request_token.authorize_url              
+      end      
+
     end
   end
 
@@ -167,7 +171,6 @@ class DataProviderUsersController < ApplicationController
 
     param = {'grant_type'=> 'fb_exchange_token', 'client_id' =>'308769445890556', 'client_secret'=>'acf570bff4de2f66da870a58d8116f47', 'fb_exchange_token'=> params[:access_token]}
 
-    # debugger
     http = Net::HTTP.new(uri.host, uri.port) 
     http.use_ssl = true
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE
@@ -179,13 +182,8 @@ class DataProviderUsersController < ApplicationController
     request = Net::HTTP::Get.new( uri.path+ '?' + request.body ) 
 
     response = http.request(request)
-    # puts "***************"
-    # puts response.body
-    # puts "***************"
-
     token = response.body.match(/=(.*)&e/)[1]
 
-    # @data_provider_user = DataProviderUser.find(current_user.data_provider_users.first.id);
     @data_provider_user = DataProviderUser.find(params[:id])
     @data_provider_user.access_token = token
     @data_provider_user.save
