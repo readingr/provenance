@@ -398,3 +398,85 @@ endBundle
 [21/Feb/2013 16:03:36] DEBUG [prov.persistence.models:92] Saving namespaces...
 [21/Feb/2013 16:03:36] DEBUG [prov.persistence.models:197] Saving bundle PROV-LOGIN-STUFF...
 [21/Feb/2013 16:03:36] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:e1)
+[21/Feb/2013 16:27:03] DEBUG [prov.persistence.models:109] Loading bundle id Facebook-171
+[21/Feb/2013 16:27:03] DEBUG [prov.persistence.models:235] Loading records for bundle alice:bundle2
+endBundle
+[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Facebook)
+[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:171)
+[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download171, -, -, [prov:type="Download 171"])
+[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(ex:system)
+[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:171, ex:download171, -)
+[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAssociatedWith(ex:download171, ex:system, -)
+[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:171, ex:Facebook)
+[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle alice:bundle2
+  entity(ex:Facebook)
+  entity(ex:171)
+  activity(ex:download171, -, -, [prov:type="Download 171"])
+  agent(ex:system)
+  wasGeneratedBy(ex:171, ex:download171, -)
+  wasAssociatedWith(ex:download171, ex:system, -)
+  specializationOf(ex:171, ex:Facebook)
+endBundle
+[21/Feb/2013 16:27:04] DEBUG [root:169] <MultiValueDict: {}>
+[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:92] Saving namespaces...
+[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:197] Saving bundle Twitter-177...
+[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:148] Saving PROV record: bundle alice:bundle2
+  entity(ex:Facebook)
+  entity(ex:171)
+  activity(ex:download171, -, -, [prov:type="Download 171"])
+  agent(ex:system)
+  wasGeneratedBy(ex:171, ex:download171, -)
+  wasAssociatedWith(ex:download171, ex:system, -)
+  specializationOf(ex:171, ex:Facebook)
+endBundle
+[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:197] Saving bundle alice:bundle2...
+[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:Facebook)
+[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:171)
+[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:148] Saving PROV record: activity(ex:download171, -, -, [prov:type="Download 171"])
+[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:148] Saving PROV record: agent(ex:system)
+[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:148] Saving PROV record: wasGeneratedBy(ex:171, ex:download171, -)
+[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:148] Saving PROV record: wasAssociatedWith(ex:download171, ex:system, -)
+[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:148] Saving PROV record: specializationOf(ex:171, ex:Facebook)
+[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:148] Saving PROV record: bundle Twitter:bundle
+  entity(ex:177)
+  entity(ex:164)
+  entity(ex:Twitter)
+  activity(ex:download164, -, -, [prov:type="Download 164"])
+  activity(ex:download177, -, -, [prov:type="Download 177"])
+  agent(ex:system)
+  wasGeneratedBy(ex:177, ex:download177, -)
+  wasDerivedFrom(ex:177, ex:164, -, -, -)
+  wasAssociatedWith(ex:download177, ex:system, -)
+  specializationOf(ex:177, ex:Twitter)
+endBundle
+[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:197] Saving bundle Twitter:bundle...
+[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:177)
+[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:164)
+[21/Feb/2013 16:27:05] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:Twitter)
+[21/Feb/2013 16:27:05] DEBUG [prov.persistence.models:148] Saving PROV record: activity(ex:download164, -, -, [prov:type="Download 164"])
+[21/Feb/2013 16:27:05] DEBUG [prov.persistence.models:148] Saving PROV record: activity(ex:download177, -, -, [prov:type="Download 177"])
+[21/Feb/2013 16:27:05] DEBUG [prov.persistence.models:148] Saving PROV record: agent(ex:system)
+[21/Feb/2013 16:27:05] DEBUG [prov.persistence.models:148] Saving PROV record: wasGeneratedBy(ex:177, ex:download177, -)
+[21/Feb/2013 16:27:05] DEBUG [prov.persistence.models:148] Saving PROV record: wasDerivedFrom(ex:177, ex:164, -, -, -)
+[21/Feb/2013 16:27:05] DEBUG [prov.persistence.models:148] Saving PROV record: wasAssociatedWith(ex:download177, ex:system, -)
+[21/Feb/2013 16:27:05] DEBUG [prov.persistence.models:148] Saving PROV record: specializationOf(ex:177, ex:Twitter)
+[21/Feb/2013 17:19:33] DEBUG [root:169] <MultiValueDict: {}>
+[21/Feb/2013 17:19:33] DEBUG [prov.persistence.models:92] Saving namespaces...
+[21/Feb/2013 17:19:33] DEBUG [prov.persistence.models:197] Saving bundle Twitter-178...
+[21/Feb/2013 17:19:33] DEBUG [prov.persistence.models:148] Saving PROV record: bundle Twitter:bundle
+  entity(ex:Twitter)
+  entity(ex:178)
+  activity(ex:download178, -, -, [prov:type="Download 178"])
+  agent(ex:system)
+  wasGeneratedBy(ex:178, ex:download178, -)
+  wasAssociatedWith(ex:download178, ex:system, -)
+  specializationOf(ex:178, ex:Twitter)
+endBundle
+[21/Feb/2013 17:19:33] DEBUG [prov.persistence.models:197] Saving bundle Twitter:bundle...
+[21/Feb/2013 17:19:33] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:Twitter)
+[21/Feb/2013 17:19:33] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:178)
+[21/Feb/2013 17:19:33] DEBUG [prov.persistence.models:148] Saving PROV record: activity(ex:download178, -, -, [prov:type="Download 178"])
+[21/Feb/2013 17:19:33] DEBUG [prov.persistence.models:148] Saving PROV record: agent(ex:system)
+[21/Feb/2013 17:19:33] DEBUG [prov.persistence.models:148] Saving PROV record: wasGeneratedBy(ex:178, ex:download178, -)
+[21/Feb/2013 17:19:33] DEBUG [prov.persistence.models:148] Saving PROV record: wasAssociatedWith(ex:download178, ex:system, -)
+[21/Feb/2013 17:19:34] DEBUG [prov.persistence.models:148] Saving PROV record: specializationOf(ex:178, ex:Twitter)

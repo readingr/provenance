@@ -3,7 +3,7 @@ module TwitterOauth
 
 
 	def self.get_consumer
-		return OAuth::Consumer.new("fYuL73SIEuhw6kgNvs2hA", "49ujIlgckdjJGbuKV8IafH9rKuvO6PlSCuxEVspd4", {:site=> "http://twitter.com"} )
+		return OAuth::Consumer.new("fYuL73SIEuhw6kgNvs2hA", "49ujIlgckdjJGbuKV8IafH9rKuvO6PlSCuxEVspd4", {:site=> "http://api.twitter.com"} )
 	end
 
 	# initialize the oauth consumer, and also access token if user_token and user_secret provided
