@@ -83,7 +83,7 @@ class DataProviderUser < ActiveRecord::Base
  		"query2" => 'SELECT first_name, last_name, profile_url, sex, pic_small, about_me, friend_count, inspirational_people, username FROM user WHERE uid = 1144492288'
  	}, options)
  	results = (query[0].values[1])[0].merge(query[1].values[1][0])
- 	debugger
+ 	# debugger
 
 
  	json_results = results.to_json
