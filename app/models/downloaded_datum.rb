@@ -26,44 +26,58 @@ class DownloadedDatum < ActiveRecord::Base
         #should it be ex:Facebook-64 or should I just keep it as ex:64?
         if last_downloaded_data.nil?
             new_bundle = {
+                "prefix"=> {
+                    "ex"=> "http://localhost:3000" #change to sensible url
+                }, 
+                "entity"=>{
+                    "#{data_provider_name}#{self.id.to_s}:bundle"=>{
+                        "prov:type"=> "prov:Bundle"
+                    }
+                },
+                "wasAttributedTo"=> {
+                    "_:id#{self.id.to_s}"=>{
+                        "prov:entity"=> "#{data_provider_name}#{self.id.to_s}:bundle", 
+                        "prov:agent"=> "#{self.agent}"
+                    }
+                },
+                "agent"=>{
+                    "#{data_provider_user.user.first_name}"=>{
+
+                    }
+                },
+                "wasRevisionOf"=>{
+
+                }
+                # "specializationOf"=>{
+                #     "_:spec#{self.id.to_s}"=>{
+                #         "prov:specificEntity"=>"#{self.agent}",
+                #         "prov:generalEntity"=>"#{data_provider_user.user.first_name}"
+                #     }
+                # },
                 "bundle"=>{
-                    "#{data_provider_name}:bundle"=>{
-                        "prefix"=>{
-                            "ex"=>"http://localhost:3000"
-                        }, 
+                    "#{data_provider_name}#{self.id.to_s}:bundle"=>{
                         "entity"=>{
-                            "ex:#{self.id}"=>{},
+                            "ex:#{self.id.to_s}"=>{},
                             "ex:#{data_provider_name}"=>{}
                         }, 
 
-                        "agent"=>{
-                            "ex:system"=>{}
-                        }, 
-
                         "activity"=>{
-                            "ex:download#{self.id}"=>{
+                            "ex:download#{self.id.to_s}"=>{
                                 "prov:type"=>"Download #{self.id}"
                             }
                         },
 
                         "specializationOf"=>{
-                            "_:spec#{self.id}"=>{
-                                "prov:specificEntity"=>"ex:#{self.id}",
+                            "_:spec#{self.id.to_s}"=>{
+                                "prov:specificEntity"=>"ex:#{self.id.to_s}",
                                 "prov:generalEntity"=>"ex:#{data_provider_name}"
-                            }
-                        },
-
-                        "wasAssociatedWith"=>{
-                            "_:asoc2"=>{
-                                "prov:agent"=>"ex:system",
-                                "prov:activity"=> "ex:download#{self.id}"
                             }
                         },
                         
                         "wasGeneratedBy"=>{
                             "_:gen2"=>{
-                                "prov:entity"=>"ex:#{self.id}",
-                                "prov:activity"=> "ex:download#{self.id}"
+                                "prov:entity"=>"ex:#{self.id.to_s}",
+                                "prov:activity"=> "ex:download#{self.id.to_s}"
                             }
                         },
                     }
@@ -74,57 +88,52 @@ class DownloadedDatum < ActiveRecord::Base
         else
             # take out of here and put in seperate action/module so we can reuse for other data provider users.
             bundle = {
+                "prefix"=> {
+                    "ex"=> "http://localhost:3000" #change to sensible url
+                }, 
+                "entity"=>{
+                    "#{data_provider_name}#{self.id.to_s}:bundle"=>{
+                        "prov:type"=> "prov:Bundle"
+                    }
+                },
+                "wasAttributedTo"=> {
+                    "_:id#{self.id.to_s}"=>{
+                        "prov:entity"=> "#{data_provider_name}#{self.id.to_s}:bundle", 
+                        "prov:agent"=> "#{self.agent}"
+                    }
+                },
+                "wasDerivedFrom"=> {
+                    "_:der#{self.id.to_s}"=> {
+                        "prov:usedEntity"=> "#{data_provider_name}#{last_downloaded_data.id.to_s}:bundle",
+                        "prov:generatedEntity"=> "#{data_provider_name}#{self.id.to_s}:bundle"
+                    }
+                },
                 "bundle"=>{
-                    "#{data_provider_name}:bundle"=>{
-                        "prefix"=>{
-                            "ex"=>"http://localhost:3000"
-                        }, 
+                    "#{data_provider_name}#{self.id.to_s}:bundle"=>{
                         "entity"=>{
-                            "ex:#{last_downloaded_data.id}"=>{},
-                            "ex:#{self.id}"=>{},
+                            "ex:#{self.id.to_s}"=>{},
                             "ex:#{data_provider_name}"=>{}
                         }, 
 
-                        "agent"=>{
-                            "ex:system"=>{}
-                        }, 
-
                         "activity"=>{
-                            "ex:download#{last_downloaded_data.id}"=>{
-                                "prov:type"=>"Download #{last_downloaded_data.id}"
-                            },
-                            "ex:download#{self.id}"=>{
-                                "prov:type"=>"Download #{self.id}"
+                            "ex:download#{self.id.to_s}"=>{
+                                "prov:type"=>"Download #{self.id.to_s}"
                             }
                         },
 
                         "specializationOf"=>{
-                            "_:spec#{self.id}"=>{
-                                "prov:specificEntity"=>"ex:#{self.id}", 
+                            "_:spec#{self.id.to_s}"=>{
+                                "prov:specificEntity"=>"ex:#{self.id.to_s}",
                                 "prov:generalEntity"=>"ex:#{data_provider_name}"
-                            }
-                        },
-
-                        "wasAssociatedWith"=>{
-                            "_:asoc2"=>{
-                                "prov:agent"=>"ex:system",
-                                "prov:activity"=> "ex:download#{self.id}"
                             }
                         },
                         
                         "wasGeneratedBy"=>{
-                            "_:gen2"=>{
-                                "prov:entity"=>"ex:#{self.id}",
-                                "prov:activity"=> "ex:download#{self.id}"
+                            "_:gen#{self.id.to_s}"=>{
+                                "prov:entity"=>"ex:#{self.id.to_s}",
+                                "prov:activity"=> "ex:download#{self.id.to_s}"
                             }
                         },
-
-                        "wasDerivedFrom"=>{
-                            "_:der1"=>{
-                                "prov:usedEntity"=>"ex:#{last_downloaded_data.id}",
-                                "prov:generatedEntity"=>"ex:#{self.id}"
-                            }
-                        }
                     }
                 }
             } 
@@ -146,6 +155,7 @@ class DownloadedDatum < ActiveRecord::Base
             end
         end
 
+
         rec_id = self.name + "-" + self.id.to_s
 
         #send the request to the prov web service
@@ -157,5 +167,11 @@ class DownloadedDatum < ActiveRecord::Base
 
         self.prov_id = prov_hash_results["id"]
         self.save
+    end
+
+    #this will return the agents name. I.e. "richard-2013-2-1" or "richard-2013-2-1-proxy"
+    def agent
+        return self.data_provider_user.user.first_name+self.data_provider_user.user.last_updated
+        # return "AGENT"
     end
 end

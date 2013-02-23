@@ -1,482 +1,180 @@
-[21/Feb/2013 15:08:24] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(ex:system)
-[21/Feb/2013 15:08:24] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:170, ex:download170, -)
-[21/Feb/2013 15:08:24] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(ex:170, ex:169, -, -, -)
-[21/Feb/2013 15:08:24] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAssociatedWith(ex:download170, ex:system, -)
-[21/Feb/2013 15:08:24] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:170, ex:Facebook)
-[21/Feb/2013 15:08:24] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle bob:bundle3
+[23/Feb/2013 08:40:55] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(Facebook203:bundle, AGENT)
+[23/Feb/2013 08:54:51] DEBUG [prov.persistence.models:109] Loading bundle id Facebook-203
+[23/Feb/2013 08:54:51] DEBUG [prov.persistence.models:235] Loading records for bundle Facebook203:bundle
+endBundle
+[23/Feb/2013 08:54:51] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Facebook)
+[23/Feb/2013 08:54:51] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:203)
+[23/Feb/2013 08:54:51] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download203, -, -, [prov:type="Download 203"])
+[23/Feb/2013 08:54:51] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:203, ex:download203, -)
+[23/Feb/2013 08:54:51] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:203, ex:Facebook)
+[23/Feb/2013 08:54:51] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Facebook203:bundle
   entity(ex:Facebook)
-  entity(ex:169)
-  entity(ex:170)
-  activity(ex:download170, -, -, [prov:type="Download 170"])
-  activity(ex:download169, -, -, [prov:type="Download 169"])
-  agent(ex:system)
-  wasGeneratedBy(ex:170, ex:download170, -)
-  wasDerivedFrom(ex:170, ex:169, -, -, -)
-  wasAssociatedWith(ex:download170, ex:system, -)
-  specializationOf(ex:170, ex:Facebook)
+  entity(ex:203)
+  activity(ex:download203, -, -, [prov:type="Download 203"])
+  wasGeneratedBy(ex:203, ex:download203, -)
+  specializationOf(ex:203, ex:Facebook)
 endBundle
-[21/Feb/2013 15:08:24] DEBUG [prov.persistence.models:235] Loading records for bundle alice:bundle2
-endBundle
-[21/Feb/2013 15:08:24] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Facebook)
-[21/Feb/2013 15:08:24] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:169)
-[21/Feb/2013 15:08:24] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download169, -, -, [prov:type="Download 169"])
-[21/Feb/2013 15:08:24] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(ex:system)
-[21/Feb/2013 15:08:24] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:169, ex:download169, -)
-[21/Feb/2013 15:08:24] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAssociatedWith(ex:download169, ex:system, -)
-[21/Feb/2013 15:08:24] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:169, ex:Facebook)
-[21/Feb/2013 15:08:24] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle alice:bundle2
+[23/Feb/2013 08:54:51] DEBUG [prov.persistence.models:239] Loaded PROV record: // agent(AGENT)
+[23/Feb/2013 08:54:51] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Facebook203:bundle, [prov:type="prov:Bundle"])
+[23/Feb/2013 08:54:51] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(Facebook203:bundle, AGENT)
+[23/Feb/2013 08:54:51] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(Richard)
+[23/Feb/2013 08:55:03] DEBUG [root:169] <MultiValueDict: {}>
+[23/Feb/2013 08:55:03] DEBUG [prov.persistence.models:92] Saving namespaces...
+[23/Feb/2013 08:55:03] DEBUG [prov.persistence.models:197] Saving bundle Facebook-205...
+[23/Feb/2013 08:55:03] DEBUG [prov.persistence.models:148] Saving PROV record: entity(Facebook205:bundle, [prov:type="prov:Bundle"])
+[23/Feb/2013 08:55:04] DEBUG [prov.persistence.models:148] Saving PROV record: agent(Richard)
+[23/Feb/2013 08:55:04] DEBUG [prov.persistence.models:148] Saving PROV record: bundle Facebook205:bundle
   entity(ex:Facebook)
-  entity(ex:169)
-  activity(ex:download169, -, -, [prov:type="Download 169"])
-  agent(ex:system)
-  wasGeneratedBy(ex:169, ex:download169, -)
-  wasAssociatedWith(ex:download169, ex:system, -)
-  specializationOf(ex:169, ex:Facebook)
+  entity(ex:205)
+  activity(ex:download205, -, -, [prov:type="Download 205"])
+  wasGeneratedBy(ex:205, ex:download205, -)
+  specializationOf(ex:205, ex:Facebook)
 endBundle
-[21/Feb/2013 15:11:17] DEBUG [prov.persistence.models:92] Saving namespaces...
-[21/Feb/2013 15:11:17] DEBUG [prov.persistence.models:197] Saving bundle 1...
-[21/Feb/2013 15:11:17] DEBUG [prov.persistence.models:148] Saving PROV record: bundle alice:bundle2
-  entity(ex:report1)
-  entity(ex:report2, [prov:type="report" %% xsd:string, ex:version="2" %% xsd:int])
-  wasGeneratedBy(ex:report2, -, 2012-05-25T11:00:01)
-  wasDerivedFrom(ex:report2, ex:report1, -, -, -)
+[23/Feb/2013 08:55:04] DEBUG [prov.persistence.models:197] Saving bundle Facebook205:bundle...
+[23/Feb/2013 08:55:04] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:Facebook)
+[23/Feb/2013 08:55:04] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:205)
+[23/Feb/2013 08:55:04] DEBUG [prov.persistence.models:148] Saving PROV record: activity(ex:download205, -, -, [prov:type="Download 205"])
+[23/Feb/2013 08:55:04] DEBUG [prov.persistence.models:148] Saving PROV record: wasGeneratedBy(ex:205, ex:download205, -)
+[23/Feb/2013 08:55:04] DEBUG [prov.persistence.models:148] Saving PROV record: specializationOf(ex:205, ex:Facebook)
+[23/Feb/2013 08:55:04] DEBUG [prov.persistence.models:148] Saving PROV record: wasAttributedTo(Facebook205:bundle, Richard)
+[23/Feb/2013 08:55:09] DEBUG [prov.persistence.models:109] Loading bundle id Facebook-205
+[23/Feb/2013 08:55:09] DEBUG [prov.persistence.models:235] Loading records for bundle Facebook205:bundle
 endBundle
-[21/Feb/2013 15:11:17] DEBUG [prov.persistence.models:197] Saving bundle alice:bundle2...
-[21/Feb/2013 15:11:17] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:report1)
-[21/Feb/2013 15:11:17] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:report2, [prov:type="report" %% xsd:string, ex:version="2" %% xsd:int])
-[21/Feb/2013 15:11:17] DEBUG [prov.persistence.models:148] Saving PROV record: wasGeneratedBy(ex:report2, -, 2012-05-25T11:00:01)
-[21/Feb/2013 15:11:18] DEBUG [prov.persistence.models:148] Saving PROV record: wasDerivedFrom(ex:report2, ex:report1, -, -, -)
-[21/Feb/2013 15:11:18] DEBUG [prov.persistence.models:148] Saving PROV record: bundle test:bundle
-  entity(alice:bundle2, [prov:type='prov:Bundle'])
-  entity(bob:bundle1, [prov:type='prov:Bundle'])
-  wasGeneratedBy(alice:bundle2, -, 2012-05-25T11:15:00)
-  wasGeneratedBy(bob:bundle1, -, 2012-05-24T10:30:00)
-  wasAttributedTo(bob:bundle1, ex:Bob)
-  wasAttributedTo(alice:bundle2, ex:Alice)
-  // agent(ex:Bob)
-  // agent(ex:Alice)
-endBundle
-[21/Feb/2013 15:11:18] DEBUG [prov.persistence.models:197] Saving bundle test:bundle...
-[21/Feb/2013 15:11:18] DEBUG [prov.persistence.models:148] Saving PROV record: entity(alice:bundle2, [prov:type='prov:Bundle'])
-[21/Feb/2013 15:11:18] DEBUG [prov.persistence.models:148] Saving PROV record: entity(bob:bundle1, [prov:type='prov:Bundle'])
-[21/Feb/2013 15:11:18] DEBUG [prov.persistence.models:148] Saving PROV record: wasGeneratedBy(alice:bundle2, -, 2012-05-25T11:15:00)
-[21/Feb/2013 15:11:18] DEBUG [prov.persistence.models:148] Saving PROV record: wasGeneratedBy(bob:bundle1, -, 2012-05-24T10:30:00)
-[21/Feb/2013 15:11:18] DEBUG [prov.persistence.models:148] Saving PROV record: wasAttributedTo(bob:bundle1, ex:Bob)
-[21/Feb/2013 15:11:18] DEBUG [prov.persistence.models:148] Saving PROV record: // agent(ex:Bob)
-[21/Feb/2013 15:11:18] DEBUG [prov.persistence.models:148] Saving PROV record: wasAttributedTo(alice:bundle2, ex:Alice)
-[21/Feb/2013 15:11:18] DEBUG [prov.persistence.models:148] Saving PROV record: // agent(ex:Alice)
-[21/Feb/2013 15:11:18] DEBUG [prov.persistence.models:148] Saving PROV record: bundle bob:bundle1
-  entity(ex:report1, [prov:type="report" %% xsd:string, ex:version="1" %% xsd:int])
-  wasGeneratedBy(ex:report1, -, 2012-05-24T10:00:01)
-endBundle
-[21/Feb/2013 15:11:18] DEBUG [prov.persistence.models:197] Saving bundle bob:bundle1...
-[21/Feb/2013 15:11:18] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:report1, [prov:type="report" %% xsd:string, ex:version="1" %% xsd:int])
-[21/Feb/2013 15:11:18] DEBUG [prov.persistence.models:148] Saving PROV record: wasGeneratedBy(ex:report1, -, 2012-05-24T10:00:01)
-[21/Feb/2013 15:11:23] DEBUG [prov.persistence.models:109] Loading bundle id 1
-[21/Feb/2013 15:11:23] DEBUG [prov.persistence.models:235] Loading records for bundle test:bundle
-endBundle
-[21/Feb/2013 15:11:23] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(alice:bundle2, [prov:type='prov:Bundle'])
-[21/Feb/2013 15:11:23] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(bob:bundle1, [prov:type='prov:Bundle'])
-[21/Feb/2013 15:11:23] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(alice:bundle2, -, 2012-05-25T11:15:00)
-[21/Feb/2013 15:11:23] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(bob:bundle1, -, 2012-05-24T10:30:00)
-[21/Feb/2013 15:11:23] DEBUG [prov.persistence.models:239] Loaded PROV record: // agent(ex:Bob)
-[21/Feb/2013 15:11:23] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(bob:bundle1, ex:Bob)
-[21/Feb/2013 15:11:23] DEBUG [prov.persistence.models:239] Loaded PROV record: // agent(ex:Alice)
-[21/Feb/2013 15:11:23] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(alice:bundle2, ex:Alice)
-[21/Feb/2013 15:11:23] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle test:bundle
-  entity(alice:bundle2, [prov:type='prov:Bundle'])
-  entity(bob:bundle1, [prov:type='prov:Bundle'])
-  wasGeneratedBy(alice:bundle2, -, 2012-05-25T11:15:00)
-  wasGeneratedBy(bob:bundle1, -, 2012-05-24T10:30:00)
-  // agent(ex:Bob)
-  wasAttributedTo(bob:bundle1, ex:Bob)
-  // agent(ex:Alice)
-  wasAttributedTo(alice:bundle2, ex:Alice)
-endBundle
-[21/Feb/2013 15:11:23] DEBUG [prov.persistence.models:235] Loading records for bundle bob:bundle1
-endBundle
-[21/Feb/2013 15:11:23] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:report1, [prov:type="report" %% xsd:string, ex:version="1" %% xsd:int])
-[21/Feb/2013 15:11:23] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:report1, -, 2012-05-24T10:00:01)
-[21/Feb/2013 15:11:23] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle bob:bundle1
-  entity(ex:report1, [prov:type="report" %% xsd:string, ex:version="1" %% xsd:int])
-  wasGeneratedBy(ex:report1, -, 2012-05-24T10:00:01)
-endBundle
-[21/Feb/2013 15:11:23] DEBUG [prov.persistence.models:235] Loading records for bundle alice:bundle2
-endBundle
-[21/Feb/2013 15:11:24] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:report1)
-[21/Feb/2013 15:11:24] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:report2, [prov:type="report" %% xsd:string, ex:version="2" %% xsd:int])
-[21/Feb/2013 15:11:24] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:report2, -, 2012-05-25T11:00:01)
-[21/Feb/2013 15:11:24] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(ex:report2, ex:report1, -, -, -)
-[21/Feb/2013 15:11:24] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle alice:bundle2
-  entity(ex:report1)
-  entity(ex:report2, [prov:type="report" %% xsd:string, ex:version="2" %% xsd:int])
-  wasGeneratedBy(ex:report2, -, 2012-05-25T11:00:01)
-  wasDerivedFrom(ex:report2, ex:report1, -, -, -)
-endBundle
-[21/Feb/2013 15:12:31] DEBUG [prov.persistence.models:109] Loading bundle id 1
-[21/Feb/2013 15:12:31] DEBUG [prov.persistence.models:235] Loading records for bundle test:bundle
-endBundle
-[21/Feb/2013 15:12:31] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(alice:bundle2, [prov:type='prov:Bundle'])
-[21/Feb/2013 15:12:31] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(bob:bundle1, [prov:type='prov:Bundle'])
-[21/Feb/2013 15:12:31] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(alice:bundle2, -, 2012-05-25T11:15:00)
-[21/Feb/2013 15:12:31] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(bob:bundle1, -, 2012-05-24T10:30:00)
-[21/Feb/2013 15:12:31] DEBUG [prov.persistence.models:239] Loaded PROV record: // agent(ex:Bob)
-[21/Feb/2013 15:12:31] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(bob:bundle1, ex:Bob)
-[21/Feb/2013 15:12:31] DEBUG [prov.persistence.models:239] Loaded PROV record: // agent(ex:Alice)
-[21/Feb/2013 15:12:31] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(alice:bundle2, ex:Alice)
-[21/Feb/2013 15:12:31] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle test:bundle
-  entity(alice:bundle2, [prov:type='prov:Bundle'])
-  entity(bob:bundle1, [prov:type='prov:Bundle'])
-  wasGeneratedBy(alice:bundle2, -, 2012-05-25T11:15:00)
-  wasGeneratedBy(bob:bundle1, -, 2012-05-24T10:30:00)
-  // agent(ex:Bob)
-  wasAttributedTo(bob:bundle1, ex:Bob)
-  // agent(ex:Alice)
-  wasAttributedTo(alice:bundle2, ex:Alice)
-endBundle
-[21/Feb/2013 15:12:31] DEBUG [prov.persistence.models:235] Loading records for bundle bob:bundle1
-endBundle
-[21/Feb/2013 15:12:31] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:report1, [prov:type="report" %% xsd:string, ex:version="1" %% xsd:int])
-[21/Feb/2013 15:12:31] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:report1, -, 2012-05-24T10:00:01)
-[21/Feb/2013 15:12:31] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle bob:bundle1
-  entity(ex:report1, [prov:type="report" %% xsd:string, ex:version="1" %% xsd:int])
-  wasGeneratedBy(ex:report1, -, 2012-05-24T10:00:01)
-endBundle
-[21/Feb/2013 15:12:31] DEBUG [prov.persistence.models:235] Loading records for bundle alice:bundle2
-endBundle
-[21/Feb/2013 15:12:31] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:report1)
-[21/Feb/2013 15:12:31] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:report2, [prov:type="report" %% xsd:string, ex:version="2" %% xsd:int])
-[21/Feb/2013 15:12:31] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:report2, -, 2012-05-25T11:00:01)
-[21/Feb/2013 15:12:31] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(ex:report2, ex:report1, -, -, -)
-[21/Feb/2013 15:12:31] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle alice:bundle2
-  entity(ex:report1)
-  entity(ex:report2, [prov:type="report" %% xsd:string, ex:version="2" %% xsd:int])
-  wasGeneratedBy(ex:report2, -, 2012-05-25T11:00:01)
-  wasDerivedFrom(ex:report2, ex:report1, -, -, -)
-endBundle
-[21/Feb/2013 15:16:36] DEBUG [prov.persistence.models:92] Saving namespaces...
-[21/Feb/2013 15:16:36] DEBUG [prov.persistence.models:197] Saving bundle testbundle...
-[21/Feb/2013 15:16:36] DEBUG [prov.persistence.models:148] Saving PROV record: entity(alice:bundle2, [prov:type=""prov:Bundle"^^xsd:QName"])
-[21/Feb/2013 15:16:36] DEBUG [prov.persistence.models:148] Saving PROV record: entity(bob:bundle1, [prov:type=""prov:Bundle"^^xsd:QName"])
-[21/Feb/2013 15:16:37] DEBUG [prov.persistence.models:148] Saving PROV record: agent(ex:Bob)
-[21/Feb/2013 15:16:37] DEBUG [prov.persistence.models:148] Saving PROV record: agent(ex:Alice)
-[21/Feb/2013 15:16:37] DEBUG [prov.persistence.models:148] Saving PROV record: bundle bob:bundle1
-  entity(ex:report1, [prov:type="report", ex:version=1])
-  wasGeneratedBy(ex:report1, -, 2012-05-24T10:00:01)
-endBundle
-[21/Feb/2013 15:16:37] DEBUG [prov.persistence.models:197] Saving bundle http://example.org/bob/bundle1...
-[21/Feb/2013 15:16:37] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:report1, [prov:type="report", ex:version=1])
-[21/Feb/2013 15:16:37] DEBUG [prov.persistence.models:148] Saving PROV record: wasGeneratedBy(ex:report1, -, 2012-05-24T10:00:01)
-[21/Feb/2013 15:16:37] DEBUG [prov.persistence.models:148] Saving PROV record: bundle alice:bundle2
-  entity(ex:report1)
-  entity(ex:report2, [prov:type="report", ex:version=2])
-  wasGeneratedBy(ex:report2, -, 2012-05-25T11:00:01)
-  wasDerivedFrom(ex:report2, ex:report1, -, -, -)
-endBundle
-[21/Feb/2013 15:16:37] DEBUG [prov.persistence.models:197] Saving bundle http://example.org/alice/bundle2...
-[21/Feb/2013 15:16:37] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:report1)
-[21/Feb/2013 15:16:37] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:report2, [prov:type="report", ex:version=2])
-[21/Feb/2013 15:16:37] DEBUG [prov.persistence.models:148] Saving PROV record: wasGeneratedBy(ex:report2, -, 2012-05-25T11:00:01)
-[21/Feb/2013 15:16:37] DEBUG [prov.persistence.models:148] Saving PROV record: wasDerivedFrom(ex:report2, ex:report1, -, -, -)
-[21/Feb/2013 15:16:37] DEBUG [prov.persistence.models:148] Saving PROV record: wasGeneratedBy(bob:bundle1, -, 2012-05-24T10:30:00)
-[21/Feb/2013 15:16:37] DEBUG [prov.persistence.models:148] Saving PROV record: wasGeneratedBy(alice:bundle2, -, 2012-05-25T11:15:00)
-[21/Feb/2013 15:16:37] DEBUG [prov.persistence.models:148] Saving PROV record: wasAttributedTo(bob:bundle1, ex:Bob)
-[21/Feb/2013 15:16:37] DEBUG [prov.persistence.models:148] Saving PROV record: wasAttributedTo(alice:bundle2, ex:Alice)
-[21/Feb/2013 15:16:42] DEBUG [prov.persistence.models:109] Loading bundle id testbundle
-[21/Feb/2013 15:16:42] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(bob:bundle1, [prov:type=""prov:Bundle"^^xsd:QName"])
-[21/Feb/2013 15:16:42] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(bob:bundle1, -, 2012-05-24T10:30:00)
-[21/Feb/2013 15:16:42] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(alice:bundle2, [prov:type=""prov:Bundle"^^xsd:QName"])
-[21/Feb/2013 15:16:42] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(alice:bundle2, -, 2012-05-25T11:15:00)
-[21/Feb/2013 15:16:42] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(ex:Bob)
-[21/Feb/2013 15:16:42] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(bob:bundle1, ex:Bob)
-[21/Feb/2013 15:16:42] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(ex:Alice)
-[21/Feb/2013 15:16:42] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(alice:bundle2, ex:Alice)
-[21/Feb/2013 15:16:42] DEBUG [prov.persistence.models:235] Loading records for bundle bob:bundle1
-endBundle
-[21/Feb/2013 15:16:42] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:report1, [prov:type="report", ex:version=1])
-[21/Feb/2013 15:16:42] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:report1, -, 2012-05-24T10:00:01)
-[21/Feb/2013 15:16:42] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle bob:bundle1
-  entity(ex:report1, [prov:type="report", ex:version=1])
-  wasGeneratedBy(ex:report1, -, 2012-05-24T10:00:01)
-endBundle
-[21/Feb/2013 15:16:42] DEBUG [prov.persistence.models:235] Loading records for bundle alice:bundle2
-endBundle
-[21/Feb/2013 15:16:42] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:report2, [prov:type="report", ex:version=2])
-[21/Feb/2013 15:16:42] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:report1)
-[21/Feb/2013 15:16:42] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(ex:report2, ex:report1, -, -, -)
-[21/Feb/2013 15:16:42] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:report2, -, 2012-05-25T11:00:01)
-[21/Feb/2013 15:16:42] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle alice:bundle2
-  entity(ex:report2, [prov:type="report", ex:version=2])
-  entity(ex:report1)
-  wasDerivedFrom(ex:report2, ex:report1, -, -, -)
-  wasGeneratedBy(ex:report2, -, 2012-05-25T11:00:01)
-endBundle
-[21/Feb/2013 15:16:48] DEBUG [prov.persistence.models:109] Loading bundle id testbundle
-[21/Feb/2013 15:16:48] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(bob:bundle1, [prov:type=""prov:Bundle"^^xsd:QName"])
-[21/Feb/2013 15:16:48] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(bob:bundle1, -, 2012-05-24T10:30:00)
-[21/Feb/2013 15:16:48] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(alice:bundle2, [prov:type=""prov:Bundle"^^xsd:QName"])
-[21/Feb/2013 15:16:48] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(alice:bundle2, -, 2012-05-25T11:15:00)
-[21/Feb/2013 15:16:48] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(ex:Bob)
-[21/Feb/2013 15:16:48] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(bob:bundle1, ex:Bob)
-[21/Feb/2013 15:16:48] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(ex:Alice)
-[21/Feb/2013 15:16:48] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(alice:bundle2, ex:Alice)
-[21/Feb/2013 15:16:48] DEBUG [prov.persistence.models:235] Loading records for bundle bob:bundle1
-endBundle
-[21/Feb/2013 15:16:48] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:report1, [prov:type="report", ex:version=1])
-[21/Feb/2013 15:16:48] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:report1, -, 2012-05-24T10:00:01)
-[21/Feb/2013 15:16:48] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle bob:bundle1
-  entity(ex:report1, [prov:type="report", ex:version=1])
-  wasGeneratedBy(ex:report1, -, 2012-05-24T10:00:01)
-endBundle
-[21/Feb/2013 15:16:48] DEBUG [prov.persistence.models:235] Loading records for bundle alice:bundle2
-endBundle
-[21/Feb/2013 15:16:48] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:report2, [prov:type="report", ex:version=2])
-[21/Feb/2013 15:16:48] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:report1)
-[21/Feb/2013 15:16:48] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(ex:report2, ex:report1, -, -, -)
-[21/Feb/2013 15:16:48] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:report2, -, 2012-05-25T11:00:01)
-[21/Feb/2013 15:16:48] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle alice:bundle2
-  entity(ex:report2, [prov:type="report", ex:version=2])
-  entity(ex:report1)
-  wasDerivedFrom(ex:report2, ex:report1, -, -, -)
-  wasGeneratedBy(ex:report2, -, 2012-05-25T11:00:01)
-endBundle
-[21/Feb/2013 15:19:41] DEBUG [prov.persistence.models:109] Loading bundle id testbundle
-[21/Feb/2013 15:19:41] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(bob:bundle1, [prov:type=""prov:Bundle"^^xsd:QName"])
-[21/Feb/2013 15:19:41] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(bob:bundle1, -, 2012-05-24T10:30:00)
-[21/Feb/2013 15:19:41] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(alice:bundle2, [prov:type=""prov:Bundle"^^xsd:QName"])
-[21/Feb/2013 15:19:41] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(alice:bundle2, -, 2012-05-25T11:15:00)
-[21/Feb/2013 15:19:41] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(ex:Bob)
-[21/Feb/2013 15:19:41] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(bob:bundle1, ex:Bob)
-[21/Feb/2013 15:19:41] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(ex:Alice)
-[21/Feb/2013 15:19:41] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(alice:bundle2, ex:Alice)
-[21/Feb/2013 15:19:41] DEBUG [prov.persistence.models:235] Loading records for bundle bob:bundle1
-endBundle
-[21/Feb/2013 15:19:41] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:report1, [prov:type="report", ex:version=1])
-[21/Feb/2013 15:19:41] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:report1, -, 2012-05-24T10:00:01)
-[21/Feb/2013 15:19:41] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle bob:bundle1
-  entity(ex:report1, [prov:type="report", ex:version=1])
-  wasGeneratedBy(ex:report1, -, 2012-05-24T10:00:01)
-endBundle
-[21/Feb/2013 15:19:41] DEBUG [prov.persistence.models:235] Loading records for bundle alice:bundle2
-endBundle
-[21/Feb/2013 15:19:41] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:report2, [prov:type="report", ex:version=2])
-[21/Feb/2013 15:19:41] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:report1)
-[21/Feb/2013 15:19:41] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(ex:report2, ex:report1, -, -, -)
-[21/Feb/2013 15:19:41] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:report2, -, 2012-05-25T11:00:01)
-[21/Feb/2013 15:19:41] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle alice:bundle2
-  entity(ex:report2, [prov:type="report", ex:version=2])
-  entity(ex:report1)
-  wasDerivedFrom(ex:report2, ex:report1, -, -, -)
-  wasGeneratedBy(ex:report2, -, 2012-05-25T11:00:01)
-endBundle
-[21/Feb/2013 15:33:40] DEBUG [root:169] <MultiValueDict: {}>
-[21/Feb/2013 15:33:40] DEBUG [prov.persistence.models:92] Saving namespaces...
-[21/Feb/2013 15:33:40] DEBUG [prov.persistence.models:197] Saving bundle Facebook-175...
-[21/Feb/2013 15:33:40] DEBUG [prov.persistence.models:148] Saving PROV record: bundle alice:bundle2
+[23/Feb/2013 08:55:09] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Facebook)
+[23/Feb/2013 08:55:09] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:205)
+[23/Feb/2013 08:55:09] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download205, -, -, [prov:type="Download 205"])
+[23/Feb/2013 08:55:09] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:205, ex:download205, -)
+[23/Feb/2013 08:55:09] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:205, ex:Facebook)
+[23/Feb/2013 08:55:09] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Facebook205:bundle
   entity(ex:Facebook)
-  entity(ex:175)
-  activity(ex:download175, -, -, [prov:type="Download 175"])
-  agent(ex:system)
-  wasGeneratedBy(ex:175, ex:download175, -)
-  wasAssociatedWith(ex:download175, ex:system, -)
-  specializationOf(ex:175, ex:Facebook)
+  entity(ex:205)
+  activity(ex:download205, -, -, [prov:type="Download 205"])
+  wasGeneratedBy(ex:205, ex:download205, -)
+  specializationOf(ex:205, ex:Facebook)
 endBundle
-[21/Feb/2013 15:33:40] DEBUG [prov.persistence.models:197] Saving bundle alice:bundle2...
-[21/Feb/2013 15:33:40] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:Facebook)
-[21/Feb/2013 15:33:40] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:175)
-[21/Feb/2013 15:33:40] DEBUG [prov.persistence.models:148] Saving PROV record: activity(ex:download175, -, -, [prov:type="Download 175"])
-[21/Feb/2013 15:33:40] DEBUG [prov.persistence.models:148] Saving PROV record: agent(ex:system)
-[21/Feb/2013 15:33:40] DEBUG [prov.persistence.models:148] Saving PROV record: wasGeneratedBy(ex:175, ex:download175, -)
-[21/Feb/2013 15:33:40] DEBUG [prov.persistence.models:148] Saving PROV record: wasAssociatedWith(ex:download175, ex:system, -)
-[21/Feb/2013 15:33:40] DEBUG [prov.persistence.models:148] Saving PROV record: specializationOf(ex:175, ex:Facebook)
-[21/Feb/2013 15:33:47] DEBUG [prov.persistence.models:109] Loading bundle id Facebook-175
-[21/Feb/2013 15:33:47] DEBUG [prov.persistence.models:235] Loading records for bundle alice:bundle2
-endBundle
-[21/Feb/2013 15:33:47] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Facebook)
-[21/Feb/2013 15:33:47] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:175)
-[21/Feb/2013 15:33:47] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download175, -, -, [prov:type="Download 175"])
-[21/Feb/2013 15:33:47] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(ex:system)
-[21/Feb/2013 15:33:47] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:175, ex:download175, -)
-[21/Feb/2013 15:33:47] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAssociatedWith(ex:download175, ex:system, -)
-[21/Feb/2013 15:33:47] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:175, ex:Facebook)
-[21/Feb/2013 15:33:47] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle alice:bundle2
+[23/Feb/2013 08:55:09] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Facebook205:bundle, [prov:type="prov:Bundle"])
+[23/Feb/2013 08:55:09] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(Richard)
+[23/Feb/2013 08:55:09] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(Facebook205:bundle, Richard)
+[23/Feb/2013 08:55:09] DEBUG [root:169] <MultiValueDict: {}>
+[23/Feb/2013 08:55:09] DEBUG [prov.persistence.models:92] Saving namespaces...
+[23/Feb/2013 08:55:09] DEBUG [prov.persistence.models:197] Saving bundle Facebook-206...
+[23/Feb/2013 08:55:09] DEBUG [prov.persistence.models:148] Saving PROV record: entity(Facebook206:bundle, [prov:type="prov:Bundle"])
+[23/Feb/2013 08:55:09] DEBUG [prov.persistence.models:148] Saving PROV record: entity(Facebook205:bundle, [prov:type="prov:Bundle"])
+[23/Feb/2013 08:55:09] DEBUG [prov.persistence.models:148] Saving PROV record: agent(Richard)
+[23/Feb/2013 08:55:09] DEBUG [prov.persistence.models:148] Saving PROV record: bundle Facebook206:bundle
   entity(ex:Facebook)
-  entity(ex:175)
-  activity(ex:download175, -, -, [prov:type="Download 175"])
-  agent(ex:system)
-  wasGeneratedBy(ex:175, ex:download175, -)
-  wasAssociatedWith(ex:download175, ex:system, -)
-  specializationOf(ex:175, ex:Facebook)
+  entity(ex:206)
+  activity(ex:download206, -, -, [prov:type="Download 206"])
+  wasGeneratedBy(ex:206, ex:download206, -)
+  specializationOf(ex:206, ex:Facebook)
 endBundle
-[21/Feb/2013 15:33:47] DEBUG [root:169] <MultiValueDict: {}>
-[21/Feb/2013 15:33:47] DEBUG [prov.persistence.models:92] Saving namespaces...
-[21/Feb/2013 15:33:47] DEBUG [prov.persistence.models:197] Saving bundle Facebook-176...
-[21/Feb/2013 15:33:47] DEBUG [prov.persistence.models:148] Saving PROV record: bundle Facebook:bundle2
+[23/Feb/2013 08:55:09] DEBUG [prov.persistence.models:197] Saving bundle Facebook206:bundle...
+[23/Feb/2013 08:55:09] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:Facebook)
+[23/Feb/2013 08:55:09] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:206)
+[23/Feb/2013 08:55:10] DEBUG [prov.persistence.models:148] Saving PROV record: activity(ex:download206, -, -, [prov:type="Download 206"])
+[23/Feb/2013 08:55:10] DEBUG [prov.persistence.models:148] Saving PROV record: wasGeneratedBy(ex:206, ex:download206, -)
+[23/Feb/2013 08:55:10] DEBUG [prov.persistence.models:148] Saving PROV record: specializationOf(ex:206, ex:Facebook)
+[23/Feb/2013 08:55:11] DEBUG [prov.persistence.models:148] Saving PROV record: bundle Facebook205:bundle
   entity(ex:Facebook)
-  entity(ex:176)
-  entity(ex:175)
-  activity(ex:download176, -, -, [prov:type="Download 176"])
-  activity(ex:download175, -, -, [prov:type="Download 175"])
-  agent(ex:system)
-  wasGeneratedBy(ex:176, ex:download176, -)
-  wasDerivedFrom(ex:176, ex:175, -, -, -)
-  wasAssociatedWith(ex:download176, ex:system, -)
-  specializationOf(ex:176, ex:Facebook)
+  entity(ex:205)
+  activity(ex:download205, -, -, [prov:type="Download 205"])
+  wasGeneratedBy(ex:205, ex:download205, -)
+  specializationOf(ex:205, ex:Facebook)
 endBundle
-[21/Feb/2013 15:33:47] DEBUG [prov.persistence.models:197] Saving bundle Facebook:bundle2...
-[21/Feb/2013 15:33:47] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:Facebook)
-[21/Feb/2013 15:33:48] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:176)
-[21/Feb/2013 15:33:48] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:175)
-[21/Feb/2013 15:33:48] DEBUG [prov.persistence.models:148] Saving PROV record: activity(ex:download176, -, -, [prov:type="Download 176"])
-[21/Feb/2013 15:33:48] DEBUG [prov.persistence.models:148] Saving PROV record: activity(ex:download175, -, -, [prov:type="Download 175"])
-[21/Feb/2013 15:33:48] DEBUG [prov.persistence.models:148] Saving PROV record: agent(ex:system)
-[21/Feb/2013 15:33:48] DEBUG [prov.persistence.models:148] Saving PROV record: wasGeneratedBy(ex:176, ex:download176, -)
-[21/Feb/2013 15:33:48] DEBUG [prov.persistence.models:148] Saving PROV record: wasDerivedFrom(ex:176, ex:175, -, -, -)
-[21/Feb/2013 15:33:48] DEBUG [prov.persistence.models:148] Saving PROV record: wasAssociatedWith(ex:download176, ex:system, -)
-[21/Feb/2013 15:33:48] DEBUG [prov.persistence.models:148] Saving PROV record: specializationOf(ex:176, ex:Facebook)
-[21/Feb/2013 15:33:48] DEBUG [prov.persistence.models:148] Saving PROV record: bundle alice:bundle2
+[23/Feb/2013 08:55:11] DEBUG [prov.persistence.models:197] Saving bundle Facebook205:bundle...
+[23/Feb/2013 08:55:11] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:Facebook)
+[23/Feb/2013 08:55:11] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:205)
+[23/Feb/2013 08:55:11] DEBUG [prov.persistence.models:148] Saving PROV record: activity(ex:download205, -, -, [prov:type="Download 205"])
+[23/Feb/2013 08:55:11] DEBUG [prov.persistence.models:148] Saving PROV record: wasGeneratedBy(ex:205, ex:download205, -)
+[23/Feb/2013 08:55:11] DEBUG [prov.persistence.models:148] Saving PROV record: specializationOf(ex:205, ex:Facebook)
+[23/Feb/2013 08:55:11] DEBUG [prov.persistence.models:148] Saving PROV record: wasDerivedFrom(Facebook206:bundle, Facebook205:bundle, -, -, -)
+[23/Feb/2013 08:55:11] DEBUG [prov.persistence.models:148] Saving PROV record: wasAttributedTo(Facebook206:bundle, Richard)
+[23/Feb/2013 08:55:11] DEBUG [prov.persistence.models:148] Saving PROV record: wasAttributedTo(Facebook205:bundle, Richard)
+[23/Feb/2013 08:55:12] DEBUG [prov.persistence.models:109] Loading bundle id Facebook-205
+[23/Feb/2013 08:55:12] DEBUG [prov.persistence.models:235] Loading records for bundle Facebook205:bundle
+endBundle
+[23/Feb/2013 08:55:13] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Facebook)
+[23/Feb/2013 08:55:13] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:205)
+[23/Feb/2013 08:55:13] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download205, -, -, [prov:type="Download 205"])
+[23/Feb/2013 08:55:13] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:205, ex:download205, -)
+[23/Feb/2013 08:55:13] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:205, ex:Facebook)
+[23/Feb/2013 08:55:13] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Facebook205:bundle
   entity(ex:Facebook)
-  entity(ex:175)
-  activity(ex:download175, -, -, [prov:type="Download 175"])
-  agent(ex:system)
-  wasGeneratedBy(ex:175, ex:download175, -)
-  wasAssociatedWith(ex:download175, ex:system, -)
-  specializationOf(ex:175, ex:Facebook)
+  entity(ex:205)
+  activity(ex:download205, -, -, [prov:type="Download 205"])
+  wasGeneratedBy(ex:205, ex:download205, -)
+  specializationOf(ex:205, ex:Facebook)
 endBundle
-[21/Feb/2013 15:33:48] DEBUG [prov.persistence.models:197] Saving bundle alice:bundle2...
-[21/Feb/2013 15:33:48] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:Facebook)
-[21/Feb/2013 15:33:48] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:175)
-[21/Feb/2013 15:33:48] DEBUG [prov.persistence.models:148] Saving PROV record: activity(ex:download175, -, -, [prov:type="Download 175"])
-[21/Feb/2013 15:33:48] DEBUG [prov.persistence.models:148] Saving PROV record: agent(ex:system)
-[21/Feb/2013 15:33:49] DEBUG [prov.persistence.models:148] Saving PROV record: wasGeneratedBy(ex:175, ex:download175, -)
-[21/Feb/2013 15:33:49] DEBUG [prov.persistence.models:148] Saving PROV record: wasAssociatedWith(ex:download175, ex:system, -)
-[21/Feb/2013 15:33:49] DEBUG [prov.persistence.models:148] Saving PROV record: specializationOf(ex:175, ex:Facebook)
-[21/Feb/2013 15:33:56] DEBUG [prov.persistence.models:109] Loading bundle id Facebook-176
-[21/Feb/2013 15:33:56] DEBUG [prov.persistence.models:235] Loading records for bundle alice:bundle2
+[23/Feb/2013 08:55:13] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Facebook205:bundle, [prov:type="prov:Bundle"])
+[23/Feb/2013 08:55:13] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(Richard)
+[23/Feb/2013 08:55:13] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(Facebook205:bundle, Richard)
+[23/Feb/2013 08:55:18] DEBUG [prov.persistence.models:109] Loading bundle id Facebook-206
+[23/Feb/2013 08:55:18] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Facebook206:bundle, [prov:type="prov:Bundle"])
+[23/Feb/2013 08:55:18] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Facebook205:bundle, [prov:type="prov:Bundle"])
+[23/Feb/2013 08:55:18] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(Richard)
+[23/Feb/2013 08:55:18] DEBUG [prov.persistence.models:235] Loading records for bundle Facebook206:bundle
 endBundle
-[21/Feb/2013 15:33:56] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download175, -, -, [prov:type="Download 175"])
-[21/Feb/2013 15:33:56] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(ex:system)
-[21/Feb/2013 15:33:56] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAssociatedWith(ex:download175, ex:system, -)
-[21/Feb/2013 15:33:56] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:175)
-[21/Feb/2013 15:33:56] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Facebook)
-[21/Feb/2013 15:33:56] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:175, ex:Facebook)
-[21/Feb/2013 15:33:56] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:175, ex:download175, -)
-[21/Feb/2013 15:33:56] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle alice:bundle2
-  activity(ex:download175, -, -, [prov:type="Download 175"])
-  agent(ex:system)
-  wasAssociatedWith(ex:download175, ex:system, -)
-  entity(ex:175)
+[23/Feb/2013 08:55:18] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:206)
+[23/Feb/2013 08:55:18] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Facebook)
+[23/Feb/2013 08:55:18] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:206, ex:Facebook)
+[23/Feb/2013 08:55:18] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download206, -, -, [prov:type="Download 206"])
+[23/Feb/2013 08:55:18] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:206, ex:download206, -)
+[23/Feb/2013 08:55:18] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Facebook206:bundle
+  entity(ex:206)
   entity(ex:Facebook)
-  specializationOf(ex:175, ex:Facebook)
-  wasGeneratedBy(ex:175, ex:download175, -)
+  specializationOf(ex:206, ex:Facebook)
+  activity(ex:download206, -, -, [prov:type="Download 206"])
+  wasGeneratedBy(ex:206, ex:download206, -)
 endBundle
-[21/Feb/2013 15:33:56] DEBUG [prov.persistence.models:235] Loading records for bundle Facebook:bundle2
+[23/Feb/2013 08:55:18] DEBUG [prov.persistence.models:235] Loading records for bundle Facebook205:bundle
 endBundle
-[21/Feb/2013 15:33:57] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Facebook)
-[21/Feb/2013 15:33:57] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:176)
-[21/Feb/2013 15:33:57] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:175)
-[21/Feb/2013 15:33:57] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download176, -, -, [prov:type="Download 176"])
-[21/Feb/2013 15:33:57] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download175, -, -, [prov:type="Download 175"])
-[21/Feb/2013 15:33:57] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(ex:system)
-[21/Feb/2013 15:33:57] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:176, ex:download176, -)
-[21/Feb/2013 15:33:57] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(ex:176, ex:175, -, -, -)
-[21/Feb/2013 15:33:57] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAssociatedWith(ex:download176, ex:system, -)
-[21/Feb/2013 15:33:57] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:176, ex:Facebook)
-[21/Feb/2013 15:33:57] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Facebook:bundle2
+[23/Feb/2013 08:55:19] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Facebook)
+[23/Feb/2013 08:55:19] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:205)
+[23/Feb/2013 08:55:19] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download205, -, -, [prov:type="Download 205"])
+[23/Feb/2013 08:55:19] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:205, ex:download205, -)
+[23/Feb/2013 08:55:19] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:205, ex:Facebook)
+[23/Feb/2013 08:55:19] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Facebook205:bundle
   entity(ex:Facebook)
-  entity(ex:176)
-  entity(ex:175)
-  activity(ex:download176, -, -, [prov:type="Download 176"])
-  activity(ex:download175, -, -, [prov:type="Download 175"])
-  agent(ex:system)
-  wasGeneratedBy(ex:176, ex:download176, -)
-  wasDerivedFrom(ex:176, ex:175, -, -, -)
-  wasAssociatedWith(ex:download176, ex:system, -)
-  specializationOf(ex:176, ex:Facebook)
+  entity(ex:205)
+  activity(ex:download205, -, -, [prov:type="Download 205"])
+  wasGeneratedBy(ex:205, ex:download205, -)
+  specializationOf(ex:205, ex:Facebook)
 endBundle
-[21/Feb/2013 16:03:35] DEBUG [root:169] <MultiValueDict: {}>
-[21/Feb/2013 16:03:36] DEBUG [prov.persistence.models:92] Saving namespaces...
-[21/Feb/2013 16:03:36] DEBUG [prov.persistence.models:197] Saving bundle PROV-LOGIN-STUFF...
-[21/Feb/2013 16:03:36] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:e1)
-[21/Feb/2013 16:27:03] DEBUG [prov.persistence.models:109] Loading bundle id Facebook-171
-[21/Feb/2013 16:27:03] DEBUG [prov.persistence.models:235] Loading records for bundle alice:bundle2
+[23/Feb/2013 08:55:19] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(Facebook206:bundle, Facebook205:bundle, -, -, -)
+[23/Feb/2013 08:55:19] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(Facebook206:bundle, Richard)
+[23/Feb/2013 08:55:19] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(Facebook205:bundle, Richard)
+[23/Feb/2013 08:56:52] DEBUG [prov.persistence.models:109] Loading bundle id Facebook-206
+[23/Feb/2013 08:56:52] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Facebook206:bundle, [prov:type="prov:Bundle"])
+[23/Feb/2013 08:56:52] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Facebook205:bundle, [prov:type="prov:Bundle"])
+[23/Feb/2013 08:56:52] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(Richard)
+[23/Feb/2013 08:56:52] DEBUG [prov.persistence.models:235] Loading records for bundle Facebook206:bundle
 endBundle
-[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Facebook)
-[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:171)
-[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download171, -, -, [prov:type="Download 171"])
-[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(ex:system)
-[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:171, ex:download171, -)
-[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAssociatedWith(ex:download171, ex:system, -)
-[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:171, ex:Facebook)
-[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle alice:bundle2
+[23/Feb/2013 08:56:52] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:206)
+[23/Feb/2013 08:56:52] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Facebook)
+[23/Feb/2013 08:56:52] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:206, ex:Facebook)
+[23/Feb/2013 08:56:52] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download206, -, -, [prov:type="Download 206"])
+[23/Feb/2013 08:56:52] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:206, ex:download206, -)
+[23/Feb/2013 08:56:52] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Facebook206:bundle
+  entity(ex:206)
   entity(ex:Facebook)
-  entity(ex:171)
-  activity(ex:download171, -, -, [prov:type="Download 171"])
-  agent(ex:system)
-  wasGeneratedBy(ex:171, ex:download171, -)
-  wasAssociatedWith(ex:download171, ex:system, -)
-  specializationOf(ex:171, ex:Facebook)
+  specializationOf(ex:206, ex:Facebook)
+  activity(ex:download206, -, -, [prov:type="Download 206"])
+  wasGeneratedBy(ex:206, ex:download206, -)
 endBundle
-[21/Feb/2013 16:27:04] DEBUG [root:169] <MultiValueDict: {}>
-[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:92] Saving namespaces...
-[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:197] Saving bundle Twitter-177...
-[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:148] Saving PROV record: bundle alice:bundle2
+[23/Feb/2013 08:56:52] DEBUG [prov.persistence.models:235] Loading records for bundle Facebook205:bundle
+endBundle
+[23/Feb/2013 08:56:52] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Facebook)
+[23/Feb/2013 08:56:52] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:205)
+[23/Feb/2013 08:56:52] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download205, -, -, [prov:type="Download 205"])
+[23/Feb/2013 08:56:52] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:205, ex:download205, -)
+[23/Feb/2013 08:56:52] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:205, ex:Facebook)
+[23/Feb/2013 08:56:52] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Facebook205:bundle
   entity(ex:Facebook)
-  entity(ex:171)
-  activity(ex:download171, -, -, [prov:type="Download 171"])
-  agent(ex:system)
-  wasGeneratedBy(ex:171, ex:download171, -)
-  wasAssociatedWith(ex:download171, ex:system, -)
-  specializationOf(ex:171, ex:Facebook)
+  entity(ex:205)
+  activity(ex:download205, -, -, [prov:type="Download 205"])
+  wasGeneratedBy(ex:205, ex:download205, -)
+  specializationOf(ex:205, ex:Facebook)
 endBundle
-[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:197] Saving bundle alice:bundle2...
-[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:Facebook)
-[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:171)
-[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:148] Saving PROV record: activity(ex:download171, -, -, [prov:type="Download 171"])
-[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:148] Saving PROV record: agent(ex:system)
-[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:148] Saving PROV record: wasGeneratedBy(ex:171, ex:download171, -)
-[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:148] Saving PROV record: wasAssociatedWith(ex:download171, ex:system, -)
-[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:148] Saving PROV record: specializationOf(ex:171, ex:Facebook)
-[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:148] Saving PROV record: bundle Twitter:bundle
-  entity(ex:177)
-  entity(ex:164)
-  entity(ex:Twitter)
-  activity(ex:download164, -, -, [prov:type="Download 164"])
-  activity(ex:download177, -, -, [prov:type="Download 177"])
-  agent(ex:system)
-  wasGeneratedBy(ex:177, ex:download177, -)
-  wasDerivedFrom(ex:177, ex:164, -, -, -)
-  wasAssociatedWith(ex:download177, ex:system, -)
-  specializationOf(ex:177, ex:Twitter)
-endBundle
-[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:197] Saving bundle Twitter:bundle...
-[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:177)
-[21/Feb/2013 16:27:04] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:164)
-[21/Feb/2013 16:27:05] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:Twitter)
-[21/Feb/2013 16:27:05] DEBUG [prov.persistence.models:148] Saving PROV record: activity(ex:download164, -, -, [prov:type="Download 164"])
-[21/Feb/2013 16:27:05] DEBUG [prov.persistence.models:148] Saving PROV record: activity(ex:download177, -, -, [prov:type="Download 177"])
-[21/Feb/2013 16:27:05] DEBUG [prov.persistence.models:148] Saving PROV record: agent(ex:system)
-[21/Feb/2013 16:27:05] DEBUG [prov.persistence.models:148] Saving PROV record: wasGeneratedBy(ex:177, ex:download177, -)
-[21/Feb/2013 16:27:05] DEBUG [prov.persistence.models:148] Saving PROV record: wasDerivedFrom(ex:177, ex:164, -, -, -)
-[21/Feb/2013 16:27:05] DEBUG [prov.persistence.models:148] Saving PROV record: wasAssociatedWith(ex:download177, ex:system, -)
-[21/Feb/2013 16:27:05] DEBUG [prov.persistence.models:148] Saving PROV record: specializationOf(ex:177, ex:Twitter)
-[21/Feb/2013 17:19:33] DEBUG [root:169] <MultiValueDict: {}>
-[21/Feb/2013 17:19:33] DEBUG [prov.persistence.models:92] Saving namespaces...
-[21/Feb/2013 17:19:33] DEBUG [prov.persistence.models:197] Saving bundle Twitter-178...
-[21/Feb/2013 17:19:33] DEBUG [prov.persistence.models:148] Saving PROV record: bundle Twitter:bundle
-  entity(ex:Twitter)
-  entity(ex:178)
-  activity(ex:download178, -, -, [prov:type="Download 178"])
-  agent(ex:system)
-  wasGeneratedBy(ex:178, ex:download178, -)
-  wasAssociatedWith(ex:download178, ex:system, -)
-  specializationOf(ex:178, ex:Twitter)
-endBundle
-[21/Feb/2013 17:19:33] DEBUG [prov.persistence.models:197] Saving bundle Twitter:bundle...
-[21/Feb/2013 17:19:33] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:Twitter)
-[21/Feb/2013 17:19:33] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:178)
-[21/Feb/2013 17:19:33] DEBUG [prov.persistence.models:148] Saving PROV record: activity(ex:download178, -, -, [prov:type="Download 178"])
-[21/Feb/2013 17:19:33] DEBUG [prov.persistence.models:148] Saving PROV record: agent(ex:system)
-[21/Feb/2013 17:19:33] DEBUG [prov.persistence.models:148] Saving PROV record: wasGeneratedBy(ex:178, ex:download178, -)
-[21/Feb/2013 17:19:33] DEBUG [prov.persistence.models:148] Saving PROV record: wasAssociatedWith(ex:download178, ex:system, -)
-[21/Feb/2013 17:19:34] DEBUG [prov.persistence.models:148] Saving PROV record: specializationOf(ex:178, ex:Twitter)
+[23/Feb/2013 08:56:52] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(Facebook206:bundle, Facebook205:bundle, -, -, -)
+[23/Feb/2013 08:56:52] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(Facebook206:bundle, Richard)
+[23/Feb/2013 08:56:52] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(Facebook205:bundle, Richard)
