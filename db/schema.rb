@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130214144921) do
+ActiveRecord::Schema.define(:version => 20130224120323) do
 
   create_table "data_provider_users", :force => true do |t|
     t.integer  "user_id"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(:version => 20130214144921) do
     t.string   "access_token"
     t.string   "update_frequency"
     t.string   "oauth_token_secret"
+    t.string   "uid"
   end
 
   create_table "data_providers", :force => true do |t|

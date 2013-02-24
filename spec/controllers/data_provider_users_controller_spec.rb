@@ -141,16 +141,15 @@ describe DataProviderUsersController do
         @data_provider.name = "Twitter"
         @data_provider.save
 
-        @consumer = OAuth::Consumer.new("fYuL73SIEuhw6kgNvs2hA", "49ujIlgckdjJGbuKV8IafH9rKuvO6PlSCuxEVspd4", {:site=> "http://twitter.com"} )
+        @consumer = OAuth::Consumer.new("fYuL73SIEuhw6kgNvs2hA", "49ujIlgckdjJGbuKV8IafH9rKuvO6PlSCuxEVspd4", {:site=> "http://api.twitter.com"} )
 
         @token = OAuth::RequestToken.new(@consumer, "186553918-sEAEO2fcvtyO1x99eH4Q4XwVcOYatODCQ5f1TwqD", "gLw2PtUyTZfxIan1gJBnbP7icboXbi98KlUoOn7ycVs") 
+        require 'TwitterOauth'
+        TwitterOauth.stub(:request_url).and_return(@token)
 
       end
 
       it "should update the tokens" do
-        require 'TwitterOauth'
-        TwitterOauth.stub(:request_url).and_return(@token)
-
         get :login, {id: @data_provider_user.id}
         @data_provider_user.reload
         @data_provider_user.access_token.should_not eq(nil)
@@ -158,14 +157,135 @@ describe DataProviderUsersController do
       end
 
       it "should not render the login page" do
-        require 'TwitterOauth'
-
-        TwitterOauth.stub(:request_url).and_return(@token)
-
         get :login, {id: @data_provider_user.id}
         response.should_not render_template("login")
+      end
+
+      it "should redirect to the twitter url" do
+        get :login, {id: @data_provider_user.id}
+        response.should redirect_to(@token.authorize_url)
       end
     end
   end
 
+  describe "Twitter_Oauth" do
+    before (:each) do
+      @data_provider.name = "Twitter"
+      @data_provider.save
+
+      @token = OAuth::RequestToken.new(@consumer, "186553918-sEAEO2fcvtyO1x99eH4Q4XwVcOYatODCQ5f1TwqD", "gLw2PtUyTZfxIan1gJBnbP7icboXbi98KlUoOn7ycVs") 
+      require 'TwitterOauth'
+
+      @access_token = OAuth::AccessToken.new(@consumer, "some-access-token", "some-token-secret")
+
+      TwitterOauth.stub(:request_url).and_return(@token)
+    end
+
+    it "should update access_token and oauth_token_secret" do
+      OAuth::RequestToken.any_instance.stub(:get_access_token).and_return(@access_token)
+      get :twitter_oauth
+
+      @data_provider_user.reload
+      @data_provider_user.access_token.should eq(@access_token.token)
+      @data_provider_user.oauth_token_secret.should eq(@access_token.secret)
+    end
+
+    it "should redirect to data_provider_users path" do
+      OAuth::RequestToken.any_instance.stub(:get_access_token).and_return(@access_token)
+      get :twitter_oauth
+      response.should redirect_to data_provider_users_path
+    end
+
+    it "should raise an error if token is nil" do
+      OAuth::RequestToken.any_instance.stub(:get_access_token).and_return(nil)
+      expect {get :twitter_oauth}.to raise_error
+    end
+  end
+
+
+  describe "update_data" do
+
+    it "should call update facebook" do
+        DataProviderUser.any_instance.stub(:update_facebook).and_return(Factory.create(:downloaded_datum))
+
+        get :update_data, {id: @data_provider_user.id}
+
+        response.should redirect_to generate_provenance_data_provider_user_downloaded_datum_path(@data_provider_user.id, DownloadedDatum.last.id)
+
+    end
+
+    it "should call update twitter" do
+        DataProviderUser.any_instance.stub(:update_twitter).and_return(Factory.create(:downloaded_datum))
+        @data_provider = Factory.create(:data_provider)
+        @data_provider.name = "Twitter"
+        @data_provider.save
+
+        @data_provider_user.data_provider_id = @data_provider.id
+        @data_provider_user.save 
+
+        get :update_data, {id: @data_provider_user.id}
+
+        response.should redirect_to generate_provenance_data_provider_user_downloaded_datum_path(@data_provider_user.id, DownloadedDatum.last.id)
+        
+    end
+
+    it "should call non-existent method" do
+        @data_provider = Factory.create(:data_provider)
+        @data_provider.name = "LOL"
+        @data_provider.save
+
+        @data_provider_user.data_provider_id = @data_provider.id
+        @data_provider_user.save 
+
+        expect{
+          get :update_data, {id: @data_provider_user.id}
+        }.to raise_error
+    end
+  end
+
+  describe "facebook_get_oauth_token" do
+  
+    it "should get the token" do 
+      stub_request(:any, /.*facebook.*/).to_return(:body => "access_token=AAAEY0v0jygwBACsjLXalh4hq6WypFcMh3u68eAb5ddjV02CCnBrdixwTAPHXSyJzGDZAiAr1IsTGW0011qmWQoSJgGmBuA2D6We4NvAZDZD&expires=5180614")
+
+      get :facebook_get_oauth_token, {id: @data_provider_user.id, access_token: "someAccessToken", uid: "someUID"}  
+
+      @data_provider_user.reload
+
+      @data_provider_user.uid.should eq("someUID")
+      @data_provider_user.access_token.should eq("AAAEY0v0jygwBACsjLXalh4hq6WypFcMh3u68eAb5ddjV02CCnBrdixwTAPHXSyJzGDZAiAr1IsTGW0011qmWQoSJgGmBuA2D6We4NvAZDZD")
+    end
+
+    it "should redirect" do 
+      stub_request(:any, /.*facebook.*/).to_return(:body => "access_token=AAAEY0v0jygwBACsjLXalh4hq6WypFcMh3u68eAb5ddjV02CCnBrdixwTAPHXSyJzGDZAiAr1IsTGW0011qmWQoSJgGmBuA2D6We4NvAZDZD&expires=5180614")
+
+      get :facebook_get_oauth_token, {id: @data_provider_user.id, access_token: "someAccessToken", uid: "someUID"}  
+
+      response.should redirect_to data_provider_users_url
+    end
+
+    it "should raise error due to incorrect token" do 
+      stub_request(:any, /.*facebook.*/).to_return(:body => "acAAAEY0v0jygwBACsjLXalh4hq6WypFcMh3u68eAb5ddjV02CCnBrdixwTAPHXSyJzGDZAiAr1IsTGW0011qmWQoSJgGmBuA2D6We4NvAZ")
+
+     expect{
+      get :facebook_get_oauth_token, {id: @data_provider_user.id, access_token: "someAccessToken", uid: "someUID"} 
+      }.to raise_error
+    end
+
+    it "should raise error due to no uid" do 
+      stub_request(:any, /.*facebook.*/).to_return(:body => "access_token=AAAEY0v0jygwBACsjLXalh4hq6WypFcMh3u68eAb5ddjV02CCnBrdixwTAPHXSyJzGDZAiAr1IsTGW0011qmWQoSJgGmBuA2D6We4NvAZDZD&expires=5180614")
+
+     expect{
+      get :facebook_get_oauth_token, {id: @data_provider_user.id, access_token: "someAccessToken", uid: nil} 
+      }.to raise_error
+    end
+
+    it "should raise error due to no uid" do 
+      stub_request(:any, /.*facebook.*/).to_return(:body => "access_token=AAAEY0v0jygwBACsjLXalh4hq6WypFcMh3u68eAb5ddjV02CCnBrdixwTAPHXSyJzGDZAiAr1IsTGW0011qmWQoSJgGmBuA2D6We4NvAZDZD&expires=5180614")
+
+     expect{
+      get :facebook_get_oauth_token, {id: @data_provider_user.id, access_token: nil, uid: "someUID"} 
+      }.to raise_error
+    end
+  end
 end

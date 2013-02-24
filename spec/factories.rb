@@ -13,4 +13,10 @@ Factory.define :data_provider_user do |dpu|
   dpu.access_token nil
   dpu.update_frequency nil
   dpu.oauth_token_secret nil
+  dpu.uid             nil
+
+end
+Factory.define :downloaded_datum do |dd|
+  dd.name "foo"
+  dd.data "bar"
 end

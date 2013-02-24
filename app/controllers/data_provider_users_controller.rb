@@ -149,6 +149,8 @@ class DataProviderUsersController < ApplicationController
       @downloaded_datum = @data_provider_user.update_facebook
     elsif @data_provider_user.twitter?
       @downloaded_datum = @data_provider_user.update_twitter
+    else
+      raise "Error"
     end
 
     respond_to do |format|
@@ -171,8 +173,12 @@ class DataProviderUsersController < ApplicationController
 
     uri = URI.parse("https://graph.facebook.com/oauth/access_token")
 
+    if !params[:access_token].nil?
     param = {'grant_type'=> 'fb_exchange_token', 'client_id' =>'308769445890556', 'client_secret'=>'acf570bff4de2f66da870a58d8116f47', 'fb_exchange_token'=> params[:access_token]}
-
+    else
+      raise "Access Token nil"
+    end
+    
     http = Net::HTTP.new(uri.host, uri.port) 
     http.use_ssl = true
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE
@@ -187,7 +193,11 @@ class DataProviderUsersController < ApplicationController
     token = response.body.match(/=(.*)&e/)[1]
 
     @data_provider_user = DataProviderUser.find(params[:id])
-    @data_provider_user.uid = params[:uid]
+    if !params[:uid].nil?
+      @data_provider_user.uid = params[:uid]
+    else
+      raise "UID nil"
+    end
     @data_provider_user.access_token = token
     @data_provider_user.save
 
