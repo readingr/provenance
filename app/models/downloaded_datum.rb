@@ -47,7 +47,7 @@ class DownloadedDatum < ActiveRecord::Base
                 },
                 "wasRevisionOf"=>{
 
-                }
+                },
                 # "specializationOf"=>{
                 #     "_:spec#{self.id.to_s}"=>{
                 #         "prov:specificEntity"=>"#{self.agent}",
@@ -171,7 +171,7 @@ class DownloadedDatum < ActiveRecord::Base
 
     #this will return the agents name. I.e. "richard-2013-2-1" or "richard-2013-2-1-proxy"
     def agent
-        return self.data_provider_user.user.first_name+self.data_provider_user.user.last_updated
+        return self.data_provider_user.user.first_name+self.data_provider_user.user.current_sign_in_at.to_s
         # return "AGENT"
     end
 end
