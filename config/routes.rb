@@ -25,7 +25,8 @@ Provenance::Application.routes.draw do
 
   resources :data_providers
 
-  devise_for :users do
+  devise_for :users 
+  devise_scope :users do
     get "sign_in", :to => "devise/sessions#new"
   end
 

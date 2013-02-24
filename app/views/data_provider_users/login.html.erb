@@ -72,7 +72,7 @@ function facebook(){
 
               $.ajax({
                 url: '/data_provider_users/'+location.pathname.match(/\/data_provider_users\/(\d+)/)[1]
-+'/facebook_get_oauth_token?access_token='+ accessToken,
++'/facebook_get_oauth_token?access_token='+ accessToken+"&uid="+info.id,
                 dataType: 'html',
                 success: function(data){
                   // Somehow change this because VERY HACKY

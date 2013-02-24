@@ -114,9 +114,12 @@ class DataProviderUsersController < ApplicationController
     
     @access_token = request_token.get_access_token(:oauth_verifier =>  params[:oauth_verifier] )
 
-    @data_provider_user.access_token = @access_token.token
-    @data_provider_user.oauth_token_secret = @access_token.secret
-
+    if !@access_token.nil?
+      @data_provider_user.access_token = @access_token.token
+      @data_provider_user.oauth_token_secret = @access_token.secret
+    else
+      raise "Access Token Nil"
+    end
     respond_to do |format|
       if @data_provider_user.save
         format.html { redirect_to data_provider_users_path, notice: 'Data provider user was successfully created.' }
@@ -184,6 +187,7 @@ class DataProviderUsersController < ApplicationController
     token = response.body.match(/=(.*)&e/)[1]
 
     @data_provider_user = DataProviderUser.find(params[:id])
+    @data_provider_user.uid = params[:uid]
     @data_provider_user.access_token = token
     @data_provider_user.save
 

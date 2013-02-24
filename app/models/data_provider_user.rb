@@ -79,8 +79,8 @@ class DataProviderUser < ActiveRecord::Base
 
  	options = { :access_token => self.access_token, :format => 'json' }
  	query = Fql.execute({
- 		"query1" => 'SELECT status_id, message, time, uid FROM status WHERE uid = 1144492288',
- 		"query2" => 'SELECT first_name, last_name, profile_url, sex, pic_small, about_me, friend_count, inspirational_people, username FROM user WHERE uid = 1144492288'
+ 		"query1" => 'SELECT status_id, message, time, uid FROM status WHERE uid ='+self.uid,
+ 		"query2" => 'SELECT first_name, last_name, profile_url, sex, pic_small, about_me, friend_count, inspirational_people, username FROM user WHERE uid ='+self.uid
  	}, options)
  	results = (query[0].values[1])[0].merge(query[1].values[1][0])
  	# debugger
