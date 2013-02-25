@@ -32,8 +32,7 @@ Provenance::Application.routes.draw do
 
 
   resources :users do 
-    resources :prov_services
-
+    
     collection do
       get :prov_login
     end

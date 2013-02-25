@@ -18,6 +18,26 @@
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
 
+  <h3> Provenance Details </h3>
+
+  <p> Sign up for the Provenance service here http://127.0.0.1:8000/store/register/?next=  </p>
+
+  <p>Then visit and generate an api key from here:   http://127.0.0.1:8000/store/apikey/ </p>
+
+
+  <p>Then paste your username and key generated below </p>
+
+
+
+  <p/>
+  <br/>
+
+  <div><%= f.label :prov_username %><br />
+  <%= f.text_field :prov_username %></div>
+
+  <div><%= f.label :access_token %><br />
+  <%= f.text_field :access_token %></div>
+
   <div><%= f.submit "Sign up" %></div>
 <% end %>
 

@@ -4,6 +4,8 @@ Factory.define :user do |user|
   user.email                 "tuser@example.com"
   user.password              "foobar"
   user.password_confirmation "foobar"
+  user.prov_username         "foobar"
+  user.access_token          "53ba3c6f3f106162f0765424275be7d9461afd4a"
 end
 Factory.define :data_provider do |data_provider|
   data_provider.name            "Facebook"
