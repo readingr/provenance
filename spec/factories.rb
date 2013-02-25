@@ -12,6 +12,7 @@ Factory.define :data_provider do |data_provider|
   data_provider.url             "http://www.facebook.com"
 end
 Factory.define :data_provider_user do |dpu|
+  dpu.user_id 1
   dpu.access_token nil
   dpu.update_frequency nil
   dpu.oauth_token_secret nil

@@ -139,12 +139,14 @@ class DownloadedDatum < ActiveRecord::Base
             } 
 
 
-
+            # debugger
             #download the the provenance for the last user
-            downloaded_prov = ProvRequests.get_request(self.data_provider_user.user.prov_service.username, self.data_provider_user.user.prov_service.access_token, last_downloaded_data.prov_id)
+            downloaded_prov = ProvRequests.get_request(self.data_provider_user.user.prov_username, self.data_provider_user.user.access_token, last_downloaded_data.prov_id)
 
             #parse the json
-            old_prov = ActiveSupport::JSON.decode(downloaded_prov)["prov_json"]
+            if !downloaded_prov.blank?
+                old_prov = ActiveSupport::JSON.decode(downloaded_prov)["prov_json"]
+            end
 
             if !old_prov.nil?
                 #deep merge them together
@@ -159,7 +161,7 @@ class DownloadedDatum < ActiveRecord::Base
         rec_id = self.name + "-" + self.id.to_s
 
         #send the request to the prov web service
-        prov_json_results = ProvRequests.post_request(self.data_provider_user.user.prov_service.username, self.data_provider_user.user.prov_service.access_token, new_bundle, rec_id)
+        prov_json_results = ProvRequests.post_request(self.data_provider_user.user.prov_username, self.data_provider_user.user.access_token, new_bundle, rec_id)
         # debugger
 
         #get the results of the hash

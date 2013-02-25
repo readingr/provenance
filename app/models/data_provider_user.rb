@@ -1,6 +1,8 @@
 class DataProviderUser < ActiveRecord::Base
   attr_accessible :data_provider_id, :password, :user_id, :username, :update_frequency
 
+  validates :user_id, presence: true
+
   belongs_to :user
   belongs_to :data_provider
   has_many :downloaded_datum, :dependent => :destroy
@@ -21,7 +23,6 @@ class DataProviderUser < ActiveRecord::Base
 
  	case time
 	 	when "hourly"
-	 		puts "hourly"
 	 		data_provider_users = DataProviderUser.where(update_frequency: "hourly")
 	 	when "daily"
 	 		data_provider_users = DataProviderUser.where(update_frequency: "daily")
@@ -52,15 +53,13 @@ class DataProviderUser < ActiveRecord::Base
  	elsif self.twitter?
  		return self.update_twitter
  	else
- 		puts "not fb/twitter"
- 		puts "**************"
+ 		raise "error, not a data provider user option"
  	end
  end
 
 
 
  def update_twitter
- 	require 'ProvRequests'
 
  	Twitter.configure do |config|
  	  config.consumer_key = "fYuL73SIEuhw6kgNvs2hA"
@@ -75,7 +74,6 @@ class DataProviderUser < ActiveRecord::Base
  end
 
  def update_facebook
- 	require 'ProvRequests'
 
  	options = { :access_token => self.access_token, :format => 'json' }
  	query = Fql.execute({
