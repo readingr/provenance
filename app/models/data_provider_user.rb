@@ -42,7 +42,7 @@ class DataProviderUser < ActiveRecord::Base
  		data_provider_users.each do |dpu|
  			downloaded_data = dpu.determine_update
  			downloaded_data.save
- 			downloaded_data.generate_provenance
+ 			downloaded_data.generate_provenance(true)
  		end
  	end
  end

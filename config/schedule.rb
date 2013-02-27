@@ -43,6 +43,6 @@ every :month do
 end
 
 # run minutely for testing
-# every '*/1 * * * *' do
-# 	runner "DataProviderUser.cron('hourly')"
-# end
+every '*/1 * * * *' do
+	runner "DataProviderUser.cron('hourly')"
+end

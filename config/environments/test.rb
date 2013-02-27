@@ -34,4 +34,8 @@ Provenance::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+
+  unless Rails.env.production?
+    ENV['PROV_SERVER'] = 'http://127.0.0.1:8000'
+  end
 end

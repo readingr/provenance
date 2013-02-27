@@ -6,7 +6,7 @@ def self.get_request(username, apikey, bundle_number)
 	require 'net/http'
 	require 'uri'
 
-	uri = URI.parse("http://127.0.0.1:8000/api/v0/bundle/"+bundle_number.to_s)
+	uri = URI.parse("#{ENV['PROV_SERVER']}/api/v0/bundle/"+bundle_number.to_s)
 
 	http = Net::HTTP.new(uri.host, uri.port) 
 	#used for secure connections
@@ -45,7 +45,7 @@ def self.post_request(username, apikey, bundle, rec_id)
 	require 'net/http'
 	require 'uri'
 
-	uri = URI.parse("http://127.0.0.1:8000/api/v0/bundle/")
+	uri = URI.parse("#{ENV['PROV_SERVER']}/api/v0/bundle/")
 
 
 	net = Net::HTTP.new(uri.path, uri.port)
