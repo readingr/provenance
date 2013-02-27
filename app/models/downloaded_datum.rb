@@ -4,7 +4,7 @@ class DownloadedDatum < ActiveRecord::Base
 
 
   #this generates the provenance from the data passed in. This is done like this because it doesn't require a user logged in.
-    def generate_provenance
+    def generate_provenance(cron)
         require 'ProvRequests'
         require 'json'
         require 'active_support/core_ext/hash/deep_merge'
@@ -35,7 +35,7 @@ class DownloadedDatum < ActiveRecord::Base
                     }
                 },
                 "wasAttributedTo"=> {
-                    "_:id#{self.id.to_s}"=>{
+                    "_:attr#{self.id.to_s}"=>{
                         "prov:entity"=> "#{data_provider_name}#{self.id.to_s}:bundle", 
                         "prov:agent"=> "#{self.agent}"
                     }
@@ -45,9 +45,15 @@ class DownloadedDatum < ActiveRecord::Base
 
                     }
                 },
-                "wasRevisionOf"=>{
+                # "actedOnBehalfOf"=>{
+                #     "_:id#{self.id.to_s}"=>{
+                #         "prov:delegate"=> "a2",
+                #         "prov:responsible"=> "a1"
+                #     }
+                # },
+                # "wasRevisionOf"=>{
 
-                },
+                # },
                 # "specializationOf"=>{
                 #     "_:spec#{self.id.to_s}"=>{
                 #         "prov:specificEntity"=>"#{self.agent}",
@@ -57,10 +63,13 @@ class DownloadedDatum < ActiveRecord::Base
                 "bundle"=>{
                     "#{data_provider_name}#{self.id.to_s}:bundle"=>{
                         "entity"=>{
-                            "ex:#{self.id.to_s}"=>{},
-                            "ex:#{data_provider_name}"=>{}
-                        }, 
+                            "ex:#{self.id.to_s}"=>{
 
+                                },
+                            "ex:#{data_provider_name}"=>{
+
+                            }
+                        }, 
                         "activity"=>{
                             "ex:download#{self.id.to_s}"=>{
                                 "prov:type"=>"Download #{self.id}"
@@ -73,7 +82,6 @@ class DownloadedDatum < ActiveRecord::Base
                                 "prov:generalEntity"=>"ex:#{data_provider_name}"
                             }
                         },
-                        
                         "wasGeneratedBy"=>{
                             "_:gen2"=>{
                                 "prov:entity"=>"ex:#{self.id.to_s}",
@@ -86,7 +94,6 @@ class DownloadedDatum < ActiveRecord::Base
 
             # debugger
         else
-            # take out of here and put in seperate action/module so we can reuse for other data provider users.
             bundle = {
                 "prefix"=> {
                     "ex"=> "http://localhost:3000" #change to sensible url
@@ -96,10 +103,10 @@ class DownloadedDatum < ActiveRecord::Base
                         "prov:type"=> "prov:Bundle"
                     }
                 },
-                "wasAttributedTo"=> {
-                    "_:id#{self.id.to_s}"=>{
-                        "prov:entity"=> "#{data_provider_name}#{self.id.to_s}:bundle", 
-                        "prov:agent"=> "#{self.agent}"
+                "specializationOf"=>{
+                    "_:spec#{self.id.to_s}"=>{
+                        "prov:specificEntity"=>"ex:#{self.id.to_s}",
+                        "prov:generalEntity"=>"ex:#{data_provider_name}"
                     }
                 },
                 "wasDerivedFrom"=> {
@@ -111,8 +118,12 @@ class DownloadedDatum < ActiveRecord::Base
                 "bundle"=>{
                     "#{data_provider_name}#{self.id.to_s}:bundle"=>{
                         "entity"=>{
-                            "ex:#{self.id.to_s}"=>{},
-                            "ex:#{data_provider_name}"=>{}
+                            "ex:#{self.id.to_s}"=>{
+
+                                },
+                            "ex:#{data_provider_name}"=>{
+
+                            }
                         }, 
 
                         "activity"=>{
@@ -138,9 +149,49 @@ class DownloadedDatum < ActiveRecord::Base
                 }
             } 
 
+            #if it's a cron job then make it a proxy
+            if cron
+                att =  {
+                        "wasAttributedTo"=> {
+                            "_:attr#{self.id.to_s}"=>{
+                                "prov:agent"=> "#{self.agent} Proxy",
+                                "prov:entity"=> "#{data_provider_name}#{self.id.to_s}:bundle"
+                            }
+                        },
+                        "actedOnBehalfOf"=>{
+                            "_:aobo#{self.id.to_s}"=>{
+                                "prov:delegate"=> "#{self.agent} Proxy",
+                                "prov:responsible"=> "#{self.agent}"
+                            }
+                        }
+                     }
+            else
+                att =  {
+                        "wasAttributedTo"=> {
+                            "_:attr#{self.id.to_s}"=>{
+                                "prov:agent"=> "#{self.agent}",
+                                "prov:entity"=> "#{data_provider_name}#{self.id.to_s}:bundle"
+                            }
+                        }
+                     }                    
+            end
 
-            # debugger
-            #download the the provenance for the last user
+            bundle = att.deep_merge(bundle)
+
+            # if cron
+            #     bbc = {
+            #         "actedOnBehalfOf"=>{
+            #             "_:aobo#{self.id.to_s}"=>{
+            #                 "prov:delegate"=> "#{self.agent} Proxy",
+            #                 "prov:responsible"=> "#{self.agent}"
+            #             }
+            #         }
+            #     }
+            #     bundle = bbc.deep_merge(bundle)
+
+            # end
+
+            #download the the provenance from the last user
             downloaded_prov = ProvRequests.get_request(self.data_provider_user.user.prov_username, self.data_provider_user.user.access_token, last_downloaded_data.prov_id)
 
             #parse the json
@@ -162,9 +213,13 @@ class DownloadedDatum < ActiveRecord::Base
 
         #send the request to the prov web service
         prov_json_results = ProvRequests.post_request(self.data_provider_user.user.prov_username, self.data_provider_user.user.access_token, new_bundle, rec_id)
-        # debugger
 
-        #get the results of the hash
+
+        #if the results are blank, typically means 401 so destroy self
+        if prov_json_results.blank?
+            self.destroy
+            raise "Error, probably an incorrect access token"
+        end
         prov_hash_results = ActiveSupport::JSON.decode(prov_json_results)
 
         self.prov_id = prov_hash_results["id"]
@@ -173,7 +228,7 @@ class DownloadedDatum < ActiveRecord::Base
 
     #this will return the agents name. I.e. "richard-2013-2-1" or "richard-2013-2-1-proxy"
     def agent
-        return self.data_provider_user.user.first_name+self.data_provider_user.user.current_sign_in_at.to_s
+        return self.data_provider_user.user.first_name+" "+self.data_provider_user.user.current_sign_in_at.to_s
         # return "AGENT"
     end
 end
