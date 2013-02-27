@@ -32,41 +32,29 @@ class DownloadedDatum < ActiveRecord::Base
                 "entity"=>{
                     "#{data_provider_name}#{self.id.to_s}:bundle"=>{
                         "prov:type"=> "prov:Bundle"
-                    }
+                    },
+                    "ex:#{self.agent}"=>{},
+                    "#{data_provider_user.user.first_name}"=>{}
                 },
                 "wasAttributedTo"=> {
-                    "_:attr#{self.id.to_s}"=>{
+                    "ex:attr#{self.id.to_s}"=>{
                         "prov:entity"=> "#{data_provider_name}#{self.id.to_s}:bundle", 
                         "prov:agent"=> "#{self.agent}"
                     }
                 },
-                "agent"=>{
-                    "#{data_provider_user.user.first_name}"=>{
-
+                "specializationOf"=>{
+                    "ex:spec#{self.agent}"=>{
+                        "prov:specificEntity"=>"ex:#{self.agent}",
+                        "prov:generalEntity"=>"#{data_provider_user.user.first_name}"
                     }
                 },
-                # "actedOnBehalfOf"=>{
-                #     "_:id#{self.id.to_s}"=>{
-                #         "prov:delegate"=> "a2",
-                #         "prov:responsible"=> "a1"
-                #     }
-                # },
-                # "wasRevisionOf"=>{
-
-                # },
-                # "specializationOf"=>{
-                #     "_:spec#{self.id.to_s}"=>{
-                #         "prov:specificEntity"=>"#{self.agent}",
-                #         "prov:generalEntity"=>"#{data_provider_user.user.first_name}"
-                #     }
-                # },
                 "bundle"=>{
                     "#{data_provider_name}#{self.id.to_s}:bundle"=>{
                         "entity"=>{
-                            "ex:#{self.id.to_s}"=>{
+                            "ex:ent#{self.id.to_s}"=>{
 
                                 },
-                            "ex:#{data_provider_name}"=>{
+                            "ex:ent#{data_provider_name}"=>{
 
                             }
                         }, 
@@ -77,22 +65,20 @@ class DownloadedDatum < ActiveRecord::Base
                         },
 
                         "specializationOf"=>{
-                            "_:spec#{self.id.to_s}"=>{
-                                "prov:specificEntity"=>"ex:#{self.id.to_s}",
-                                "prov:generalEntity"=>"ex:#{data_provider_name}"
+                            "ex:spec#{self.id.to_s}"=>{
+                                "prov:specificEntity"=>"ex:ent#{self.id.to_s}",
+                                "prov:generalEntity"=>"ex:ent#{data_provider_name}"
                             }
                         },
                         "wasGeneratedBy"=>{
-                            "_:gen2"=>{
-                                "prov:entity"=>"ex:#{self.id.to_s}",
+                            "ex:gen#{self.id.to_s}"=>{
+                                "prov:entity"=>"ex:ent#{self.id.to_s}",
                                 "prov:activity"=> "ex:download#{self.id.to_s}"
                             }
                         },
                     }
                 }
             }
-
-            # debugger
         else
             bundle = {
                 "prefix"=> {
@@ -101,16 +87,19 @@ class DownloadedDatum < ActiveRecord::Base
                 "entity"=>{
                     "#{data_provider_name}#{self.id.to_s}:bundle"=>{
                         "prov:type"=> "prov:Bundle"
-                    }
+                    },
+                    "ex:#{self.agent}"=>{},
+                    "#{data_provider_user.user.first_name}"=>{}
+                    # "ex:#{data_provider_user.user.first_name}"=>{}
                 },
                 "specializationOf"=>{
-                    "_:spec#{self.id.to_s}"=>{
-                        "prov:specificEntity"=>"ex:#{self.id.to_s}",
-                        "prov:generalEntity"=>"ex:#{data_provider_name}"
+                    "ex:spec#{self.agent}"=>{
+                        "prov:specificEntity"=>"ex:#{self.agent}",
+                        "prov:generalEntity"=>"#{data_provider_user.user.first_name}"
                     }
                 },
                 "wasDerivedFrom"=> {
-                    "_:der#{self.id.to_s}"=> {
+                    "ex:der#{self.id.to_s}"=> {
                         "prov:usedEntity"=> "#{data_provider_name}#{last_downloaded_data.id.to_s}:bundle",
                         "prov:generatedEntity"=> "#{data_provider_name}#{self.id.to_s}:bundle"
                     }
@@ -118,10 +107,10 @@ class DownloadedDatum < ActiveRecord::Base
                 "bundle"=>{
                     "#{data_provider_name}#{self.id.to_s}:bundle"=>{
                         "entity"=>{
-                            "ex:#{self.id.to_s}"=>{
+                            "ex:ent#{self.id.to_s}"=>{
 
                                 },
-                            "ex:#{data_provider_name}"=>{
+                            "ex:ent#{data_provider_name}"=>{
 
                             }
                         }, 
@@ -133,15 +122,15 @@ class DownloadedDatum < ActiveRecord::Base
                         },
 
                         "specializationOf"=>{
-                            "_:spec#{self.id.to_s}"=>{
-                                "prov:specificEntity"=>"ex:#{self.id.to_s}",
-                                "prov:generalEntity"=>"ex:#{data_provider_name}"
+                            "ex:spec#{self.id.to_s}"=>{
+                                "prov:specificEntity"=>"ex:ent#{self.id.to_s}",
+                                "prov:generalEntity"=>"ex:ent#{data_provider_name}"
                             }
                         },
                         
                         "wasGeneratedBy"=>{
-                            "_:gen#{self.id.to_s}"=>{
-                                "prov:entity"=>"ex:#{self.id.to_s}",
+                            "ex:gen#{self.id.to_s}"=>{
+                                "prov:entity"=>"ex:ent#{self.id.to_s}",
                                 "prov:activity"=> "ex:download#{self.id.to_s}"
                             }
                         },
@@ -153,13 +142,13 @@ class DownloadedDatum < ActiveRecord::Base
             if cron
                 att =  {
                         "wasAttributedTo"=> {
-                            "_:attr#{self.id.to_s}"=>{
+                            "ex:attr#{self.id.to_s}"=>{
                                 "prov:agent"=> "#{self.agent} Proxy",
                                 "prov:entity"=> "#{data_provider_name}#{self.id.to_s}:bundle"
                             }
                         },
                         "actedOnBehalfOf"=>{
-                            "_:aobo#{self.id.to_s}"=>{
+                            "ex:aobo#{self.id.to_s}"=>{
                                 "prov:delegate"=> "#{self.agent} Proxy",
                                 "prov:responsible"=> "#{self.agent}"
                             }
@@ -168,7 +157,7 @@ class DownloadedDatum < ActiveRecord::Base
             else
                 att =  {
                         "wasAttributedTo"=> {
-                            "_:attr#{self.id.to_s}"=>{
+                            "ex:attr#{self.id.to_s}"=>{
                                 "prov:agent"=> "#{self.agent}",
                                 "prov:entity"=> "#{data_provider_name}#{self.id.to_s}:bundle"
                             }
@@ -178,18 +167,21 @@ class DownloadedDatum < ActiveRecord::Base
 
             bundle = att.deep_merge(bundle)
 
-            # if cron
-            #     bbc = {
-            #         "actedOnBehalfOf"=>{
-            #             "_:aobo#{self.id.to_s}"=>{
-            #                 "prov:delegate"=> "#{self.agent} Proxy",
-            #                 "prov:responsible"=> "#{self.agent}"
-            #             }
-            #         }
-            #     }
-            #     bundle = bbc.deep_merge(bundle)
+            #if they've signed in more than once we can add revision!
+            if !self.data_provider_user.user.last_sign_in_at.nil?
+                revision = {
+                    "wasDerivedFrom"=>{
+                        "ex:rev#{self.agent}"=>{
+                            "prov:generatedEntity"=>"ex:#{self.data_provider_user.user.first_name} #{self.data_provider_user.user.current_sign_in_at}",
+                            "prov:usedEntity"=>"ex:#{self.data_provider_user.user.first_name} #{self.data_provider_user.user.last_sign_in_at}",
+                            "prov:type"=> "prov:Revision"
+                        }
+                    }
+                }
 
-            # end
+            bundle = revision.deep_merge(bundle)
+            end
+
 
             #download the the provenance from the last user
             downloaded_prov = ProvRequests.get_request(self.data_provider_user.user.prov_username, self.data_provider_user.user.access_token, last_downloaded_data.prov_id)
@@ -207,6 +199,8 @@ class DownloadedDatum < ActiveRecord::Base
                 new_bundle = bundle
             end
         end
+
+        puts new_bundle.to_json
 
 
         rec_id = self.name + "-" + self.id.to_s
