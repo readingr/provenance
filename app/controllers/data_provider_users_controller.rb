@@ -208,4 +208,20 @@ class DataProviderUsersController < ApplicationController
     end
   end
 
+
+  #this gets the overall provenance of the system, collates it into one bundle and sends it to the prov server
+  def overall_prov
+    url = current_user.overall_prov
+
+    respond_to do |format| 
+      if !url.nil?
+        format.html {redirect_to url }
+        format.json { head :no_content }
+      else
+      format.html { redirect_to data_provider_users_url }
+      format.json { head :no_content }
+    end
+    end
+  end
+
 end

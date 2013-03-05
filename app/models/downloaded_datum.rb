@@ -178,8 +178,7 @@ class DownloadedDatum < ActiveRecord::Base
                         }
                     }
                 }
-
-            bundle = revision.deep_merge(bundle)
+                bundle = revision.deep_merge(bundle)
             end
 
 

@@ -1,402 +1,398 @@
-[27/Feb/2013 18:48:39] DEBUG [prov.persistence.models:148] Saving PROV record: wasDerivedFrom(ex:der329, Twitter329:bundle, Twitter326:bundle, -, -, -)
-[27/Feb/2013 18:48:39] DEBUG [prov.persistence.models:148] Saving PROV record: wasDerivedFrom(ex:der335, Twitter335:bundle, Twitter334:bundle, -, -, -)
-[27/Feb/2013 18:48:39] DEBUG [prov.persistence.models:148] Saving PROV record: wasDerivedFrom(ex:der334, Twitter334:bundle, Twitter329:bundle, -, -, -)
-[27/Feb/2013 18:48:40] DEBUG [prov.persistence.models:148] Saving PROV record: wasDerivedFrom(ex:revRichard 2013-02-27 18:28:59 UTC, ex:Richard 2013-02-27 18:28:59 UTC, ex:Richard 2013-02-27 17:49:02 UTC, -, -, -, [prov:type="prov:Revision"])
-[27/Feb/2013 18:48:40] DEBUG [prov.persistence.models:148] Saving PROV record: wasAttributedTo(ex:attr329, Twitter329:bundle, Richard 2013-02-27 17:49:02 UTC)
-[27/Feb/2013 18:48:40] DEBUG [prov.persistence.models:148] Saving PROV record: wasAttributedTo(ex:attr335, Twitter335:bundle, Richard 2013-02-27 18:28:59 UTC Proxy)
-[27/Feb/2013 18:48:40] DEBUG [prov.persistence.models:148] Saving PROV record: // agent(Richard 2013-02-27 18:28:59 UTC Proxy)
-[27/Feb/2013 18:48:40] DEBUG [prov.persistence.models:148] Saving PROV record: wasAttributedTo(ex:attr334, Twitter334:bundle, Richard 2013-02-27 18:28:59 UTC)
-[27/Feb/2013 18:48:40] DEBUG [prov.persistence.models:148] Saving PROV record: wasAttributedTo(ex:attr326, Twitter326:bundle, Richard 2013-02-27 17:49:02 UTC)
-[27/Feb/2013 18:48:40] DEBUG [prov.persistence.models:148] Saving PROV record: actedOnBehalfOf(ex:aobo335, Richard 2013-02-27 18:28:59 UTC Proxy, Richard 2013-02-27 18:28:59 UTC, -)
-[27/Feb/2013 18:48:40] DEBUG [prov.persistence.models:148] Saving PROV record: specializationOf(ex:specRichard 2013-02-27 18:28:59 UTC, ex:Richard 2013-02-27 18:28:59 UTC, Richard)
-[27/Feb/2013 18:48:40] DEBUG [prov.persistence.models:148] Saving PROV record: specializationOf(ex:specRichard 2013-02-27 17:49:02 UTC, ex:Richard 2013-02-27 17:49:02 UTC, Richard)
-[27/Feb/2013 18:48:44] DEBUG [prov.persistence.models:109] Loading bundle id Twitter-335
-[27/Feb/2013 18:48:44] DEBUG [prov.persistence.models:239] Loaded PROV record: // agent(Richard 2013-02-27 18:28:59 UTC Proxy)
-[27/Feb/2013 18:48:44] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Twitter334:bundle, [prov:type="prov:Bundle"])
-[27/Feb/2013 18:48:44] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(Richard 2013-02-27 18:28:59 UTC)
-[27/Feb/2013 18:48:44] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr334, Twitter334:bundle, Richard 2013-02-27 18:28:59 UTC)
-[27/Feb/2013 18:48:44] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Twitter326:bundle, [prov:type="prov:Bundle"])
-[27/Feb/2013 18:48:44] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(Richard 2013-02-27 17:49:02 UTC)
-[27/Feb/2013 18:48:44] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr326, Twitter326:bundle, Richard 2013-02-27 17:49:02 UTC)
-[27/Feb/2013 18:48:44] DEBUG [prov.persistence.models:239] Loaded PROV record: actedOnBehalfOf(ex:aobo335, Richard 2013-02-27 18:28:59 UTC Proxy, Richard 2013-02-27 18:28:59 UTC, -)
-[27/Feb/2013 18:48:44] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Richard 2013-02-27 18:28:59 UTC)
-[27/Feb/2013 18:48:44] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Richard)
-[27/Feb/2013 18:48:44] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:specRichard 2013-02-27 18:28:59 UTC, ex:Richard 2013-02-27 18:28:59 UTC, Richard)
-[27/Feb/2013 18:48:44] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Richard 2013-02-27 17:49:02 UTC)
-[27/Feb/2013 18:48:44] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:specRichard 2013-02-27 17:49:02 UTC, ex:Richard 2013-02-27 17:49:02 UTC, Richard)
-[27/Feb/2013 18:48:44] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Twitter335:bundle, [prov:type="prov:Bundle"])
-[27/Feb/2013 18:48:44] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Twitter329:bundle, [prov:type="prov:Bundle"])
-[27/Feb/2013 18:48:44] DEBUG [prov.persistence.models:235] Loading records for bundle Twitter334:bundle
+[05/Mar/2013 13:50:41] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr351, Facebook351:bundle, Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:50:41] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:50:41] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Richard)
+[05/Mar/2013 13:50:41] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:specRichard 2013-03-05 13:04:09 UTC, ex:Richard 2013-03-05 13:04:09 UTC, Richard)
+[05/Mar/2013 13:50:41] DEBUG [prov.persistence.models:235] Loading records for bundle Facebook351:bundle
 endBundle
-[27/Feb/2013 18:48:44] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entTwitter)
-[27/Feb/2013 18:48:44] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent334)
-[27/Feb/2013 18:48:44] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download334, -, -, [prov:type="Download 334"])
-[27/Feb/2013 18:48:44] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen334, ex:ent334, ex:download334, -)
-[27/Feb/2013 18:48:44] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec334, ex:ent334, ex:entTwitter)
-[27/Feb/2013 18:48:44] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Twitter334:bundle
+[05/Mar/2013 13:50:41] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent351)
+[05/Mar/2013 13:50:41] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entFacebook)
+[05/Mar/2013 13:50:41] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download351, -, -, [prov:type="Download 351"])
+[05/Mar/2013 13:50:41] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen351, ex:ent351, ex:download351, -)
+[05/Mar/2013 13:50:41] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec351, ex:ent351, ex:entFacebook)
+[05/Mar/2013 13:50:41] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Facebook351:bundle
+  entity(ex:ent351)
+  entity(ex:entFacebook)
+  activity(ex:download351, -, -, [prov:type="Download 351"])
+  wasGeneratedBy(ex:gen351, ex:ent351, ex:download351, -)
+  specializationOf(ex:spec351, ex:ent351, ex:entFacebook)
+endBundle
+[05/Mar/2013 13:50:41] DEBUG [root:169] <MultiValueDict: {}>
+[05/Mar/2013 13:50:41] DEBUG [prov.persistence.models:92] Saving namespaces...
+[05/Mar/2013 13:50:41] DEBUG [prov.persistence.models:197] Saving bundle BBC...
+[05/Mar/2013 13:50:41] DEBUG [prov.persistence.models:148] Saving PROV record: entity(Twitter350:bundle, [prov:type="prov:Bundle"])
+[05/Mar/2013 13:50:41] DEBUG [prov.persistence.models:148] Saving PROV record: entity(Facebook351:bundle, [prov:type="prov:Bundle"])
+[05/Mar/2013 13:50:42] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:50:42] DEBUG [prov.persistence.models:148] Saving PROV record: entity(Richard)
+[05/Mar/2013 13:50:42] DEBUG [prov.persistence.models:148] Saving PROV record: agent(Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:50:42] DEBUG [prov.persistence.models:148] Saving PROV record: bundle Twitter350:bundle
   entity(ex:entTwitter)
-  entity(ex:ent334)
-  activity(ex:download334, -, -, [prov:type="Download 334"])
-  wasGeneratedBy(ex:gen334, ex:ent334, ex:download334, -)
-  specializationOf(ex:spec334, ex:ent334, ex:entTwitter)
+  entity(ex:ent350)
+  activity(ex:download350, -, -, [prov:type="Download 350"])
+  wasGeneratedBy(ex:gen350, ex:ent350, ex:download350, -)
+  specializationOf(ex:spec350, ex:ent350, ex:entTwitter)
 endBundle
-[27/Feb/2013 18:48:44] DEBUG [prov.persistence.models:235] Loading records for bundle Twitter329:bundle
+[05/Mar/2013 13:50:42] DEBUG [prov.persistence.models:197] Saving bundle Twitter350:bundle...
+[05/Mar/2013 13:50:42] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:entTwitter)
+[05/Mar/2013 13:50:42] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:ent350)
+[05/Mar/2013 13:50:42] DEBUG [prov.persistence.models:148] Saving PROV record: activity(ex:download350, -, -, [prov:type="Download 350"])
+[05/Mar/2013 13:50:42] DEBUG [prov.persistence.models:148] Saving PROV record: wasGeneratedBy(ex:gen350, ex:ent350, ex:download350, -)
+[05/Mar/2013 13:50:42] DEBUG [prov.persistence.models:148] Saving PROV record: specializationOf(ex:spec350, ex:ent350, ex:entTwitter)
+[05/Mar/2013 13:50:42] DEBUG [prov.persistence.models:148] Saving PROV record: bundle Facebook351:bundle
+  entity(ex:ent351)
+  entity(ex:entFacebook)
+  activity(ex:download351, -, -, [prov:type="Download 351"])
+  wasGeneratedBy(ex:gen351, ex:ent351, ex:download351, -)
+  specializationOf(ex:spec351, ex:ent351, ex:entFacebook)
 endBundle
-[27/Feb/2013 18:48:45] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entTwitter)
-[27/Feb/2013 18:48:45] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent329)
-[27/Feb/2013 18:48:45] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download329, -, -, [prov:type="Download 329"])
-[27/Feb/2013 18:48:45] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen329, ex:ent329, ex:download329, -)
-[27/Feb/2013 18:48:45] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec329, ex:ent329, ex:entTwitter)
-[27/Feb/2013 18:48:45] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Twitter329:bundle
+[05/Mar/2013 13:50:42] DEBUG [prov.persistence.models:197] Saving bundle Facebook351:bundle...
+[05/Mar/2013 13:50:42] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:ent351)
+[05/Mar/2013 13:50:42] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:entFacebook)
+[05/Mar/2013 13:50:42] DEBUG [prov.persistence.models:148] Saving PROV record: activity(ex:download351, -, -, [prov:type="Download 351"])
+[05/Mar/2013 13:50:42] DEBUG [prov.persistence.models:148] Saving PROV record: wasGeneratedBy(ex:gen351, ex:ent351, ex:download351, -)
+[05/Mar/2013 13:50:43] DEBUG [prov.persistence.models:148] Saving PROV record: specializationOf(ex:spec351, ex:ent351, ex:entFacebook)
+[05/Mar/2013 13:50:43] DEBUG [prov.persistence.models:148] Saving PROV record: wasAttributedTo(ex:attr350, Twitter350:bundle, Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:50:43] DEBUG [prov.persistence.models:148] Saving PROV record: wasAttributedTo(ex:attr351, Facebook351:bundle, Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:50:43] DEBUG [prov.persistence.models:148] Saving PROV record: specializationOf(ex:specRichard 2013-03-05 13:04:09 UTC, ex:Richard 2013-03-05 13:04:09 UTC, Richard)
+[05/Mar/2013 13:51:28] DEBUG [prov.persistence.models:109] Loading bundle id BBC
+[05/Mar/2013 13:51:28] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:51:28] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Richard)
+[05/Mar/2013 13:51:28] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:51:28] DEBUG [prov.persistence.models:235] Loading records for bundle Twitter350:bundle
+endBundle
+[05/Mar/2013 13:51:28] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent350)
+[05/Mar/2013 13:51:28] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entTwitter)
+[05/Mar/2013 13:51:28] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec350, ex:ent350, ex:entTwitter)
+[05/Mar/2013 13:51:28] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download350, -, -, [prov:type="Download 350"])
+[05/Mar/2013 13:51:28] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen350, ex:ent350, ex:download350, -)
+[05/Mar/2013 13:51:28] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Twitter350:bundle
+  entity(ex:ent350)
   entity(ex:entTwitter)
-  entity(ex:ent329)
-  activity(ex:download329, -, -, [prov:type="Download 329"])
-  wasGeneratedBy(ex:gen329, ex:ent329, ex:download329, -)
-  specializationOf(ex:spec329, ex:ent329, ex:entTwitter)
+  specializationOf(ex:spec350, ex:ent350, ex:entTwitter)
+  activity(ex:download350, -, -, [prov:type="Download 350"])
+  wasGeneratedBy(ex:gen350, ex:ent350, ex:download350, -)
 endBundle
-[27/Feb/2013 18:48:45] DEBUG [prov.persistence.models:235] Loading records for bundle Twitter335:bundle
+[05/Mar/2013 13:51:28] DEBUG [prov.persistence.models:235] Loading records for bundle Facebook351:bundle
 endBundle
-[27/Feb/2013 18:48:45] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent335)
-[27/Feb/2013 18:48:45] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download335, -, -, [prov:type="Download 335"])
-[27/Feb/2013 18:48:45] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen335, ex:ent335, ex:download335, -)
-[27/Feb/2013 18:48:45] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entTwitter)
-[27/Feb/2013 18:48:45] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec335, ex:ent335, ex:entTwitter)
-[27/Feb/2013 18:48:45] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Twitter335:bundle
-  entity(ex:ent335)
-  activity(ex:download335, -, -, [prov:type="Download 335"])
-  wasGeneratedBy(ex:gen335, ex:ent335, ex:download335, -)
+[05/Mar/2013 13:51:28] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent351)
+[05/Mar/2013 13:51:28] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entFacebook)
+[05/Mar/2013 13:51:28] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download351, -, -, [prov:type="Download 351"])
+[05/Mar/2013 13:51:28] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen351, ex:ent351, ex:download351, -)
+[05/Mar/2013 13:51:28] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec351, ex:ent351, ex:entFacebook)
+[05/Mar/2013 13:51:28] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Facebook351:bundle
+  entity(ex:ent351)
+  entity(ex:entFacebook)
+  activity(ex:download351, -, -, [prov:type="Download 351"])
+  wasGeneratedBy(ex:gen351, ex:ent351, ex:download351, -)
+  specializationOf(ex:spec351, ex:ent351, ex:entFacebook)
+endBundle
+[05/Mar/2013 13:51:28] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Twitter350:bundle, [prov:type="prov:Bundle"])
+[05/Mar/2013 13:51:28] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr350, Twitter350:bundle, Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:51:28] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Facebook351:bundle, [prov:type="prov:Bundle"])
+[05/Mar/2013 13:51:28] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr351, Facebook351:bundle, Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:51:28] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:specRichard 2013-03-05 13:04:09 UTC, ex:Richard 2013-03-05 13:04:09 UTC, Richard)
+[05/Mar/2013 13:52:03] DEBUG [prov.persistence.models:109] Loading bundle id Twitter-350
+[05/Mar/2013 13:52:04] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Twitter350:bundle, [prov:type="prov:Bundle"])
+[05/Mar/2013 13:52:04] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:52:04] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Richard)
+[05/Mar/2013 13:52:04] DEBUG [prov.persistence.models:235] Loading records for bundle Twitter350:bundle
+endBundle
+[05/Mar/2013 13:52:04] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download350, -, -, [prov:type="Download 350"])
+[05/Mar/2013 13:52:04] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent350)
+[05/Mar/2013 13:52:04] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen350, ex:ent350, ex:download350, -)
+[05/Mar/2013 13:52:04] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entTwitter)
+[05/Mar/2013 13:52:04] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec350, ex:ent350, ex:entTwitter)
+[05/Mar/2013 13:52:04] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Twitter350:bundle
+  activity(ex:download350, -, -, [prov:type="Download 350"])
+  entity(ex:ent350)
+  wasGeneratedBy(ex:gen350, ex:ent350, ex:download350, -)
   entity(ex:entTwitter)
-  specializationOf(ex:spec335, ex:ent335, ex:entTwitter)
+  specializationOf(ex:spec350, ex:ent350, ex:entTwitter)
 endBundle
-[27/Feb/2013 18:48:45] DEBUG [prov.persistence.models:235] Loading records for bundle Twitter326:bundle
+[05/Mar/2013 13:52:04] DEBUG [prov.persistence.models:239] Loaded PROV record: // agent(Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:52:04] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr350, Twitter350:bundle, Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:52:04] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:specRichard 2013-03-05 13:04:09 UTC, ex:Richard 2013-03-05 13:04:09 UTC, Richard)
+[05/Mar/2013 13:52:04] DEBUG [prov.persistence.models:109] Loading bundle id Facebook-351
+[05/Mar/2013 13:52:04] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Facebook351:bundle, [prov:type="prov:Bundle"])
+[05/Mar/2013 13:52:04] DEBUG [prov.persistence.models:239] Loaded PROV record: // agent(Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:52:04] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr351, Facebook351:bundle, Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:52:04] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:52:04] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Richard)
+[05/Mar/2013 13:52:04] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:specRichard 2013-03-05 13:04:09 UTC, ex:Richard 2013-03-05 13:04:09 UTC, Richard)
+[05/Mar/2013 13:52:04] DEBUG [prov.persistence.models:235] Loading records for bundle Facebook351:bundle
 endBundle
-[27/Feb/2013 18:48:45] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent326)
-[27/Feb/2013 18:48:45] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download326, -, -, [prov:type="Download 326"])
-[27/Feb/2013 18:48:45] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen326, ex:ent326, ex:download326, -)
-[27/Feb/2013 18:48:45] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entTwitter)
-[27/Feb/2013 18:48:45] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec326, ex:ent326, ex:entTwitter)
-[27/Feb/2013 18:48:45] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Twitter326:bundle
-  entity(ex:ent326)
-  activity(ex:download326, -, -, [prov:type="Download 326"])
-  wasGeneratedBy(ex:gen326, ex:ent326, ex:download326, -)
+[05/Mar/2013 13:52:05] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent351)
+[05/Mar/2013 13:52:05] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entFacebook)
+[05/Mar/2013 13:52:05] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download351, -, -, [prov:type="Download 351"])
+[05/Mar/2013 13:52:05] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen351, ex:ent351, ex:download351, -)
+[05/Mar/2013 13:52:05] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec351, ex:ent351, ex:entFacebook)
+[05/Mar/2013 13:52:05] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Facebook351:bundle
+  entity(ex:ent351)
+  entity(ex:entFacebook)
+  activity(ex:download351, -, -, [prov:type="Download 351"])
+  wasGeneratedBy(ex:gen351, ex:ent351, ex:download351, -)
+  specializationOf(ex:spec351, ex:ent351, ex:entFacebook)
+endBundle
+[05/Mar/2013 13:52:05] DEBUG [root:169] <MultiValueDict: {}>
+[05/Mar/2013 13:52:05] DEBUG [prov.persistence.models:92] Saving namespaces...
+[05/Mar/2013 13:52:05] DEBUG [prov.persistence.models:197] Saving bundle BBC...
+[05/Mar/2013 13:52:05] DEBUG [prov.persistence.models:148] Saving PROV record: entity(Twitter350:bundle, [prov:type="prov:Bundle"])
+[05/Mar/2013 13:52:05] DEBUG [prov.persistence.models:148] Saving PROV record: entity(Facebook351:bundle, [prov:type="prov:Bundle"])
+[05/Mar/2013 13:52:05] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:52:05] DEBUG [prov.persistence.models:148] Saving PROV record: entity(Richard)
+[05/Mar/2013 13:52:05] DEBUG [prov.persistence.models:148] Saving PROV record: agent(Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:52:05] DEBUG [prov.persistence.models:148] Saving PROV record: bundle Twitter350:bundle
   entity(ex:entTwitter)
-  specializationOf(ex:spec326, ex:ent326, ex:entTwitter)
+  entity(ex:ent350)
+  activity(ex:download350, -, -, [prov:type="Download 350"])
+  wasGeneratedBy(ex:gen350, ex:ent350, ex:download350, -)
+  specializationOf(ex:spec350, ex:ent350, ex:entTwitter)
 endBundle
-[27/Feb/2013 18:48:45] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(ex:der329, Twitter329:bundle, Twitter326:bundle, -, -, -)
-[27/Feb/2013 18:48:45] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(ex:der335, Twitter335:bundle, Twitter334:bundle, -, -, -)
-[27/Feb/2013 18:48:45] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(ex:der334, Twitter334:bundle, Twitter329:bundle, -, -, -)
-[27/Feb/2013 18:48:45] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(ex:revRichard 2013-02-27 18:28:59 UTC, ex:Richard 2013-02-27 18:28:59 UTC, ex:Richard 2013-02-27 17:49:02 UTC, -, -, -, [prov:type="prov:Revision"])
-[27/Feb/2013 18:48:45] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr329, Twitter329:bundle, Richard 2013-02-27 17:49:02 UTC)
-[27/Feb/2013 18:48:45] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr335, Twitter335:bundle, Richard 2013-02-27 18:28:59 UTC Proxy)
-[27/Feb/2013 18:51:38] DEBUG [prov.persistence.models:109] Loading bundle id Twitter-335
-[27/Feb/2013 18:51:38] DEBUG [prov.persistence.models:239] Loaded PROV record: // agent(Richard 2013-02-27 18:28:59 UTC Proxy)
-[27/Feb/2013 18:51:38] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Twitter334:bundle, [prov:type="prov:Bundle"])
-[27/Feb/2013 18:51:38] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(Richard 2013-02-27 18:28:59 UTC)
-[27/Feb/2013 18:51:38] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr334, Twitter334:bundle, Richard 2013-02-27 18:28:59 UTC)
-[27/Feb/2013 18:51:38] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Twitter326:bundle, [prov:type="prov:Bundle"])
-[27/Feb/2013 18:51:38] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(Richard 2013-02-27 17:49:02 UTC)
-[27/Feb/2013 18:51:38] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr326, Twitter326:bundle, Richard 2013-02-27 17:49:02 UTC)
-[27/Feb/2013 18:51:38] DEBUG [prov.persistence.models:239] Loaded PROV record: actedOnBehalfOf(ex:aobo335, Richard 2013-02-27 18:28:59 UTC Proxy, Richard 2013-02-27 18:28:59 UTC, -)
-[27/Feb/2013 18:51:38] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Richard 2013-02-27 18:28:59 UTC)
-[27/Feb/2013 18:51:38] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Richard)
-[27/Feb/2013 18:51:38] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:specRichard 2013-02-27 18:28:59 UTC, ex:Richard 2013-02-27 18:28:59 UTC, Richard)
-[27/Feb/2013 18:51:38] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Richard 2013-02-27 17:49:02 UTC)
-[27/Feb/2013 18:51:38] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:specRichard 2013-02-27 17:49:02 UTC, ex:Richard 2013-02-27 17:49:02 UTC, Richard)
-[27/Feb/2013 18:51:38] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Twitter335:bundle, [prov:type="prov:Bundle"])
-[27/Feb/2013 18:51:38] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Twitter329:bundle, [prov:type="prov:Bundle"])
-[27/Feb/2013 18:51:38] DEBUG [prov.persistence.models:235] Loading records for bundle Twitter334:bundle
+[05/Mar/2013 13:52:05] DEBUG [prov.persistence.models:197] Saving bundle Twitter350:bundle...
+[05/Mar/2013 13:52:05] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:entTwitter)
+[05/Mar/2013 13:52:05] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:ent350)
+[05/Mar/2013 13:52:05] DEBUG [prov.persistence.models:148] Saving PROV record: activity(ex:download350, -, -, [prov:type="Download 350"])
+[05/Mar/2013 13:52:05] DEBUG [prov.persistence.models:148] Saving PROV record: wasGeneratedBy(ex:gen350, ex:ent350, ex:download350, -)
+[05/Mar/2013 13:52:06] DEBUG [prov.persistence.models:148] Saving PROV record: specializationOf(ex:spec350, ex:ent350, ex:entTwitter)
+[05/Mar/2013 13:52:06] DEBUG [prov.persistence.models:148] Saving PROV record: bundle Facebook351:bundle
+  entity(ex:ent351)
+  entity(ex:entFacebook)
+  activity(ex:download351, -, -, [prov:type="Download 351"])
+  wasGeneratedBy(ex:gen351, ex:ent351, ex:download351, -)
+  specializationOf(ex:spec351, ex:ent351, ex:entFacebook)
 endBundle
-[27/Feb/2013 18:51:38] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entTwitter)
-[27/Feb/2013 18:51:38] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent334)
-[27/Feb/2013 18:51:38] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download334, -, -, [prov:type="Download 334"])
-[27/Feb/2013 18:51:38] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen334, ex:ent334, ex:download334, -)
-[27/Feb/2013 18:51:38] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec334, ex:ent334, ex:entTwitter)
-[27/Feb/2013 18:51:38] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Twitter334:bundle
+[05/Mar/2013 13:52:06] DEBUG [prov.persistence.models:197] Saving bundle Facebook351:bundle...
+[05/Mar/2013 13:52:06] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:ent351)
+[05/Mar/2013 13:52:06] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:entFacebook)
+[05/Mar/2013 13:52:06] DEBUG [prov.persistence.models:148] Saving PROV record: activity(ex:download351, -, -, [prov:type="Download 351"])
+[05/Mar/2013 13:52:06] DEBUG [prov.persistence.models:148] Saving PROV record: wasGeneratedBy(ex:gen351, ex:ent351, ex:download351, -)
+[05/Mar/2013 13:52:06] DEBUG [prov.persistence.models:148] Saving PROV record: specializationOf(ex:spec351, ex:ent351, ex:entFacebook)
+[05/Mar/2013 13:52:06] DEBUG [prov.persistence.models:148] Saving PROV record: wasAttributedTo(ex:attr350, Twitter350:bundle, Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:52:06] DEBUG [prov.persistence.models:148] Saving PROV record: wasAttributedTo(ex:attr351, Facebook351:bundle, Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:52:07] DEBUG [prov.persistence.models:148] Saving PROV record: specializationOf(ex:specRichard 2013-03-05 13:04:09 UTC, ex:Richard 2013-03-05 13:04:09 UTC, Richard)
+[05/Mar/2013 13:53:21] DEBUG [prov.persistence.models:109] Loading bundle id Twitter-350
+[05/Mar/2013 13:53:21] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Twitter350:bundle, [prov:type="prov:Bundle"])
+[05/Mar/2013 13:53:21] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:53:21] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Richard)
+[05/Mar/2013 13:53:21] DEBUG [prov.persistence.models:235] Loading records for bundle Twitter350:bundle
+endBundle
+[05/Mar/2013 13:53:21] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download350, -, -, [prov:type="Download 350"])
+[05/Mar/2013 13:53:21] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent350)
+[05/Mar/2013 13:53:21] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen350, ex:ent350, ex:download350, -)
+[05/Mar/2013 13:53:21] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entTwitter)
+[05/Mar/2013 13:53:21] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec350, ex:ent350, ex:entTwitter)
+[05/Mar/2013 13:53:21] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Twitter350:bundle
+  activity(ex:download350, -, -, [prov:type="Download 350"])
+  entity(ex:ent350)
+  wasGeneratedBy(ex:gen350, ex:ent350, ex:download350, -)
   entity(ex:entTwitter)
-  entity(ex:ent334)
-  activity(ex:download334, -, -, [prov:type="Download 334"])
-  wasGeneratedBy(ex:gen334, ex:ent334, ex:download334, -)
-  specializationOf(ex:spec334, ex:ent334, ex:entTwitter)
+  specializationOf(ex:spec350, ex:ent350, ex:entTwitter)
 endBundle
-[27/Feb/2013 18:51:38] DEBUG [prov.persistence.models:235] Loading records for bundle Twitter329:bundle
+[05/Mar/2013 13:53:21] DEBUG [prov.persistence.models:239] Loaded PROV record: // agent(Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:53:21] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr350, Twitter350:bundle, Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:53:21] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:specRichard 2013-03-05 13:04:09 UTC, ex:Richard 2013-03-05 13:04:09 UTC, Richard)
+[05/Mar/2013 13:53:21] DEBUG [prov.persistence.models:109] Loading bundle id Facebook-351
+[05/Mar/2013 13:53:22] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Facebook351:bundle, [prov:type="prov:Bundle"])
+[05/Mar/2013 13:53:22] DEBUG [prov.persistence.models:239] Loaded PROV record: // agent(Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:53:22] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr351, Facebook351:bundle, Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:53:22] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:53:22] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Richard)
+[05/Mar/2013 13:53:22] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:specRichard 2013-03-05 13:04:09 UTC, ex:Richard 2013-03-05 13:04:09 UTC, Richard)
+[05/Mar/2013 13:53:22] DEBUG [prov.persistence.models:235] Loading records for bundle Facebook351:bundle
 endBundle
-[27/Feb/2013 18:51:38] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entTwitter)
-[27/Feb/2013 18:51:38] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent329)
-[27/Feb/2013 18:51:38] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download329, -, -, [prov:type="Download 329"])
-[27/Feb/2013 18:51:38] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen329, ex:ent329, ex:download329, -)
-[27/Feb/2013 18:51:38] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec329, ex:ent329, ex:entTwitter)
-[27/Feb/2013 18:51:38] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Twitter329:bundle
+[05/Mar/2013 13:53:22] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent351)
+[05/Mar/2013 13:53:22] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entFacebook)
+[05/Mar/2013 13:53:22] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download351, -, -, [prov:type="Download 351"])
+[05/Mar/2013 13:53:22] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen351, ex:ent351, ex:download351, -)
+[05/Mar/2013 13:53:22] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec351, ex:ent351, ex:entFacebook)
+[05/Mar/2013 13:53:22] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Facebook351:bundle
+  entity(ex:ent351)
+  entity(ex:entFacebook)
+  activity(ex:download351, -, -, [prov:type="Download 351"])
+  wasGeneratedBy(ex:gen351, ex:ent351, ex:download351, -)
+  specializationOf(ex:spec351, ex:ent351, ex:entFacebook)
+endBundle
+[05/Mar/2013 13:53:22] DEBUG [root:169] <MultiValueDict: {}>
+[05/Mar/2013 13:53:22] DEBUG [prov.persistence.models:92] Saving namespaces...
+[05/Mar/2013 13:53:22] DEBUG [prov.persistence.models:197] Saving bundle BBC...
+[05/Mar/2013 13:53:22] DEBUG [prov.persistence.models:148] Saving PROV record: entity(Twitter350:bundle, [prov:type="prov:Bundle"])
+[05/Mar/2013 13:53:22] DEBUG [prov.persistence.models:148] Saving PROV record: entity(Facebook351:bundle, [prov:type="prov:Bundle"])
+[05/Mar/2013 13:53:22] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:53:22] DEBUG [prov.persistence.models:148] Saving PROV record: entity(Richard)
+[05/Mar/2013 13:53:22] DEBUG [prov.persistence.models:148] Saving PROV record: agent(Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:53:22] DEBUG [prov.persistence.models:148] Saving PROV record: bundle Twitter350:bundle
   entity(ex:entTwitter)
-  entity(ex:ent329)
-  activity(ex:download329, -, -, [prov:type="Download 329"])
-  wasGeneratedBy(ex:gen329, ex:ent329, ex:download329, -)
-  specializationOf(ex:spec329, ex:ent329, ex:entTwitter)
+  entity(ex:ent350)
+  activity(ex:download350, -, -, [prov:type="Download 350"])
+  wasGeneratedBy(ex:gen350, ex:ent350, ex:download350, -)
+  specializationOf(ex:spec350, ex:ent350, ex:entTwitter)
 endBundle
-[27/Feb/2013 18:51:38] DEBUG [prov.persistence.models:235] Loading records for bundle Twitter335:bundle
+[05/Mar/2013 13:53:22] DEBUG [prov.persistence.models:197] Saving bundle Twitter350:bundle...
+[05/Mar/2013 13:53:22] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:entTwitter)
+[05/Mar/2013 13:53:22] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:ent350)
+[05/Mar/2013 13:53:22] DEBUG [prov.persistence.models:148] Saving PROV record: activity(ex:download350, -, -, [prov:type="Download 350"])
+[05/Mar/2013 13:53:23] DEBUG [prov.persistence.models:148] Saving PROV record: wasGeneratedBy(ex:gen350, ex:ent350, ex:download350, -)
+[05/Mar/2013 13:53:23] DEBUG [prov.persistence.models:148] Saving PROV record: specializationOf(ex:spec350, ex:ent350, ex:entTwitter)
+[05/Mar/2013 13:53:23] DEBUG [prov.persistence.models:148] Saving PROV record: bundle Facebook351:bundle
+  entity(ex:ent351)
+  entity(ex:entFacebook)
+  activity(ex:download351, -, -, [prov:type="Download 351"])
+  wasGeneratedBy(ex:gen351, ex:ent351, ex:download351, -)
+  specializationOf(ex:spec351, ex:ent351, ex:entFacebook)
 endBundle
-[27/Feb/2013 18:51:39] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent335)
-[27/Feb/2013 18:51:39] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download335, -, -, [prov:type="Download 335"])
-[27/Feb/2013 18:51:39] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen335, ex:ent335, ex:download335, -)
-[27/Feb/2013 18:51:39] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entTwitter)
-[27/Feb/2013 18:51:39] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec335, ex:ent335, ex:entTwitter)
-[27/Feb/2013 18:51:39] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Twitter335:bundle
-  entity(ex:ent335)
-  activity(ex:download335, -, -, [prov:type="Download 335"])
-  wasGeneratedBy(ex:gen335, ex:ent335, ex:download335, -)
+[05/Mar/2013 13:53:23] DEBUG [prov.persistence.models:197] Saving bundle Facebook351:bundle...
+[05/Mar/2013 13:53:23] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:ent351)
+[05/Mar/2013 13:53:23] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:entFacebook)
+[05/Mar/2013 13:53:23] DEBUG [prov.persistence.models:148] Saving PROV record: activity(ex:download351, -, -, [prov:type="Download 351"])
+[05/Mar/2013 13:53:23] DEBUG [prov.persistence.models:148] Saving PROV record: wasGeneratedBy(ex:gen351, ex:ent351, ex:download351, -)
+[05/Mar/2013 13:53:23] DEBUG [prov.persistence.models:148] Saving PROV record: specializationOf(ex:spec351, ex:ent351, ex:entFacebook)
+[05/Mar/2013 13:53:23] DEBUG [prov.persistence.models:148] Saving PROV record: wasAttributedTo(ex:attr350, Twitter350:bundle, Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:53:23] DEBUG [prov.persistence.models:148] Saving PROV record: wasAttributedTo(ex:attr351, Facebook351:bundle, Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:53:23] DEBUG [prov.persistence.models:148] Saving PROV record: specializationOf(ex:specRichard 2013-03-05 13:04:09 UTC, ex:Richard 2013-03-05 13:04:09 UTC, Richard)
+[05/Mar/2013 13:53:24] DEBUG [prov.persistence.models:109] Loading bundle id BBC
+[05/Mar/2013 13:53:24] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Twitter350:bundle, [prov:type="prov:Bundle"])
+[05/Mar/2013 13:53:24] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Facebook351:bundle, [prov:type="prov:Bundle"])
+[05/Mar/2013 13:53:24] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:53:24] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Richard)
+[05/Mar/2013 13:53:24] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:53:24] DEBUG [prov.persistence.models:235] Loading records for bundle Twitter350:bundle
+endBundle
+[05/Mar/2013 13:53:24] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download350, -, -, [prov:type="Download 350"])
+[05/Mar/2013 13:53:24] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent350)
+[05/Mar/2013 13:53:24] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen350, ex:ent350, ex:download350, -)
+[05/Mar/2013 13:53:24] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entTwitter)
+[05/Mar/2013 13:53:24] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec350, ex:ent350, ex:entTwitter)
+[05/Mar/2013 13:53:24] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Twitter350:bundle
+  activity(ex:download350, -, -, [prov:type="Download 350"])
+  entity(ex:ent350)
+  wasGeneratedBy(ex:gen350, ex:ent350, ex:download350, -)
   entity(ex:entTwitter)
-  specializationOf(ex:spec335, ex:ent335, ex:entTwitter)
+  specializationOf(ex:spec350, ex:ent350, ex:entTwitter)
 endBundle
-[27/Feb/2013 18:51:39] DEBUG [prov.persistence.models:235] Loading records for bundle Twitter326:bundle
+[05/Mar/2013 13:53:24] DEBUG [prov.persistence.models:235] Loading records for bundle Facebook351:bundle
 endBundle
-[27/Feb/2013 18:51:39] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent326)
-[27/Feb/2013 18:51:39] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download326, -, -, [prov:type="Download 326"])
-[27/Feb/2013 18:51:39] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen326, ex:ent326, ex:download326, -)
-[27/Feb/2013 18:51:39] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entTwitter)
-[27/Feb/2013 18:51:39] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec326, ex:ent326, ex:entTwitter)
-[27/Feb/2013 18:51:39] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Twitter326:bundle
-  entity(ex:ent326)
-  activity(ex:download326, -, -, [prov:type="Download 326"])
-  wasGeneratedBy(ex:gen326, ex:ent326, ex:download326, -)
+[05/Mar/2013 13:53:24] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent351)
+[05/Mar/2013 13:53:24] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entFacebook)
+[05/Mar/2013 13:53:24] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec351, ex:ent351, ex:entFacebook)
+[05/Mar/2013 13:53:24] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download351, -, -, [prov:type="Download 351"])
+[05/Mar/2013 13:53:24] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen351, ex:ent351, ex:download351, -)
+[05/Mar/2013 13:53:24] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Facebook351:bundle
+  entity(ex:ent351)
+  entity(ex:entFacebook)
+  specializationOf(ex:spec351, ex:ent351, ex:entFacebook)
+  activity(ex:download351, -, -, [prov:type="Download 351"])
+  wasGeneratedBy(ex:gen351, ex:ent351, ex:download351, -)
+endBundle
+[05/Mar/2013 13:53:24] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr350, Twitter350:bundle, Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:53:24] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr351, Facebook351:bundle, Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:53:24] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:specRichard 2013-03-05 13:04:09 UTC, ex:Richard 2013-03-05 13:04:09 UTC, Richard)
+[05/Mar/2013 13:53:38] DEBUG [prov.persistence.models:109] Loading bundle id BBC
+[05/Mar/2013 13:53:38] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Twitter350:bundle, [prov:type="prov:Bundle"])
+[05/Mar/2013 13:53:38] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Facebook351:bundle, [prov:type="prov:Bundle"])
+[05/Mar/2013 13:53:38] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:53:38] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Richard)
+[05/Mar/2013 13:53:38] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:53:38] DEBUG [prov.persistence.models:235] Loading records for bundle Twitter350:bundle
+endBundle
+[05/Mar/2013 13:53:38] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent350)
+[05/Mar/2013 13:53:38] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download350, -, -, [prov:type="Download 350"])
+[05/Mar/2013 13:53:38] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen350, ex:ent350, ex:download350, -)
+[05/Mar/2013 13:53:38] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entTwitter)
+[05/Mar/2013 13:53:38] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec350, ex:ent350, ex:entTwitter)
+[05/Mar/2013 13:53:38] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Twitter350:bundle
+  entity(ex:ent350)
+  activity(ex:download350, -, -, [prov:type="Download 350"])
+  wasGeneratedBy(ex:gen350, ex:ent350, ex:download350, -)
   entity(ex:entTwitter)
-  specializationOf(ex:spec326, ex:ent326, ex:entTwitter)
+  specializationOf(ex:spec350, ex:ent350, ex:entTwitter)
 endBundle
-[27/Feb/2013 18:51:39] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(ex:der329, Twitter329:bundle, Twitter326:bundle, -, -, -)
-[27/Feb/2013 18:51:39] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(ex:der335, Twitter335:bundle, Twitter334:bundle, -, -, -)
-[27/Feb/2013 18:51:39] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(ex:der334, Twitter334:bundle, Twitter329:bundle, -, -, -)
-[27/Feb/2013 18:51:39] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(ex:revRichard 2013-02-27 18:28:59 UTC, ex:Richard 2013-02-27 18:28:59 UTC, ex:Richard 2013-02-27 17:49:02 UTC, -, -, -, [prov:type="prov:Revision"])
-[27/Feb/2013 18:51:39] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr329, Twitter329:bundle, Richard 2013-02-27 17:49:02 UTC)
-[27/Feb/2013 18:51:39] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr335, Twitter335:bundle, Richard 2013-02-27 18:28:59 UTC Proxy)
-[27/Feb/2013 18:52:14] DEBUG [prov.persistence.models:109] Loading bundle id Twitter-335
-[27/Feb/2013 18:52:14] DEBUG [prov.persistence.models:239] Loaded PROV record: // agent(Richard 2013-02-27 18:28:59 UTC Proxy)
-[27/Feb/2013 18:52:14] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Twitter334:bundle, [prov:type="prov:Bundle"])
-[27/Feb/2013 18:52:14] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(Richard 2013-02-27 18:28:59 UTC)
-[27/Feb/2013 18:52:14] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr334, Twitter334:bundle, Richard 2013-02-27 18:28:59 UTC)
-[27/Feb/2013 18:52:14] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Twitter326:bundle, [prov:type="prov:Bundle"])
-[27/Feb/2013 18:52:14] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(Richard 2013-02-27 17:49:02 UTC)
-[27/Feb/2013 18:52:14] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr326, Twitter326:bundle, Richard 2013-02-27 17:49:02 UTC)
-[27/Feb/2013 18:52:14] DEBUG [prov.persistence.models:239] Loaded PROV record: actedOnBehalfOf(ex:aobo335, Richard 2013-02-27 18:28:59 UTC Proxy, Richard 2013-02-27 18:28:59 UTC, -)
-[27/Feb/2013 18:52:14] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Richard 2013-02-27 18:28:59 UTC)
-[27/Feb/2013 18:52:14] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Richard)
-[27/Feb/2013 18:52:14] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:specRichard 2013-02-27 18:28:59 UTC, ex:Richard 2013-02-27 18:28:59 UTC, Richard)
-[27/Feb/2013 18:52:14] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Richard 2013-02-27 17:49:02 UTC)
-[27/Feb/2013 18:52:14] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:specRichard 2013-02-27 17:49:02 UTC, ex:Richard 2013-02-27 17:49:02 UTC, Richard)
-[27/Feb/2013 18:52:14] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Twitter335:bundle, [prov:type="prov:Bundle"])
-[27/Feb/2013 18:52:14] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Twitter329:bundle, [prov:type="prov:Bundle"])
-[27/Feb/2013 18:52:14] DEBUG [prov.persistence.models:235] Loading records for bundle Twitter334:bundle
+[05/Mar/2013 13:53:38] DEBUG [prov.persistence.models:235] Loading records for bundle Facebook351:bundle
 endBundle
-[27/Feb/2013 18:52:14] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entTwitter)
-[27/Feb/2013 18:52:14] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent334)
-[27/Feb/2013 18:52:14] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download334, -, -, [prov:type="Download 334"])
-[27/Feb/2013 18:52:14] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen334, ex:ent334, ex:download334, -)
-[27/Feb/2013 18:52:14] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec334, ex:ent334, ex:entTwitter)
-[27/Feb/2013 18:52:14] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Twitter334:bundle
+[05/Mar/2013 13:53:38] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent351)
+[05/Mar/2013 13:53:38] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download351, -, -, [prov:type="Download 351"])
+[05/Mar/2013 13:53:38] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen351, ex:ent351, ex:download351, -)
+[05/Mar/2013 13:53:38] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entFacebook)
+[05/Mar/2013 13:53:38] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec351, ex:ent351, ex:entFacebook)
+[05/Mar/2013 13:53:38] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Facebook351:bundle
+  entity(ex:ent351)
+  activity(ex:download351, -, -, [prov:type="Download 351"])
+  wasGeneratedBy(ex:gen351, ex:ent351, ex:download351, -)
+  entity(ex:entFacebook)
+  specializationOf(ex:spec351, ex:ent351, ex:entFacebook)
+endBundle
+[05/Mar/2013 13:53:38] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr350, Twitter350:bundle, Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:53:38] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr351, Facebook351:bundle, Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:53:38] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:specRichard 2013-03-05 13:04:09 UTC, ex:Richard 2013-03-05 13:04:09 UTC, Richard)
+[05/Mar/2013 13:53:39] DEBUG [prov.persistence.models:109] Loading bundle id BBC
+[05/Mar/2013 13:53:39] DEBUG [prov.persistence.models:109] Loading bundle id BBC
+[05/Mar/2013 13:53:39] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:53:39] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Richard)
+[05/Mar/2013 13:53:39] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:53:39] DEBUG [prov.persistence.models:235] Loading records for bundle Twitter350:bundle
+endBundle
+[05/Mar/2013 13:53:39] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Twitter350:bundle, [prov:type="prov:Bundle"])
+[05/Mar/2013 13:53:39] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:53:39] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr350, Twitter350:bundle, Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:53:39] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Facebook351:bundle, [prov:type="prov:Bundle"])
+[05/Mar/2013 13:53:39] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr351, Facebook351:bundle, Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:53:39] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:53:39] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Richard)
+[05/Mar/2013 13:53:39] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:specRichard 2013-03-05 13:04:09 UTC, ex:Richard 2013-03-05 13:04:09 UTC, Richard)
+[05/Mar/2013 13:53:39] DEBUG [prov.persistence.models:235] Loading records for bundle Twitter350:bundle
+endBundle
+[05/Mar/2013 13:53:39] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent350)
+[05/Mar/2013 13:53:39] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entTwitter)
+[05/Mar/2013 13:53:39] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec350, ex:ent350, ex:entTwitter)
+[05/Mar/2013 13:53:39] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download350, -, -, [prov:type="Download 350"])
+[05/Mar/2013 13:53:39] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen350, ex:ent350, ex:download350, -)
+[05/Mar/2013 13:53:39] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Twitter350:bundle
+  entity(ex:ent350)
   entity(ex:entTwitter)
-  entity(ex:ent334)
-  activity(ex:download334, -, -, [prov:type="Download 334"])
-  wasGeneratedBy(ex:gen334, ex:ent334, ex:download334, -)
-  specializationOf(ex:spec334, ex:ent334, ex:entTwitter)
+  specializationOf(ex:spec350, ex:ent350, ex:entTwitter)
+  activity(ex:download350, -, -, [prov:type="Download 350"])
+  wasGeneratedBy(ex:gen350, ex:ent350, ex:download350, -)
 endBundle
-[27/Feb/2013 18:52:14] DEBUG [prov.persistence.models:235] Loading records for bundle Twitter329:bundle
+[05/Mar/2013 13:53:39] DEBUG [prov.persistence.models:235] Loading records for bundle Facebook351:bundle
 endBundle
-[27/Feb/2013 18:52:15] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entTwitter)
-[27/Feb/2013 18:52:15] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent329)
-[27/Feb/2013 18:52:15] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download329, -, -, [prov:type="Download 329"])
-[27/Feb/2013 18:52:15] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen329, ex:ent329, ex:download329, -)
-[27/Feb/2013 18:52:15] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec329, ex:ent329, ex:entTwitter)
-[27/Feb/2013 18:52:15] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Twitter329:bundle
+[05/Mar/2013 13:53:39] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entTwitter)
+[05/Mar/2013 13:53:39] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent350)
+[05/Mar/2013 13:53:39] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download350, -, -, [prov:type="Download 350"])
+[05/Mar/2013 13:53:39] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen350, ex:ent350, ex:download350, -)
+[05/Mar/2013 13:53:39] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec350, ex:ent350, ex:entTwitter)
+[05/Mar/2013 13:53:39] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Twitter350:bundle
   entity(ex:entTwitter)
-  entity(ex:ent329)
-  activity(ex:download329, -, -, [prov:type="Download 329"])
-  wasGeneratedBy(ex:gen329, ex:ent329, ex:download329, -)
-  specializationOf(ex:spec329, ex:ent329, ex:entTwitter)
+  entity(ex:ent350)
+  activity(ex:download350, -, -, [prov:type="Download 350"])
+  wasGeneratedBy(ex:gen350, ex:ent350, ex:download350, -)
+  specializationOf(ex:spec350, ex:ent350, ex:entTwitter)
 endBundle
-[27/Feb/2013 18:52:15] DEBUG [prov.persistence.models:235] Loading records for bundle Twitter335:bundle
+[05/Mar/2013 13:53:39] DEBUG [prov.persistence.models:235] Loading records for bundle Facebook351:bundle
 endBundle
-[27/Feb/2013 18:52:15] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent335)
-[27/Feb/2013 18:52:15] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download335, -, -, [prov:type="Download 335"])
-[27/Feb/2013 18:52:15] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen335, ex:ent335, ex:download335, -)
-[27/Feb/2013 18:52:15] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entTwitter)
-[27/Feb/2013 18:52:15] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec335, ex:ent335, ex:entTwitter)
-[27/Feb/2013 18:52:15] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Twitter335:bundle
-  entity(ex:ent335)
-  activity(ex:download335, -, -, [prov:type="Download 335"])
-  wasGeneratedBy(ex:gen335, ex:ent335, ex:download335, -)
-  entity(ex:entTwitter)
-  specializationOf(ex:spec335, ex:ent335, ex:entTwitter)
+[05/Mar/2013 13:53:40] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent351)
+[05/Mar/2013 13:53:40] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entFacebook)
+[05/Mar/2013 13:53:40] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download351, -, -, [prov:type="Download 351"])
+[05/Mar/2013 13:53:40] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen351, ex:ent351, ex:download351, -)
+[05/Mar/2013 13:53:40] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec351, ex:ent351, ex:entFacebook)
+[05/Mar/2013 13:53:40] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Facebook351:bundle
+  entity(ex:ent351)
+  entity(ex:entFacebook)
+  activity(ex:download351, -, -, [prov:type="Download 351"])
+  wasGeneratedBy(ex:gen351, ex:ent351, ex:download351, -)
+  specializationOf(ex:spec351, ex:ent351, ex:entFacebook)
 endBundle
-[27/Feb/2013 18:52:15] DEBUG [prov.persistence.models:235] Loading records for bundle Twitter326:bundle
+[05/Mar/2013 13:53:40] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Twitter350:bundle, [prov:type="prov:Bundle"])
+[05/Mar/2013 13:53:40] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr350, Twitter350:bundle, Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:53:40] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Facebook351:bundle, [prov:type="prov:Bundle"])
+[05/Mar/2013 13:53:40] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr351, Facebook351:bundle, Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 13:53:40] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:specRichard 2013-03-05 13:04:09 UTC, ex:Richard 2013-03-05 13:04:09 UTC, Richard)
+[05/Mar/2013 13:53:40] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entFacebook)
+[05/Mar/2013 13:53:40] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download351, -, -, [prov:type="Download 351"])
+[05/Mar/2013 13:53:40] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent351)
+[05/Mar/2013 13:53:40] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen351, ex:ent351, ex:download351, -)
+[05/Mar/2013 13:53:40] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec351, ex:ent351, ex:entFacebook)
+[05/Mar/2013 13:53:40] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Facebook351:bundle
+  entity(ex:entFacebook)
+  activity(ex:download351, -, -, [prov:type="Download 351"])
+  entity(ex:ent351)
+  wasGeneratedBy(ex:gen351, ex:ent351, ex:download351, -)
+  specializationOf(ex:spec351, ex:ent351, ex:entFacebook)
 endBundle
-[27/Feb/2013 18:52:15] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent326)
-[27/Feb/2013 18:52:15] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download326, -, -, [prov:type="Download 326"])
-[27/Feb/2013 18:52:15] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen326, ex:ent326, ex:download326, -)
-[27/Feb/2013 18:52:15] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entTwitter)
-[27/Feb/2013 18:52:15] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec326, ex:ent326, ex:entTwitter)
-[27/Feb/2013 18:52:15] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Twitter326:bundle
-  entity(ex:ent326)
-  activity(ex:download326, -, -, [prov:type="Download 326"])
-  wasGeneratedBy(ex:gen326, ex:ent326, ex:download326, -)
-  entity(ex:entTwitter)
-  specializationOf(ex:spec326, ex:ent326, ex:entTwitter)
-endBundle
-[27/Feb/2013 18:52:15] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(ex:der329, Twitter329:bundle, Twitter326:bundle, -, -, -)
-[27/Feb/2013 18:52:15] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(ex:der335, Twitter335:bundle, Twitter334:bundle, -, -, -)
-[27/Feb/2013 18:52:15] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(ex:der334, Twitter334:bundle, Twitter329:bundle, -, -, -)
-[27/Feb/2013 18:52:15] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(ex:revRichard 2013-02-27 18:28:59 UTC, ex:Richard 2013-02-27 18:28:59 UTC, ex:Richard 2013-02-27 17:49:02 UTC, -, -, -, [prov:type="prov:Revision"])
-[27/Feb/2013 18:52:15] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr329, Twitter329:bundle, Richard 2013-02-27 17:49:02 UTC)
-[27/Feb/2013 18:52:15] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr335, Twitter335:bundle, Richard 2013-02-27 18:28:59 UTC Proxy)
-[27/Feb/2013 22:49:36] DEBUG [prov.persistence.models:109] Loading bundle id Twitter-335
-[27/Feb/2013 22:49:36] DEBUG [prov.persistence.models:239] Loaded PROV record: // agent(Richard 2013-02-27 18:28:59 UTC Proxy)
-[27/Feb/2013 22:49:36] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Twitter334:bundle, [prov:type="prov:Bundle"])
-[27/Feb/2013 22:49:36] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(Richard 2013-02-27 18:28:59 UTC)
-[27/Feb/2013 22:49:36] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr334, Twitter334:bundle, Richard 2013-02-27 18:28:59 UTC)
-[27/Feb/2013 22:49:36] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Twitter326:bundle, [prov:type="prov:Bundle"])
-[27/Feb/2013 22:49:36] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(Richard 2013-02-27 17:49:02 UTC)
-[27/Feb/2013 22:49:36] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr326, Twitter326:bundle, Richard 2013-02-27 17:49:02 UTC)
-[27/Feb/2013 22:49:36] DEBUG [prov.persistence.models:239] Loaded PROV record: actedOnBehalfOf(ex:aobo335, Richard 2013-02-27 18:28:59 UTC Proxy, Richard 2013-02-27 18:28:59 UTC, -)
-[27/Feb/2013 22:49:36] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Richard 2013-02-27 18:28:59 UTC)
-[27/Feb/2013 22:49:36] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Richard)
-[27/Feb/2013 22:49:36] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:specRichard 2013-02-27 18:28:59 UTC, ex:Richard 2013-02-27 18:28:59 UTC, Richard)
-[27/Feb/2013 22:49:36] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Richard 2013-02-27 17:49:02 UTC)
-[27/Feb/2013 22:49:36] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:specRichard 2013-02-27 17:49:02 UTC, ex:Richard 2013-02-27 17:49:02 UTC, Richard)
-[27/Feb/2013 22:49:36] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Twitter335:bundle, [prov:type="prov:Bundle"])
-[27/Feb/2013 22:49:36] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Twitter329:bundle, [prov:type="prov:Bundle"])
-[27/Feb/2013 22:49:36] DEBUG [prov.persistence.models:235] Loading records for bundle Twitter334:bundle
-endBundle
-[27/Feb/2013 22:49:37] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entTwitter)
-[27/Feb/2013 22:49:37] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent334)
-[27/Feb/2013 22:49:37] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download334, -, -, [prov:type="Download 334"])
-[27/Feb/2013 22:49:37] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen334, ex:ent334, ex:download334, -)
-[27/Feb/2013 22:49:37] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec334, ex:ent334, ex:entTwitter)
-[27/Feb/2013 22:49:37] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Twitter334:bundle
-  entity(ex:entTwitter)
-  entity(ex:ent334)
-  activity(ex:download334, -, -, [prov:type="Download 334"])
-  wasGeneratedBy(ex:gen334, ex:ent334, ex:download334, -)
-  specializationOf(ex:spec334, ex:ent334, ex:entTwitter)
-endBundle
-[27/Feb/2013 22:49:37] DEBUG [prov.persistence.models:235] Loading records for bundle Twitter329:bundle
-endBundle
-[27/Feb/2013 22:49:37] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entTwitter)
-[27/Feb/2013 22:49:37] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent329)
-[27/Feb/2013 22:49:37] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download329, -, -, [prov:type="Download 329"])
-[27/Feb/2013 22:49:37] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen329, ex:ent329, ex:download329, -)
-[27/Feb/2013 22:49:37] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec329, ex:ent329, ex:entTwitter)
-[27/Feb/2013 22:49:37] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Twitter329:bundle
-  entity(ex:entTwitter)
-  entity(ex:ent329)
-  activity(ex:download329, -, -, [prov:type="Download 329"])
-  wasGeneratedBy(ex:gen329, ex:ent329, ex:download329, -)
-  specializationOf(ex:spec329, ex:ent329, ex:entTwitter)
-endBundle
-[27/Feb/2013 22:49:37] DEBUG [prov.persistence.models:235] Loading records for bundle Twitter335:bundle
-endBundle
-[27/Feb/2013 22:49:37] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent335)
-[27/Feb/2013 22:49:37] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download335, -, -, [prov:type="Download 335"])
-[27/Feb/2013 22:49:37] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen335, ex:ent335, ex:download335, -)
-[27/Feb/2013 22:49:37] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entTwitter)
-[27/Feb/2013 22:49:37] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec335, ex:ent335, ex:entTwitter)
-[27/Feb/2013 22:49:37] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Twitter335:bundle
-  entity(ex:ent335)
-  activity(ex:download335, -, -, [prov:type="Download 335"])
-  wasGeneratedBy(ex:gen335, ex:ent335, ex:download335, -)
-  entity(ex:entTwitter)
-  specializationOf(ex:spec335, ex:ent335, ex:entTwitter)
-endBundle
-[27/Feb/2013 22:49:37] DEBUG [prov.persistence.models:235] Loading records for bundle Twitter326:bundle
-endBundle
-[27/Feb/2013 22:49:37] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent326)
-[27/Feb/2013 22:49:37] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download326, -, -, [prov:type="Download 326"])
-[27/Feb/2013 22:49:37] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen326, ex:ent326, ex:download326, -)
-[27/Feb/2013 22:49:37] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entTwitter)
-[27/Feb/2013 22:49:37] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec326, ex:ent326, ex:entTwitter)
-[27/Feb/2013 22:49:37] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Twitter326:bundle
-  entity(ex:ent326)
-  activity(ex:download326, -, -, [prov:type="Download 326"])
-  wasGeneratedBy(ex:gen326, ex:ent326, ex:download326, -)
-  entity(ex:entTwitter)
-  specializationOf(ex:spec326, ex:ent326, ex:entTwitter)
-endBundle
-[27/Feb/2013 22:49:37] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(ex:der329, Twitter329:bundle, Twitter326:bundle, -, -, -)
-[27/Feb/2013 22:49:37] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(ex:der335, Twitter335:bundle, Twitter334:bundle, -, -, -)
-[27/Feb/2013 22:49:37] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(ex:der334, Twitter334:bundle, Twitter329:bundle, -, -, -)
-[27/Feb/2013 22:49:37] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(ex:revRichard 2013-02-27 18:28:59 UTC, ex:Richard 2013-02-27 18:28:59 UTC, ex:Richard 2013-02-27 17:49:02 UTC, -, -, -, [prov:type="prov:Revision"])
-[27/Feb/2013 22:49:37] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr329, Twitter329:bundle, Richard 2013-02-27 17:49:02 UTC)
-[27/Feb/2013 22:49:37] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr335, Twitter335:bundle, Richard 2013-02-27 18:28:59 UTC Proxy)
-[27/Feb/2013 22:50:13] DEBUG [prov.persistence.models:109] Loading bundle id Twitter-335
-[27/Feb/2013 22:50:13] DEBUG [prov.persistence.models:239] Loaded PROV record: // agent(Richard 2013-02-27 18:28:59 UTC Proxy)
-[27/Feb/2013 22:50:13] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Twitter334:bundle, [prov:type="prov:Bundle"])
-[27/Feb/2013 22:50:13] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(Richard 2013-02-27 18:28:59 UTC)
-[27/Feb/2013 22:50:13] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr334, Twitter334:bundle, Richard 2013-02-27 18:28:59 UTC)
-[27/Feb/2013 22:50:13] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Twitter326:bundle, [prov:type="prov:Bundle"])
-[27/Feb/2013 22:50:13] DEBUG [prov.persistence.models:239] Loaded PROV record: agent(Richard 2013-02-27 17:49:02 UTC)
-[27/Feb/2013 22:50:13] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr326, Twitter326:bundle, Richard 2013-02-27 17:49:02 UTC)
-[27/Feb/2013 22:50:13] DEBUG [prov.persistence.models:239] Loaded PROV record: actedOnBehalfOf(ex:aobo335, Richard 2013-02-27 18:28:59 UTC Proxy, Richard 2013-02-27 18:28:59 UTC, -)
-[27/Feb/2013 22:50:13] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Richard 2013-02-27 18:28:59 UTC)
-[27/Feb/2013 22:50:13] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Richard)
-[27/Feb/2013 22:50:13] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:specRichard 2013-02-27 18:28:59 UTC, ex:Richard 2013-02-27 18:28:59 UTC, Richard)
-[27/Feb/2013 22:50:13] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Richard 2013-02-27 17:49:02 UTC)
-[27/Feb/2013 22:50:13] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:specRichard 2013-02-27 17:49:02 UTC, ex:Richard 2013-02-27 17:49:02 UTC, Richard)
-[27/Feb/2013 22:50:13] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Twitter335:bundle, [prov:type="prov:Bundle"])
-[27/Feb/2013 22:50:13] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Twitter329:bundle, [prov:type="prov:Bundle"])
-[27/Feb/2013 22:50:13] DEBUG [prov.persistence.models:235] Loading records for bundle Twitter334:bundle
-endBundle
-[27/Feb/2013 22:50:13] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entTwitter)
-[27/Feb/2013 22:50:13] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent334)
-[27/Feb/2013 22:50:13] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download334, -, -, [prov:type="Download 334"])
-[27/Feb/2013 22:50:13] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen334, ex:ent334, ex:download334, -)
-[27/Feb/2013 22:50:13] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec334, ex:ent334, ex:entTwitter)
-[27/Feb/2013 22:50:13] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Twitter334:bundle
-  entity(ex:entTwitter)
-  entity(ex:ent334)
-  activity(ex:download334, -, -, [prov:type="Download 334"])
-  wasGeneratedBy(ex:gen334, ex:ent334, ex:download334, -)
-  specializationOf(ex:spec334, ex:ent334, ex:entTwitter)
-endBundle
-[27/Feb/2013 22:50:13] DEBUG [prov.persistence.models:235] Loading records for bundle Twitter329:bundle
-endBundle
-[27/Feb/2013 22:50:13] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entTwitter)
-[27/Feb/2013 22:50:13] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent329)
-[27/Feb/2013 22:50:13] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download329, -, -, [prov:type="Download 329"])
-[27/Feb/2013 22:50:13] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen329, ex:ent329, ex:download329, -)
-[27/Feb/2013 22:50:13] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec329, ex:ent329, ex:entTwitter)
-[27/Feb/2013 22:50:13] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Twitter329:bundle
-  entity(ex:entTwitter)
-  entity(ex:ent329)
-  activity(ex:download329, -, -, [prov:type="Download 329"])
-  wasGeneratedBy(ex:gen329, ex:ent329, ex:download329, -)
-  specializationOf(ex:spec329, ex:ent329, ex:entTwitter)
-endBundle
-[27/Feb/2013 22:50:13] DEBUG [prov.persistence.models:235] Loading records for bundle Twitter335:bundle
-endBundle
-[27/Feb/2013 22:50:13] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent335)
-[27/Feb/2013 22:50:13] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download335, -, -, [prov:type="Download 335"])
-[27/Feb/2013 22:50:13] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen335, ex:ent335, ex:download335, -)
-[27/Feb/2013 22:50:13] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entTwitter)
-[27/Feb/2013 22:50:13] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec335, ex:ent335, ex:entTwitter)
-[27/Feb/2013 22:50:13] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Twitter335:bundle
-  entity(ex:ent335)
-  activity(ex:download335, -, -, [prov:type="Download 335"])
-  wasGeneratedBy(ex:gen335, ex:ent335, ex:download335, -)
-  entity(ex:entTwitter)
-  specializationOf(ex:spec335, ex:ent335, ex:entTwitter)
-endBundle
-[27/Feb/2013 22:50:13] DEBUG [prov.persistence.models:235] Loading records for bundle Twitter326:bundle
-endBundle
-[27/Feb/2013 22:50:14] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent326)
-[27/Feb/2013 22:50:14] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download326, -, -, [prov:type="Download 326"])
-[27/Feb/2013 22:50:14] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen326, ex:ent326, ex:download326, -)
-[27/Feb/2013 22:50:14] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entTwitter)
-[27/Feb/2013 22:50:14] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec326, ex:ent326, ex:entTwitter)
-[27/Feb/2013 22:50:14] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Twitter326:bundle
-  entity(ex:ent326)
-  activity(ex:download326, -, -, [prov:type="Download 326"])
-  wasGeneratedBy(ex:gen326, ex:ent326, ex:download326, -)
-  entity(ex:entTwitter)
-  specializationOf(ex:spec326, ex:ent326, ex:entTwitter)
-endBundle
-[27/Feb/2013 22:50:14] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(ex:der329, Twitter329:bundle, Twitter326:bundle, -, -, -)
-[27/Feb/2013 22:50:14] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(ex:der335, Twitter335:bundle, Twitter334:bundle, -, -, -)
-[27/Feb/2013 22:50:14] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(ex:der334, Twitter334:bundle, Twitter329:bundle, -, -, -)
-[27/Feb/2013 22:50:14] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(ex:revRichard 2013-02-27 18:28:59 UTC, ex:Richard 2013-02-27 18:28:59 UTC, ex:Richard 2013-02-27 17:49:02 UTC, -, -, -, [prov:type="prov:Revision"])
-[27/Feb/2013 22:50:14] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr329, Twitter329:bundle, Richard 2013-02-27 17:49:02 UTC)
-[27/Feb/2013 22:50:14] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr335, Twitter335:bundle, Richard 2013-02-27 18:28:59 UTC Proxy)

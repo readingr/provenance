@@ -12,4 +12,33 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :prov_username, :access_token
 
+
+
+  def overall_prov
+  	puts "*************"
+    require 'ProvRequests'
+    require 'json'
+    require 'active_support/core_ext/hash/deep_merge'
+
+    prov = {}
+  	@dpu = self.data_provider_users
+
+  	@dpu.each do |dpu|
+  		if !dpu.downloaded_datum.blank?
+  			request = ProvRequests.get_request(self.prov_username, self.access_token, dpu.downloaded_datum.last.prov_id)
+  			results = ActiveSupport::JSON.decode(request)["prov_json"]
+  			prov = prov.deep_merge(results)
+  		end
+  	end
+
+  	if !prov.blank?
+  		response = ProvRequests.post_request(self.prov_username, self.access_token, test, "Complete Prov")
+  		prov_id = ActiveSupport::JSON.decode(response)["id"]
+  		# debugger	
+  		return "#{ENV['PROV_SERVER']}/store/bundles/#{prov_id}"
+  	else	
+  		return nil
+  	end
+
+  end
 end
