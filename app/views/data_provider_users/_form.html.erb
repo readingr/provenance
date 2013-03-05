@@ -31,6 +31,6 @@
     <%= f.select :update_frequency, [['None','None'],['hourly','hourly'], ['daily','daily'],['weekly','weekly'],['fortnightly', 'fortnightly'],['monthly','monthly']], :selected => @data_provider_user.update_frequency %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit nil, :class => 'btn' %>
   </div>
 <% end %>
