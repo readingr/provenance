@@ -60,6 +60,9 @@ class DownloadedDatum < ActiveRecord::Base
                         }, 
                         "activity"=>{
                             "ex:download#{self.id.to_s}"=>{
+                                "prov:startTime"=> "#{Time.now}",
+                                #it is assumed it takes one second
+                                "prov:endTime"=> "#{Time.now+1}",
                                 "prov:type"=>"Download #{self.id}"
                             }
                         },
@@ -117,6 +120,9 @@ class DownloadedDatum < ActiveRecord::Base
 
                         "activity"=>{
                             "ex:download#{self.id.to_s}"=>{
+                                "prov:startTime"=> "#{Time.now}",
+                                #it is assumed it takes 1 second
+                                "prov:endTime"=> "#{Time.now+1}",
                                 "prov:type"=>"Download #{self.id.to_s}"
                             }
                         },

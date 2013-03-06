@@ -396,3 +396,24 @@ endBundle
   wasGeneratedBy(ex:gen351, ex:ent351, ex:download351, -)
   specializationOf(ex:spec351, ex:ent351, ex:entFacebook)
 endBundle
+[05/Mar/2013 15:17:07] DEBUG [prov.persistence.models:109] Loading bundle id Twitter-350
+[05/Mar/2013 15:17:07] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Twitter350:bundle, [prov:type="prov:Bundle"])
+[05/Mar/2013 15:17:07] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 15:17:07] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Richard)
+[05/Mar/2013 15:17:07] DEBUG [prov.persistence.models:235] Loading records for bundle Twitter350:bundle
+endBundle
+[05/Mar/2013 15:17:07] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download350, -, -, [prov:type="Download 350"])
+[05/Mar/2013 15:17:07] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent350)
+[05/Mar/2013 15:17:07] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen350, ex:ent350, ex:download350, -)
+[05/Mar/2013 15:17:07] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entTwitter)
+[05/Mar/2013 15:17:07] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec350, ex:ent350, ex:entTwitter)
+[05/Mar/2013 15:17:07] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Twitter350:bundle
+  activity(ex:download350, -, -, [prov:type="Download 350"])
+  entity(ex:ent350)
+  wasGeneratedBy(ex:gen350, ex:ent350, ex:download350, -)
+  entity(ex:entTwitter)
+  specializationOf(ex:spec350, ex:ent350, ex:entTwitter)
+endBundle
+[05/Mar/2013 15:17:07] DEBUG [prov.persistence.models:239] Loaded PROV record: // agent(Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 15:17:07] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr350, Twitter350:bundle, Richard 2013-03-05 13:04:09 UTC)
+[05/Mar/2013 15:17:07] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:specRichard 2013-03-05 13:04:09 UTC, ex:Richard 2013-03-05 13:04:09 UTC, Richard)
