@@ -25,6 +25,7 @@ class DownloadedDatum < ActiveRecord::Base
 
         #should it be ex:Facebook-64 or should I just keep it as ex:64?
         if last_downloaded_data.nil?
+            puts "*****************************"
             new_bundle = {
                 "prefix"=> {
                     "ex"=> "http://localhost:3000" #change to sensible url
@@ -60,9 +61,10 @@ class DownloadedDatum < ActiveRecord::Base
                         }, 
                         "activity"=>{
                             "ex:download#{self.id.to_s}"=>{
-                                "prov:startTime"=> "#{Time.now}",
+                                "startTime"=> ["#{Time.now}", "xsd:dateTime"],
+                                #["2011-11-16T16:06:00", "xsd:dateTime"]
                                 #it is assumed it takes one second
-                                "prov:endTime"=> "#{Time.now+1}",
+                                "endTime"=> ["#{Time.now+1}" , "xsd:dateTime"],
                                 "prov:type"=>"Download #{self.id}"
                             }
                         },
@@ -120,10 +122,11 @@ class DownloadedDatum < ActiveRecord::Base
 
                         "activity"=>{
                             "ex:download#{self.id.to_s}"=>{
-                                "prov:startTime"=> "#{Time.now}",
-                                #it is assumed it takes 1 second
-                                "prov:endTime"=> "#{Time.now+1}",
-                                "prov:type"=>"Download #{self.id.to_s}"
+                                "startTime"=> ["#{Time.now}", "xsd:dateTime"],
+                                #["2011-11-16T16:06:00", "xsd:dateTime"]
+                                #it is assumed it takes one second
+                                "endTime"=> ["#{Time.now+1}" , "xsd:dateTime"],
+                                "prov:type"=>"Download #{self.id}"
                             }
                         },
 
