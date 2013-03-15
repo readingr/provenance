@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
   	end
 
   	if !prov.blank?
-  		response = ProvRequests.post_request(self.prov_username, self.access_token, test, "Complete Prov")
+  		response = ProvRequests.post_request(self.prov_username, self.access_token, prov, "Complete Prov")
   		prov_id = ActiveSupport::JSON.decode(response)["id"]
   		# debugger	
   		return "#{ENV['PROV_SERVER']}/store/bundles/#{prov_id}"
