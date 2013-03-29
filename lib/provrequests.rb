@@ -37,7 +37,7 @@ def self.get_request(username, apikey, bundle_number)
 	return response.body
 end
 
-#pass in @user.prov_service.username, @user.prov_service.access_token, the JSON bundle you wish to send and the name of the file
+#pass in @user.prov_username, @user.access_token, the JSON bundle you wish to send and the name of the file
 def self.post_request(username, apikey, bundle, rec_id)
 
 	# username = current_user.prov_username

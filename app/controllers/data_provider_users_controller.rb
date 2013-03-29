@@ -59,6 +59,7 @@ class DataProviderUsersController < ApplicationController
   # PUT /data_provider_users/1
   # PUT /data_provider_users/1.json
   def update
+
     @data_provider_user = DataProviderUser.find(params[:id])
 
     respond_to do |format|
@@ -87,6 +88,7 @@ class DataProviderUsersController < ApplicationController
 
 
   #this provides the login page
+  #it renders the login page from the view.
   def login
     require 'TwitterOauth'
     @data_provider_user = DataProviderUser.find(params[:id])
@@ -149,6 +151,8 @@ class DataProviderUsersController < ApplicationController
       @downloaded_datum = @data_provider_user.update_facebook
     elsif @data_provider_user.twitter?
       @downloaded_datum = @data_provider_user.update_twitter
+    elsif @data_provider_user.micropost?
+      @downloaded_datum = @data_provider_user.update_micropost
     else
       raise "Error"
     end

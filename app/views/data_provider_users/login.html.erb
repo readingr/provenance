@@ -101,11 +101,22 @@ function facebook(){
 <br />
 <div id="debug"></div>
 
-<% else @data_provider_user.twitter? %>
+<% elsif @data_provider_user.twitter? %>
 
 <h3>Twitter</h3>
 
 <%#debugger%>
+
+<% elsif @data_provider_user.micropost? %>
+
+<h3> Micropost </h3>
+</br>
+
+Enter your User ID shown on the home page.
+<p/>
+
+<%= render 'micropost' %>
+
 
 <%end%>
 

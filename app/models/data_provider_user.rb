@@ -1,5 +1,5 @@
 class DataProviderUser < ActiveRecord::Base
-  attr_accessible :data_provider_id, :password, :user_id, :username, :update_frequency
+  attr_accessible :data_provider_id, :password, :user_id, :username, :update_frequency, :uid
 
   validates :user_id, presence: true
 
@@ -15,6 +15,10 @@ class DataProviderUser < ActiveRecord::Base
 
  def twitter?
  	return self.data_provider.name == "Twitter"
+ end
+
+ def micropost?
+ 	return self.data_provider.name == "Micropost"
  end
 
 
@@ -52,6 +56,8 @@ class DataProviderUser < ActiveRecord::Base
  		return self.update_facebook
  	elsif self.twitter?
  		return self.update_twitter
+ 	elsif self.micropost?
+ 		return self.update_micropost
  	else
  		raise "error, not a data provider user option"
  	end
@@ -88,6 +94,15 @@ class DataProviderUser < ActiveRecord::Base
 
  end
 
+ def update_micropost
+ 	require 'net/http'
+ 	uri = URI("http://localhost:3001/users/#{self.uid.to_s}/get_last_micropost")
+
+ 	response = Net::HTTP.get(uri)
+
+ 	return DownloadedDatum.new(name:"Micropost", data: response, data_provider_user_id: self.id)
+
+ end
 
   
 end

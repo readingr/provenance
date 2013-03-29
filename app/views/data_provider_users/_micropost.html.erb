@@ -1,0 +1,26 @@
+
+<%= form_for(@data_provider_user, :html => { :class => "form-horizontal" }) do |f| %>
+  <% if @data_provider_user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@data_provider_user.errors.count, "error") %> prohibited this data_provider_user from being saved:</h2>
+
+      <ul>
+      <% @data_provider_user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="control-group">
+    <%= f.label :uid, class: "control-label" %>
+    <div class="controls">
+      <%= f.text_field :uid %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= f.submit nil, :class => 'btn' %>
+  </div>
+<% end %>
