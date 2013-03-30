@@ -137,8 +137,14 @@ class DownloadedDataController < ApplicationController
       require 'net/http'
       uri = URI("http://localhost:3001/users/#{@data_provider_user.uid.to_s}/remote_posting")
 
-      params = {'content' => "Post made from Web app, Downloaded Data number #{@downloaded_datum.id}", 'has_provenance' => has_provenance, 'in_reply_to' => ActiveSupport::JSON.decode(@downloaded_datum.data)['data']['id'] }
 
+      if ActiveSupport::JSON.decode(@downloaded_datum.data)['data'].blank?
+        params = {'content' => "Post made from Web app, Downloaded Data number #{@downloaded_datum.id}", 'has_provenance' => has_provenance}
+
+      else
+        params = {'content' => "Post made from Web app, Downloaded Data number #{@downloaded_datum.id}", 'has_provenance' => has_provenance, 'in_reply_to' => ActiveSupport::JSON.decode(@downloaded_datum.data)['data']['id'] }
+
+      end
       http = Net::HTTP.new(uri.host, uri.port) 
       request = Net::HTTP::Get.new(uri.path) 
 
@@ -155,5 +161,5 @@ class DownloadedDataController < ApplicationController
     end
   end
 
-  
+
 end
