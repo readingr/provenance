@@ -15,6 +15,7 @@ class DownloadedDatum < ActiveRecord::Base
 
         #remove whitespace at some point: http://stackoverflow.com/questions/1634750/ruby-function-to-remove-all-white-spaces
         #get has_provenance at some point.
+        #change prov_id to has_provenance location, makes much more sense, or put both. Up to you.
 
         #*****************
 
@@ -190,6 +191,12 @@ class DownloadedDatum < ActiveRecord::Base
                             "prov:usedEntity"=>"ex:#{self.data_provider_user.user.first_name} #{self.data_provider_user.user.last_sign_in_at}",
                             "prov:type"=> "prov:Revision"
                         }
+                    },
+                    "specializationOf"=>{
+                        "ex:spec#{self.data_provider_user.user.first_name+" "+self.data_provider_user.user.last_sign_in_at.to_s}"=>{
+                            "prov:specificEntity"=>"ex:#{self.data_provider_user.user.first_name+" "+self.data_provider_user.user.last_sign_in_at.to_s}",
+                            "prov:generalEntity"=>"#{data_provider_user.user.first_name}"
+                        }
                     }
                 }
                 bundle = revision.deep_merge(bundle)
@@ -210,6 +217,45 @@ class DownloadedDatum < ActiveRecord::Base
             else
                 #if there is no old prov, use the bundle itself
                 new_bundle = bundle
+            end
+        end
+
+
+        if !ActiveSupport::JSON.decode(self.data)['data'].blank?
+            mp = ActiveSupport::JSON.decode(self.data)['data']['has_provenance']
+            if !mp.blank?
+                prov_id = /(\d*)\.provn/.match(mp)
+                if !prov_id.nil?
+
+
+                  prov_id = prov_id[1]
+                  # debugger
+
+                  if !prov_id.blank?
+                    downloaded_prov = ProvRequests.get_request(self.data_provider_user.user.prov_username, self.data_provider_user.user.access_token, prov_id)
+                  
+                    if !downloaded_prov.blank?
+                        old_prov = ActiveSupport::JSON.decode(downloaded_prov)["prov_json"]
+
+                        if self.data_provider_user.micropost?
+                            id_no = ActiveSupport::JSON.decode(self.data)['data']['id']
+                            derived_from = {
+                                "wasDerivedFrom"=>{
+                                    "ex:rev#{self.agent}#{id_no}"=>{
+                                        "prov:generatedEntity"=>"#{data_provider_name}#{self.id.to_s}:bundle",
+                                        "prov:usedEntity"=>"ex:en#{id_no}"
+                                    }
+                                }
+                            }
+
+                            new_bundle =new_bundle.deep_merge(derived_from)
+                        end
+                        new_bundle = new_bundle.deep_merge(old_prov)
+                    end
+                    
+                  end
+
+                end
             end
         end
 

@@ -15,5 +15,6 @@
 
     <%= link_to 'View SVG', "#{ENV['PROV_SERVER']}/store/bundles/#{@downloaded_datum.prov_id}.svg" %> |
     <%= link_to 'Explicit Provenance Link', "#{ENV['PROV_SERVER']}/store/bundles/#{@downloaded_datum.prov_id}" %> |
+    Post Micropost |
     <%= link_to 'Edit', edit_data_provider_user_downloaded_datum_path(@downloaded_datum.data_provider_user.id, @downloaded_datum) %> |
     <%= link_to 'Back', data_provider_user_downloaded_data_path %>

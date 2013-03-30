@@ -124,4 +124,42 @@ class DownloadedDataController < ApplicationController
   end
 
 
+  def post_micropost
+
+
+    @downloaded_datum = DownloadedDatum.find(params[:id])
+    @data_provider_user = DataProviderUser.find(params[:data_provider_user_id])
+
+    if !@downloaded_datum.prov_id.blank?
+      content = "Post made from Web app, Downloaded Data number #{@downloaded_datum.id}"
+      has_provenance = ENV['PROV_SERVER']+"/store/bundles/"+@downloaded_datum.prov_id.to_s+".provn"
+
+      require 'net/http'
+      uri = URI("http://localhost:3001/users/#{@data_provider_user.uid.to_s}/remote_posting")
+
+      params = {'content' => "Post made from Web app, Downloaded Data number #{@downloaded_datum.id}", 'has_provenance' => has_provenance, 'in_reply_to' => ActiveSupport::JSON.decode(@downloaded_datum.data)['data']['id'] }
+
+      http = Net::HTTP.new(uri.host, uri.port) 
+      request = Net::HTTP::Get.new(uri.path) 
+
+      request.set_form_data( params )
+
+      response = http.request(request)
+
+      puts response
+
+      respond_to do |format|
+          format.html { redirect_to data_provider_user_downloaded_datum_path(@data_provider_user.id, @downloaded_datum.id)}
+      format.json { render json: @downloaded_datum, status: :created, location: @downloaded_datum }
+    end
+
+
+      # response = Net::HTTP.get(uri)
+
+    end
+
+  end
+
+
+
 end

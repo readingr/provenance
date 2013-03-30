@@ -9,6 +9,7 @@ Provenance::Application.routes.draw do
         get :return_data
         get :generate_provenance
         get :download
+        get :post_micropost
       end
     end
 
