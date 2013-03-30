@@ -151,15 +151,9 @@ class DownloadedDataController < ApplicationController
       respond_to do |format|
           format.html { redirect_to data_provider_user_downloaded_datum_path(@data_provider_user.id, @downloaded_datum.id)}
       format.json { render json: @downloaded_datum, status: :created, location: @downloaded_datum }
+      end
     end
-
-
-      # response = Net::HTTP.get(uri)
-
-    end
-
   end
 
-
-
+  
 end
