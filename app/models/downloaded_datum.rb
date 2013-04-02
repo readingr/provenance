@@ -204,7 +204,7 @@ class DownloadedDatum < ActiveRecord::Base
 
 
             #download the the provenance from the last user
-            downloaded_prov = ProvRequests.get_request(self.data_provider_user.user.prov_username, self.data_provider_user.user.access_token, last_downloaded_data.prov_id)
+            downloaded_prov = ProvRequests.get_request(self.data_provider_user.user.prov_username, self.data_provider_user.user.prov_access_token, last_downloaded_data.prov_id)
 
             #parse the json
             if !downloaded_prov.blank?
@@ -232,7 +232,7 @@ class DownloadedDatum < ActiveRecord::Base
                   # debugger
 
                   if !prov_id.blank?
-                    downloaded_prov = ProvRequests.get_request(self.data_provider_user.user.prov_username, self.data_provider_user.user.access_token, prov_id)
+                    downloaded_prov = ProvRequests.get_request(self.data_provider_user.user.prov_username, self.data_provider_user.user.prov_access_token, prov_id)
                   
                     if !downloaded_prov.blank?
                         old_prov = ActiveSupport::JSON.decode(downloaded_prov)["prov_json"]
@@ -265,7 +265,7 @@ class DownloadedDatum < ActiveRecord::Base
         rec_id = self.name + "-" + self.id.to_s
 
         #send the request to the prov web service
-        prov_json_results = ProvRequests.post_request(self.data_provider_user.user.prov_username, self.data_provider_user.user.access_token, new_bundle, rec_id)
+        prov_json_results = ProvRequests.post_request(self.data_provider_user.user.prov_username, self.data_provider_user.user.prov_access_token, new_bundle, rec_id)
 
 
         #if the results are blank, typically means 401 so destroy self

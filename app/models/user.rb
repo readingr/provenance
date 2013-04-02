@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
-  validates :first_name, :last_name, :prov_username, :access_token, :presence => true
+  validates :first_name, :last_name, :prov_username, :prov_access_token, :presence => true
 
   has_many :data_provider_users
 
@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :prov_username, :access_token
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :prov_username, :prov_access_token
 
 
 
@@ -25,14 +25,14 @@ class User < ActiveRecord::Base
 
   	@dpu.each do |dpu|
   		if !dpu.downloaded_datum.blank?
-  			request = ProvRequests.get_request(self.prov_username, self.access_token, dpu.downloaded_datum.last.prov_id)
+  			request = ProvRequests.get_request(self.prov_username, self.prov_access_token, dpu.downloaded_datum.last.prov_id)
   			results = ActiveSupport::JSON.decode(request)["prov_json"]
   			prov = prov.deep_merge(results)
   		end
   	end
 
   	if !prov.blank?
-  		response = ProvRequests.post_request(self.prov_username, self.access_token, prov, "Complete Prov")
+  		response = ProvRequests.post_request(self.prov_username, self.prov_access_token, prov, "Complete Prov")
   		prov_id = ActiveSupport::JSON.decode(response)["id"]
   		# debugger	
   		return "#{ENV['PROV_SERVER']}/store/bundles/#{prov_id}"

@@ -91,12 +91,12 @@ class UsersController < ApplicationController
 
 
     #if the user has signed up to the prov web service
-    if current_user.prov_username != nil and current_user.access_token != nil
-      # test = ProvRequests.get_request(current_user.prov_username, current_user.access_token, 2)
+    if current_user.prov_username != nil and current_user.prov_access_token != nil
+      # test = ProvRequests.get_request(current_user.prov_username, current_user.prov_access_token, 2)
     
       bundle = {'prefix'=>{'ex'=>'http://example'}, 'entity'=>{'ex:e1'=>{}}} 
       rec_id = "PROV-LOGIN-STUFF"
-      test = ProvRequests.post_request(current_user.prov_username, current_user.access_token, bundle, rec_id)
+      test = ProvRequests.post_request(current_user.prov_username, current_user.prov_access_token, bundle, rec_id)
     end
 
     respond_to do |format|

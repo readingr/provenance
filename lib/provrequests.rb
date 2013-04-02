@@ -1,7 +1,7 @@
 module ProvRequests
 
 
-#pass in @user.prov_username, @user.access_token and the bundle id you wish to access.
+#pass in @user.prov_username, @user.prov_access_token and the bundle id you wish to access.
 def self.get_request(username, apikey, bundle_number)
 	require 'net/http'
 	require 'uri'
@@ -37,7 +37,7 @@ def self.get_request(username, apikey, bundle_number)
 	return response.body
 end
 
-#pass in @user.prov_username, @user.access_token, the JSON bundle you wish to send and the name of the file
+#pass in @user.prov_username, @user.prov_access_token, the JSON bundle you wish to send and the name of the file
 def self.post_request(username, apikey, bundle, rec_id)
 
 	# username = current_user.prov_username
