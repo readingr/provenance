@@ -1,116 +1,130 @@
-[30/Mar/2013 11:19:23] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Facebook403:bundle
-  entity(ex:ent403)
-  activity(ex:download403, -, -, [endTime="2013-03-30 11:05:42 +0000", endTime="xsd:dateTime", prov:type="Download 403", startTime="2013-03-30 11:05:41 +0000", startTime="xsd:dateTime"])
-  wasGeneratedBy(ex:gen403, ex:ent403, ex:download403, -)
+[08/Apr/2013 12:35:30] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr405, Facebook405:bundle, Richard 2013-04-08 11:03:21 UTC)
+[08/Apr/2013 12:35:30] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:specRichard 2013-04-08 11:03:21 UTC, ex:Richard 2013-04-08 11:03:21 UTC, Richard)
+[08/Apr/2013 12:36:31] DEBUG [root:169] <MultiValueDict: {}>
+[08/Apr/2013 12:36:31] DEBUG [prov.persistence.models:92] Saving namespaces...
+[08/Apr/2013 12:36:31] DEBUG [prov.persistence.models:197] Saving bundle Facebook-406...
+[08/Apr/2013 12:36:31] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:Richard 2013-04-08 11:03:21 UTC)
+[08/Apr/2013 12:36:31] DEBUG [prov.persistence.models:148] Saving PROV record: entity(Facebook406:bundle, [prov:type="prov:Bundle"])
+[08/Apr/2013 12:36:32] DEBUG [prov.persistence.models:148] Saving PROV record: entity(Richard)
+[08/Apr/2013 12:36:32] DEBUG [prov.persistence.models:148] Saving PROV record: bundle Facebook406:bundle
+  entity(ex:ent406)
   entity(ex:entFacebook)
-  specializationOf(ex:spec403, ex:ent403, ex:entFacebook)
+  activity(ex:download406, -, -, [endTime="2013-04-08T12:36:32", endTime="xsd:dateTime", prov:type="Download 406", startTime="2013-04-08T12:36:31", startTime="xsd:dateTime"])
+  wasGeneratedBy(ex:gen406, ex:ent406, ex:download406, -)
+  specializationOf(ex:spec406, ex:ent406, ex:entFacebook)
 endBundle
-[30/Mar/2013 11:19:23] DEBUG [prov.persistence.models:235] Loading records for bundle Facebook351:bundle
+[08/Apr/2013 12:36:32] DEBUG [prov.persistence.models:197] Saving bundle Facebook406:bundle...
+[08/Apr/2013 12:36:32] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:ent406)
+[08/Apr/2013 12:36:32] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:entFacebook)
+[08/Apr/2013 12:36:32] DEBUG [prov.persistence.models:148] Saving PROV record: activity(ex:download406, -, -, [endTime="2013-04-08T12:36:32", endTime="xsd:dateTime", prov:type="Download 406", startTime="2013-04-08T12:36:31", startTime="xsd:dateTime"])
+[08/Apr/2013 12:36:32] DEBUG [prov.persistence.models:148] Saving PROV record: wasGeneratedBy(ex:gen406, ex:ent406, ex:download406, -)
+[08/Apr/2013 12:36:32] DEBUG [prov.persistence.models:148] Saving PROV record: specializationOf(ex:spec406, ex:ent406, ex:entFacebook)
+[08/Apr/2013 12:36:32] DEBUG [prov.persistence.models:148] Saving PROV record: wasAttributedTo(ex:attr406, Facebook406:bundle, Richard 2013-04-08 11:03:21 UTC)
+[08/Apr/2013 12:36:32] DEBUG [prov.persistence.models:148] Saving PROV record: // agent(Richard 2013-04-08 11:03:21 UTC)
+[08/Apr/2013 12:36:32] DEBUG [prov.persistence.models:148] Saving PROV record: specializationOf(ex:specRichard 2013-04-08 11:03:21 UTC, ex:Richard 2013-04-08 11:03:21 UTC, Richard)
+[08/Apr/2013 12:36:34] DEBUG [prov.persistence.models:109] Loading bundle id Facebook-406
+[08/Apr/2013 12:36:34] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Richard 2013-04-08 11:03:21 UTC)
+[08/Apr/2013 12:36:34] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Facebook406:bundle, [prov:type="prov:Bundle"])
+[08/Apr/2013 12:36:34] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Richard)
+[08/Apr/2013 12:36:34] DEBUG [prov.persistence.models:235] Loading records for bundle Facebook406:bundle
 endBundle
-[30/Mar/2013 11:19:23] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent351)
-[30/Mar/2013 11:19:23] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entFacebook)
-[30/Mar/2013 11:19:23] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download351, -, -, [prov:type="Download 351"])
-[30/Mar/2013 11:19:23] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen351, ex:ent351, ex:download351, -)
-[30/Mar/2013 11:19:23] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec351, ex:ent351, ex:entFacebook)
-[30/Mar/2013 11:19:23] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Facebook351:bundle
-  entity(ex:ent351)
+[08/Apr/2013 12:36:34] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent406)
+[08/Apr/2013 12:36:34] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download406, -, -, [endTime="2013-04-08T12:36:32", endTime="xsd:dateTime", prov:type="Download 406", startTime="2013-04-08T12:36:31", startTime="xsd:dateTime"])
+[08/Apr/2013 12:36:34] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen406, ex:ent406, ex:download406, -)
+[08/Apr/2013 12:36:34] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entFacebook)
+[08/Apr/2013 12:36:34] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec406, ex:ent406, ex:entFacebook)
+[08/Apr/2013 12:36:34] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Facebook406:bundle
+  entity(ex:ent406)
+  activity(ex:download406, -, -, [endTime="2013-04-08T12:36:32", endTime="xsd:dateTime", prov:type="Download 406", startTime="2013-04-08T12:36:31", startTime="xsd:dateTime"])
+  wasGeneratedBy(ex:gen406, ex:ent406, ex:download406, -)
   entity(ex:entFacebook)
-  activity(ex:download351, -, -, [prov:type="Download 351"])
-  wasGeneratedBy(ex:gen351, ex:ent351, ex:download351, -)
-  specializationOf(ex:spec351, ex:ent351, ex:entFacebook)
+  specializationOf(ex:spec406, ex:ent406, ex:entFacebook)
 endBundle
-[30/Mar/2013 11:19:23] DEBUG [prov.persistence.models:235] Loading records for bundle Facebook364:bundle
+[08/Apr/2013 12:36:34] DEBUG [prov.persistence.models:239] Loaded PROV record: // agent(Richard 2013-04-08 11:03:21 UTC)
+[08/Apr/2013 12:36:34] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr406, Facebook406:bundle, Richard 2013-04-08 11:03:21 UTC)
+[08/Apr/2013 12:36:34] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:specRichard 2013-04-08 11:03:21 UTC, ex:Richard 2013-04-08 11:03:21 UTC, Richard)
+[08/Apr/2013 12:36:42] DEBUG [prov.persistence.models:109] Loading bundle id Facebook-406
+[08/Apr/2013 12:36:42] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Richard 2013-04-08 11:03:21 UTC)
+[08/Apr/2013 12:36:42] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Facebook406:bundle, [prov:type="prov:Bundle"])
+[08/Apr/2013 12:36:42] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Richard)
+[08/Apr/2013 12:36:42] DEBUG [prov.persistence.models:235] Loading records for bundle Facebook406:bundle
 endBundle
-[30/Mar/2013 11:19:24] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent364)
-[30/Mar/2013 11:19:24] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entFacebook)
-[30/Mar/2013 11:19:24] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download364, -, -, [endTime="2013-03-11 11:28:54 +0000", endTime="xsd:dateTime", prov:type="Download 364", startTime="2013-03-11 11:28:53 +0000", startTime="xsd:dateTime"])
-[30/Mar/2013 11:19:24] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen364, ex:ent364, ex:download364, -)
-[30/Mar/2013 11:19:24] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec364, ex:ent364, ex:entFacebook)
-[30/Mar/2013 11:19:24] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Facebook364:bundle
-  entity(ex:ent364)
+[08/Apr/2013 12:36:43] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent406)
+[08/Apr/2013 12:36:43] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download406, -, -, [endTime="2013-04-08T12:36:32", endTime="xsd:dateTime", prov:type="Download 406", startTime="2013-04-08T12:36:31", startTime="xsd:dateTime"])
+[08/Apr/2013 12:36:43] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen406, ex:ent406, ex:download406, -)
+[08/Apr/2013 12:36:43] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entFacebook)
+[08/Apr/2013 12:36:43] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec406, ex:ent406, ex:entFacebook)
+[08/Apr/2013 12:36:43] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Facebook406:bundle
+  entity(ex:ent406)
+  activity(ex:download406, -, -, [endTime="2013-04-08T12:36:32", endTime="xsd:dateTime", prov:type="Download 406", startTime="2013-04-08T12:36:31", startTime="xsd:dateTime"])
+  wasGeneratedBy(ex:gen406, ex:ent406, ex:download406, -)
   entity(ex:entFacebook)
-  activity(ex:download364, -, -, [endTime="2013-03-11 11:28:54 +0000", endTime="xsd:dateTime", prov:type="Download 364", startTime="2013-03-11 11:28:53 +0000", startTime="xsd:dateTime"])
-  wasGeneratedBy(ex:gen364, ex:ent364, ex:download364, -)
-  specializationOf(ex:spec364, ex:ent364, ex:entFacebook)
+  specializationOf(ex:spec406, ex:ent406, ex:entFacebook)
 endBundle
-[30/Mar/2013 11:19:24] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(ex:der364, Facebook364:bundle, Facebook351:bundle, -, -, -)
-[30/Mar/2013 11:19:24] DEBUG [prov.persistence.models:239] Loaded PROV record: // entity(ex:Richard 2013-03-15 15:52:01 UTC)
-[30/Mar/2013 11:19:24] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(ex:revRichard 2013-03-25 16:22:56 UTC, ex:Richard 2013-03-25 16:22:56 UTC, ex:Richard 2013-03-15 15:52:01 UTC, -, -, -, [prov:type="prov:Revision"])
-[30/Mar/2013 11:19:24] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(ex:der403, Facebook403:bundle, Facebook364:bundle, -, -, -)
-[30/Mar/2013 11:19:24] DEBUG [prov.persistence.models:239] Loaded PROV record: wasDerivedFrom(ex:revRichard 2013-03-11 11:15:42 UTC, ex:Richard 2013-03-11 11:15:42 UTC, ex:Richard 2013-03-10 16:35:56 UTC, -, -, -, [prov:type="prov:Revision"])
-[30/Mar/2013 11:19:24] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr351, Facebook351:bundle, Richard 2013-03-05 13:04:09 UTC)
-[30/Mar/2013 11:19:24] DEBUG [prov.persistence.models:239] Loaded PROV record: // agent(Richard 2013-03-25 16:22:56 UTC)
-[30/Mar/2013 11:19:24] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr403, Facebook403:bundle, Richard 2013-03-25 16:22:56 UTC)
-[30/Mar/2013 11:19:24] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr364, Facebook364:bundle, Richard 2013-03-11 11:15:42 UTC)
-[30/Mar/2013 11:19:24] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:specRichard 2013-03-11 11:15:42 UTC, ex:Richard 2013-03-11 11:15:42 UTC, Richard)
-[30/Mar/2013 11:19:24] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:specRichard 2013-03-15 15:52:01 UTC, ex:Richard 2013-03-15 15:52:01 UTC, Richard)
-[30/Mar/2013 11:19:24] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:specRichard 2013-03-05 13:04:09 UTC, ex:Richard 2013-03-05 13:04:09 UTC, Richard)
-[30/Mar/2013 11:19:24] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:specRichard 2013-03-25 16:22:56 UTC, ex:Richard 2013-03-25 16:22:56 UTC, Richard)
-[02/Apr/2013 11:44:09] DEBUG [root:169] <MultiValueDict: {}>
-[02/Apr/2013 11:44:09] DEBUG [prov.persistence.models:92] Saving namespaces...
-[02/Apr/2013 11:44:09] DEBUG [prov.persistence.models:197] Saving bundle Facebook-404...
-[02/Apr/2013 11:44:09] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:Richard 2013-03-25 16:22:56 UTC)
-[02/Apr/2013 11:44:09] DEBUG [prov.persistence.models:148] Saving PROV record: entity(Facebook404:bundle, [prov:type="prov:Bundle"])
-[02/Apr/2013 11:44:09] DEBUG [prov.persistence.models:148] Saving PROV record: entity(Richard)
-[02/Apr/2013 11:44:09] DEBUG [prov.persistence.models:148] Saving PROV record: bundle Facebook404:bundle
-  entity(ex:ent404)
+[08/Apr/2013 12:36:43] DEBUG [prov.persistence.models:239] Loaded PROV record: // agent(Richard 2013-04-08 11:03:21 UTC)
+[08/Apr/2013 12:36:43] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr406, Facebook406:bundle, Richard 2013-04-08 11:03:21 UTC)
+[08/Apr/2013 12:36:43] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:specRichard 2013-04-08 11:03:21 UTC, ex:Richard 2013-04-08 11:03:21 UTC, Richard)
+[08/Apr/2013 12:37:16] DEBUG [root:169] <MultiValueDict: {}>
+[08/Apr/2013 12:37:17] DEBUG [prov.persistence.models:92] Saving namespaces...
+[08/Apr/2013 12:37:17] DEBUG [prov.persistence.models:197] Saving bundle Facebook-407...
+[08/Apr/2013 12:37:17] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:Richard2013-04-08T11:03:21)
+[08/Apr/2013 12:37:17] DEBUG [prov.persistence.models:148] Saving PROV record: entity(Facebook407:bundle, [prov:type="prov:Bundle"])
+[08/Apr/2013 12:37:17] DEBUG [prov.persistence.models:148] Saving PROV record: entity(Richard)
+[08/Apr/2013 12:37:17] DEBUG [prov.persistence.models:148] Saving PROV record: bundle Facebook407:bundle
+  entity(ex:ent407)
   entity(ex:entFacebook)
-  activity(ex:download404, -, -, [endTime="2013-04-02 11:44:08 +0100", endTime="xsd:dateTime", prov:type="Download 404", startTime="2013-04-02 11:44:07 +0100", startTime="xsd:dateTime"])
-  wasGeneratedBy(ex:gen404, ex:ent404, ex:download404, -)
-  specializationOf(ex:spec404, ex:ent404, ex:entFacebook)
+  activity(ex:download407, -, -, [endTime="2013-04-08T12:37:17", endTime="xsd:dateTime", prov:type="Download 407", startTime="2013-04-08T12:37:16", startTime="xsd:dateTime"])
+  wasGeneratedBy(ex:gen407, ex:ent407, ex:download407, -)
+  specializationOf(ex:spec407, ex:ent407, ex:entFacebook)
 endBundle
-[02/Apr/2013 11:44:10] DEBUG [prov.persistence.models:197] Saving bundle Facebook404:bundle...
-[02/Apr/2013 11:44:10] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:ent404)
-[02/Apr/2013 11:44:10] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:entFacebook)
-[02/Apr/2013 11:44:10] DEBUG [prov.persistence.models:148] Saving PROV record: activity(ex:download404, -, -, [endTime="2013-04-02 11:44:08 +0100", endTime="xsd:dateTime", prov:type="Download 404", startTime="2013-04-02 11:44:07 +0100", startTime="xsd:dateTime"])
-[02/Apr/2013 11:44:10] DEBUG [prov.persistence.models:148] Saving PROV record: wasGeneratedBy(ex:gen404, ex:ent404, ex:download404, -)
-[02/Apr/2013 11:44:10] DEBUG [prov.persistence.models:148] Saving PROV record: specializationOf(ex:spec404, ex:ent404, ex:entFacebook)
-[02/Apr/2013 11:44:10] DEBUG [prov.persistence.models:148] Saving PROV record: wasAttributedTo(ex:attr404, Facebook404:bundle, Richard 2013-03-25 16:22:56 UTC)
-[02/Apr/2013 11:44:10] DEBUG [prov.persistence.models:148] Saving PROV record: // agent(Richard 2013-03-25 16:22:56 UTC)
-[02/Apr/2013 11:44:10] DEBUG [prov.persistence.models:148] Saving PROV record: specializationOf(ex:specRichard 2013-03-25 16:22:56 UTC, ex:Richard 2013-03-25 16:22:56 UTC, Richard)
-[02/Apr/2013 11:44:32] DEBUG [prov.persistence.models:109] Loading bundle id Facebook-404
-[02/Apr/2013 11:44:32] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Richard 2013-03-25 16:22:56 UTC)
-[02/Apr/2013 11:44:32] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Facebook404:bundle, [prov:type="prov:Bundle"])
-[02/Apr/2013 11:44:32] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Richard)
-[02/Apr/2013 11:44:32] DEBUG [prov.persistence.models:235] Loading records for bundle Facebook404:bundle
+[08/Apr/2013 12:37:17] DEBUG [prov.persistence.models:197] Saving bundle Facebook407:bundle...
+[08/Apr/2013 12:37:17] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:ent407)
+[08/Apr/2013 12:37:17] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:entFacebook)
+[08/Apr/2013 12:37:17] DEBUG [prov.persistence.models:148] Saving PROV record: activity(ex:download407, -, -, [endTime="2013-04-08T12:37:17", endTime="xsd:dateTime", prov:type="Download 407", startTime="2013-04-08T12:37:16", startTime="xsd:dateTime"])
+[08/Apr/2013 12:37:17] DEBUG [prov.persistence.models:148] Saving PROV record: wasGeneratedBy(ex:gen407, ex:ent407, ex:download407, -)
+[08/Apr/2013 12:37:17] DEBUG [prov.persistence.models:148] Saving PROV record: specializationOf(ex:spec407, ex:ent407, ex:entFacebook)
+[08/Apr/2013 12:37:17] DEBUG [prov.persistence.models:148] Saving PROV record: wasAttributedTo(ex:attr407, Facebook407:bundle, Richard2013-04-08T11:03:21)
+[08/Apr/2013 12:37:17] DEBUG [prov.persistence.models:148] Saving PROV record: // agent(Richard2013-04-08T11:03:21)
+[08/Apr/2013 12:37:17] DEBUG [prov.persistence.models:148] Saving PROV record: specializationOf(ex:specRichard2013-04-08T11:03:21, ex:Richard2013-04-08T11:03:21, Richard)
+[08/Apr/2013 12:37:24] DEBUG [prov.persistence.models:109] Loading bundle id Facebook-407
+[08/Apr/2013 12:37:24] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Richard2013-04-08T11:03:21)
+[08/Apr/2013 12:37:24] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Facebook407:bundle, [prov:type="prov:Bundle"])
+[08/Apr/2013 12:37:24] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Richard)
+[08/Apr/2013 12:37:24] DEBUG [prov.persistence.models:235] Loading records for bundle Facebook407:bundle
 endBundle
-[02/Apr/2013 11:44:32] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent404)
-[02/Apr/2013 11:44:32] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entFacebook)
-[02/Apr/2013 11:44:32] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download404, -, -, [endTime="2013-04-02 11:44:08 +0100", endTime="xsd:dateTime", prov:type="Download 404", startTime="2013-04-02 11:44:07 +0100", startTime="xsd:dateTime"])
-[02/Apr/2013 11:44:32] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen404, ex:ent404, ex:download404, -)
-[02/Apr/2013 11:44:32] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec404, ex:ent404, ex:entFacebook)
-[02/Apr/2013 11:44:32] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Facebook404:bundle
-  entity(ex:ent404)
+[08/Apr/2013 12:37:24] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent407)
+[08/Apr/2013 12:37:24] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download407, -, -, [endTime="2013-04-08T12:37:17", endTime="xsd:dateTime", prov:type="Download 407", startTime="2013-04-08T12:37:16", startTime="xsd:dateTime"])
+[08/Apr/2013 12:37:24] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen407, ex:ent407, ex:download407, -)
+[08/Apr/2013 12:37:24] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entFacebook)
+[08/Apr/2013 12:37:24] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec407, ex:ent407, ex:entFacebook)
+[08/Apr/2013 12:37:24] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Facebook407:bundle
+  entity(ex:ent407)
+  activity(ex:download407, -, -, [endTime="2013-04-08T12:37:17", endTime="xsd:dateTime", prov:type="Download 407", startTime="2013-04-08T12:37:16", startTime="xsd:dateTime"])
+  wasGeneratedBy(ex:gen407, ex:ent407, ex:download407, -)
   entity(ex:entFacebook)
-  activity(ex:download404, -, -, [endTime="2013-04-02 11:44:08 +0100", endTime="xsd:dateTime", prov:type="Download 404", startTime="2013-04-02 11:44:07 +0100", startTime="xsd:dateTime"])
-  wasGeneratedBy(ex:gen404, ex:ent404, ex:download404, -)
-  specializationOf(ex:spec404, ex:ent404, ex:entFacebook)
+  specializationOf(ex:spec407, ex:ent407, ex:entFacebook)
 endBundle
-[02/Apr/2013 11:44:32] DEBUG [prov.persistence.models:239] Loaded PROV record: // agent(Richard 2013-03-25 16:22:56 UTC)
-[02/Apr/2013 11:44:32] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr404, Facebook404:bundle, Richard 2013-03-25 16:22:56 UTC)
-[02/Apr/2013 11:44:32] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:specRichard 2013-03-25 16:22:56 UTC, ex:Richard 2013-03-25 16:22:56 UTC, Richard)
-[02/Apr/2013 11:44:36] DEBUG [prov.persistence.models:109] Loading bundle id Facebook-404
-[02/Apr/2013 11:44:36] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Richard 2013-03-25 16:22:56 UTC)
-[02/Apr/2013 11:44:36] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Facebook404:bundle, [prov:type="prov:Bundle"])
-[02/Apr/2013 11:44:36] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Richard)
-[02/Apr/2013 11:44:36] DEBUG [prov.persistence.models:235] Loading records for bundle Facebook404:bundle
+[08/Apr/2013 12:37:24] DEBUG [prov.persistence.models:239] Loaded PROV record: // agent(Richard2013-04-08T11:03:21)
+[08/Apr/2013 12:37:24] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr407, Facebook407:bundle, Richard2013-04-08T11:03:21)
+[08/Apr/2013 12:37:24] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:specRichard2013-04-08T11:03:21, ex:Richard2013-04-08T11:03:21, Richard)
+[08/Apr/2013 12:37:26] DEBUG [prov.persistence.models:109] Loading bundle id Facebook-407
+[08/Apr/2013 12:37:26] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:Richard2013-04-08T11:03:21)
+[08/Apr/2013 12:37:26] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Facebook407:bundle, [prov:type="prov:Bundle"])
+[08/Apr/2013 12:37:26] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(Richard)
+[08/Apr/2013 12:37:26] DEBUG [prov.persistence.models:235] Loading records for bundle Facebook407:bundle
 endBundle
-[02/Apr/2013 11:44:36] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent404)
-[02/Apr/2013 11:44:36] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entFacebook)
-[02/Apr/2013 11:44:36] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download404, -, -, [endTime="2013-04-02 11:44:08 +0100", endTime="xsd:dateTime", prov:type="Download 404", startTime="2013-04-02 11:44:07 +0100", startTime="xsd:dateTime"])
-[02/Apr/2013 11:44:36] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen404, ex:ent404, ex:download404, -)
-[02/Apr/2013 11:44:36] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec404, ex:ent404, ex:entFacebook)
-[02/Apr/2013 11:44:36] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Facebook404:bundle
-  entity(ex:ent404)
+[08/Apr/2013 12:37:27] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:ent407)
+[08/Apr/2013 12:37:27] DEBUG [prov.persistence.models:239] Loaded PROV record: activity(ex:download407, -, -, [endTime="2013-04-08T12:37:17", endTime="xsd:dateTime", prov:type="Download 407", startTime="2013-04-08T12:37:16", startTime="xsd:dateTime"])
+[08/Apr/2013 12:37:27] DEBUG [prov.persistence.models:239] Loaded PROV record: wasGeneratedBy(ex:gen407, ex:ent407, ex:download407, -)
+[08/Apr/2013 12:37:27] DEBUG [prov.persistence.models:239] Loaded PROV record: entity(ex:entFacebook)
+[08/Apr/2013 12:37:27] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:spec407, ex:ent407, ex:entFacebook)
+[08/Apr/2013 12:37:27] DEBUG [prov.persistence.models:239] Loaded PROV record: bundle Facebook407:bundle
+  entity(ex:ent407)
+  activity(ex:download407, -, -, [endTime="2013-04-08T12:37:17", endTime="xsd:dateTime", prov:type="Download 407", startTime="2013-04-08T12:37:16", startTime="xsd:dateTime"])
+  wasGeneratedBy(ex:gen407, ex:ent407, ex:download407, -)
   entity(ex:entFacebook)
-  activity(ex:download404, -, -, [endTime="2013-04-02 11:44:08 +0100", endTime="xsd:dateTime", prov:type="Download 404", startTime="2013-04-02 11:44:07 +0100", startTime="xsd:dateTime"])
-  wasGeneratedBy(ex:gen404, ex:ent404, ex:download404, -)
-  specializationOf(ex:spec404, ex:ent404, ex:entFacebook)
+  specializationOf(ex:spec407, ex:ent407, ex:entFacebook)
 endBundle
-[02/Apr/2013 11:44:36] DEBUG [prov.persistence.models:239] Loaded PROV record: // agent(Richard 2013-03-25 16:22:56 UTC)
-[02/Apr/2013 11:44:36] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr404, Facebook404:bundle, Richard 2013-03-25 16:22:56 UTC)
-[02/Apr/2013 11:44:36] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:specRichard 2013-03-25 16:22:56 UTC, ex:Richard 2013-03-25 16:22:56 UTC, Richard)
-[02/Apr/2013 17:55:02] DEBUG [root:169] <MultiValueDict: {}>
-[02/Apr/2013 17:55:03] DEBUG [prov.persistence.models:92] Saving namespaces...
-[02/Apr/2013 17:55:03] DEBUG [prov.persistence.models:197] Saving bundle PROV-LOGIN-STUFF...
-[02/Apr/2013 17:55:03] DEBUG [prov.persistence.models:148] Saving PROV record: entity(ex:e1)
+[08/Apr/2013 12:37:27] DEBUG [prov.persistence.models:239] Loaded PROV record: // agent(Richard2013-04-08T11:03:21)
+[08/Apr/2013 12:37:27] DEBUG [prov.persistence.models:239] Loaded PROV record: wasAttributedTo(ex:attr407, Facebook407:bundle, Richard2013-04-08T11:03:21)
+[08/Apr/2013 12:37:27] DEBUG [prov.persistence.models:239] Loaded PROV record: specializationOf(ex:specRichard2013-04-08T11:03:21, ex:Richard2013-04-08T11:03:21, Richard)

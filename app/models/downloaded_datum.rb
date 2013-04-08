@@ -67,10 +67,10 @@ class DownloadedDatum < ActiveRecord::Base
                         }, 
                         "activity"=>{
                             "ex:download#{self.id.to_s}"=>{
-                                "startTime"=> ["#{Time.now}", "xsd:dateTime"],
+                                "startTime"=> ["#{strip_time(Time.now)}", "xsd:dateTime"],
                                 #["2011-11-16T16:06:00", "xsd:dateTime"]
                                 #it is assumed it takes one second
-                                "endTime"=> ["#{Time.now+1}" , "xsd:dateTime"],
+                                "endTime"=> ["#{strip_time(Time.now+1)}" , "xsd:dateTime"],
                                 "prov:type"=>"Download #{self.id}"
                             }
                         },
@@ -128,10 +128,10 @@ class DownloadedDatum < ActiveRecord::Base
 
                         "activity"=>{
                             "ex:download#{self.id.to_s}"=>{
-                                "startTime"=> ["#{Time.now}", "xsd:dateTime"],
+                                "startTime"=> ["#{strip_time(Time.now)}", "xsd:dateTime"],
                                 #["2011-11-16T16:06:00", "xsd:dateTime"]
                                 #it is assumed it takes one second
-                                "endTime"=> ["#{Time.now+1}" , "xsd:dateTime"],
+                                "endTime"=> ["#{strip_time(Time.now+1)}" , "xsd:dateTime"],
                                 "prov:type"=>"Download #{self.id}"
                             }
                         },
@@ -158,13 +158,13 @@ class DownloadedDatum < ActiveRecord::Base
                 att =  {
                         "wasAttributedTo"=> {
                             "ex:attr#{self.id.to_s}"=>{
-                                "prov:agent"=> "#{self.agent} Proxy",
+                                "prov:agent"=> "#{self.agent}Proxy",
                                 "prov:entity"=> "#{data_provider_name}#{self.id.to_s}:bundle"
                             }
                         },
                         "actedOnBehalfOf"=>{
                             "ex:aobo#{self.id.to_s}"=>{
-                                "prov:delegate"=> "#{self.agent} Proxy",
+                                "prov:delegate"=> "#{self.agent}Proxy",
                                 "prov:responsible"=> "#{self.agent}"
                             }
                         }
@@ -187,14 +187,14 @@ class DownloadedDatum < ActiveRecord::Base
                 revision = {
                     "wasDerivedFrom"=>{
                         "ex:rev#{self.agent}"=>{
-                            "prov:generatedEntity"=>"ex:#{self.data_provider_user.user.first_name} #{self.data_provider_user.user.current_sign_in_at}",
-                            "prov:usedEntity"=>"ex:#{self.data_provider_user.user.first_name} #{self.data_provider_user.user.last_sign_in_at}",
+                            "prov:generatedEntity"=>"ex:#{self.data_provider_user.user.first_name}#{strip_time(self.data_provider_user.user.current_sign_in_at)}",
+                            "prov:usedEntity"=>"ex:#{self.data_provider_user.user.first_name}#{strip_time(self.data_provider_user.user.last_sign_in_at)}",
                             "prov:type"=> "prov:Revision"
                         }
                     },
                     "specializationOf"=>{
-                        "ex:spec#{self.data_provider_user.user.first_name+" "+self.data_provider_user.user.last_sign_in_at.to_s}"=>{
-                            "prov:specificEntity"=>"ex:#{self.data_provider_user.user.first_name+" "+self.data_provider_user.user.last_sign_in_at.to_s}",
+                        "ex:spec#{self.data_provider_user.user.first_name+""+strip_time(self.data_provider_user.user.last_sign_in_at)}"=>{
+                            "prov:specificEntity"=>"ex:#{self.data_provider_user.user.first_name+""+strip_time(self.data_provider_user.user.last_sign_in_at)}",
                             "prov:generalEntity"=>"#{data_provider_user.user.first_name}"
                         }
                     }
@@ -281,7 +281,21 @@ class DownloadedDatum < ActiveRecord::Base
 
     #this will return the agents name. I.e. "richard-2013-2-1" or "richard-2013-2-1-proxy"
     def agent
-        return self.data_provider_user.user.first_name+" "+self.data_provider_user.user.current_sign_in_at.to_s
+        return self.data_provider_user.user.first_name+""+strip_time(self.data_provider_user.user.current_sign_in_at)
         # return "AGENT"
     end
+
+
+    #this strips a time object to a prov correct string
+    def strip_time(time)
+
+        #split the time into an array.
+        timeArray = time.to_s.split(/\s/)
+        return timeArray[0]+"T"+timeArray[1]
+
+    end
+
+
+
+
 end
