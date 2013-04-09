@@ -58,10 +58,10 @@ class DownloadedDatum < ActiveRecord::Base
                 "bundle"=>{
                     "#{data_provider_name}#{self.id.to_s}:bundle"=>{
                         "entity"=>{
-                            "ex:ent#{self.id.to_s}"=>{
+                            "ex:#{self.id.to_s}"=>{
 
                                 },
-                            "ex:ent#{data_provider_name}"=>{
+                            "ex:#{data_provider_name}"=>{
 
                             }
                         }, 
@@ -77,13 +77,13 @@ class DownloadedDatum < ActiveRecord::Base
 
                         "specializationOf"=>{
                             "ex:spec#{self.id.to_s}"=>{
-                                "prov:specificEntity"=>"ex:ent#{self.id.to_s}",
-                                "prov:generalEntity"=>"ex:ent#{data_provider_name}"
+                                "prov:specificEntity"=>"ex:#{self.id.to_s}",
+                                "prov:generalEntity"=>"ex:#{data_provider_name}"
                             }
                         },
                         "wasGeneratedBy"=>{
                             "ex:gen#{self.id.to_s}"=>{
-                                "prov:entity"=>"ex:ent#{self.id.to_s}",
+                                "prov:entity"=>"ex:#{self.id.to_s}",
                                 "prov:activity"=> "ex:download#{self.id.to_s}"
                             }
                         },
@@ -109,19 +109,13 @@ class DownloadedDatum < ActiveRecord::Base
                         "prov:generalEntity"=>"#{data_provider_user.user.first_name}"
                     }
                 },
-                "wasDerivedFrom"=> {
-                    "ex:der#{self.id.to_s}"=> {
-                        "prov:usedEntity"=> "#{data_provider_name}#{last_downloaded_data.id.to_s}:bundle",
-                        "prov:generatedEntity"=> "#{data_provider_name}#{self.id.to_s}:bundle"
-                    }
-                },
                 "bundle"=>{
                     "#{data_provider_name}#{self.id.to_s}:bundle"=>{
                         "entity"=>{
-                            "ex:ent#{self.id.to_s}"=>{
+                            "ex:#{self.id.to_s}"=>{
 
                                 },
-                            "ex:ent#{data_provider_name}"=>{
+                            "ex:#{data_provider_name}"=>{
 
                             }
                         }, 
@@ -138,14 +132,14 @@ class DownloadedDatum < ActiveRecord::Base
 
                         "specializationOf"=>{
                             "ex:spec#{self.id.to_s}"=>{
-                                "prov:specificEntity"=>"ex:ent#{self.id.to_s}",
-                                "prov:generalEntity"=>"ex:ent#{data_provider_name}"
+                                "prov:specificEntity"=>"ex:#{self.id.to_s}",
+                                "prov:generalEntity"=>"ex:#{data_provider_name}"
                             }
                         },
                         
                         "wasGeneratedBy"=>{
                             "ex:gen#{self.id.to_s}"=>{
-                                "prov:entity"=>"ex:ent#{self.id.to_s}",
+                                "prov:entity"=>"ex:#{self.id.to_s}",
                                 "prov:activity"=> "ex:download#{self.id.to_s}"
                             }
                         },
@@ -153,6 +147,20 @@ class DownloadedDatum < ActiveRecord::Base
                 }
             } 
 
+
+            if !self.data_provider_user.micropost?
+                der = {
+                    "wasDerivedFrom"=> {
+                        "ex:der#{self.id.to_s}"=> {
+                            "prov:usedEntity"=> "#{data_provider_name}#{last_downloaded_data.id.to_s}:bundle",
+                            "prov:generatedEntity"=> "#{data_provider_name}#{self.id.to_s}:bundle",
+                            "prov:type"=> "prov:Revision"
+                        }
+                    }
+                }
+                bundle = der.deep_merge(bundle)
+
+            end
             #if it's a cron job then make it a proxy
             if cron
                 att =  {
@@ -241,9 +249,9 @@ class DownloadedDatum < ActiveRecord::Base
                             id_no = ActiveSupport::JSON.decode(self.data)['data']['id']
                             derived_from = {
                                 "wasDerivedFrom"=>{
-                                    "ex:rev#{self.agent}#{id_no}"=>{
+                                    "ex:rev#{self.agent}#{id_no}#{self.id.to_s}"=>{
                                         "prov:generatedEntity"=>"#{data_provider_name}#{self.id.to_s}:bundle",
-                                        "prov:usedEntity"=>"ex:en#{id_no}"
+                                        "prov:usedEntity"=>"ex:Micropost#{id_no}"
                                     }
                                 }
                             }
