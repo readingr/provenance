@@ -39,10 +39,6 @@ class DownloadedDataController < ApplicationController
     end
   end
 
-  # GET /downloaded_data/1/edit
-  def edit
-    @downloaded_datum = DownloadedDatum.find(params[:id])
-  end
 
   # POST /downloaded_data
   # POST /downloaded_data.json

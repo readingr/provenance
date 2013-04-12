@@ -109,7 +109,6 @@ $(document).ready(function(){
   <tr>
     <th>Name</th>
     <!-- <th>Data</th> -->
-    <th>Annotation</th>
     <th>Last Updated At</th>
     <th></th>
     <th></th>
@@ -122,11 +121,9 @@ $(document).ready(function(){
   <tr>
     <td><%= downloaded_datum.name %></td>
     <!-- <td><%= downloaded_datum.data %></td> -->
-    <td><%= downloaded_datum.annotation %></td>
     <td><%= downloaded_datum.updated_at %></td>
     <td><%= link_to 'Download', download_data_provider_user_downloaded_datum_path(downloaded_datum.data_provider_user.id, downloaded_datum.id)%></td>
     <td><%= link_to 'Show', data_provider_user_downloaded_datum_path(downloaded_datum.data_provider_user.id, downloaded_datum.id) %></td>
-    <td><%= link_to 'Edit', edit_data_provider_user_downloaded_datum_path(downloaded_datum.data_provider_user.id, downloaded_datum) %></td>
     <td><%= link_to 'Destroy', [downloaded_datum.data_provider_user, downloaded_datum], method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
   <%end%>

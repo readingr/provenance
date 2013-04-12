@@ -4,7 +4,7 @@ Provenance::Application.routes.draw do
 
   resources :data_provider_users do
 
-    resources :downloaded_data do
+    resources :downloaded_data, :except => :edit do
       member do
         get :return_data
         get :generate_provenance
