@@ -148,7 +148,7 @@ class DownloadedDatum < ActiveRecord::Base
             } 
 
 
-            if !self.data_provider_user.micropost?
+            # if !self.data_provider_user.micropost?
                 der = {
                     "wasDerivedFrom"=> {
                         "ex:der#{self.id.to_s}"=> {
@@ -159,8 +159,6 @@ class DownloadedDatum < ActiveRecord::Base
                     }
                 }
                 bundle = der.deep_merge(bundle)
-
-            end
             #if it's a cron job then make it a proxy
             if cron
                 att =  {

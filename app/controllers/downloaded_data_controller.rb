@@ -142,7 +142,7 @@ class DownloadedDataController < ApplicationController
         params = {'content' => "Post made from Web app, Downloaded Data number #{@downloaded_datum.id}", 'has_provenance' => has_provenance}
 
       else
-        params = {'content' => "Post made from Web app, Downloaded Data number #{@downloaded_datum.id}", 'has_provenance' => has_provenance, 'in_reply_to' => ActiveSupport::JSON.decode(@downloaded_datum.data)['data']['id'] }
+        params = {'content' => "Post made from Web app, Downloaded Data number #{@downloaded_datum.id}", 'has_provenance' => has_provenance, 'in_reply_to' => ActiveSupport::JSON.decode(@downloaded_datum.data)['data']['id'], 'bundle_number' => @downloaded_datum.id }
 
       end
       http = Net::HTTP.new(uri.host, uri.port) 

@@ -1,5 +1,5 @@
 class DataProviderUser < ActiveRecord::Base
-  attr_accessible :data_provider_id, :password, :user_id, :username, :update_frequency, :uid
+  attr_accessible :data_provider_id, :user_id,  :update_frequency, :uid
 
   validates :user_id, presence: true
 
