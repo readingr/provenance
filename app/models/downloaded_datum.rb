@@ -19,9 +19,8 @@ class DownloadedDatum < ActiveRecord::Base
 
         #*****************
 
-        #select the second last downloaded data. This is so we can use the 
+        #select the second last downloaded data. 
         if dd.count >= 2
-          #perhaps pass all the data to them so if one doesn't have provenance, it can use the next one??
           last_downloaded_data = dd.order("created_at DESC").limit(1).offset(1).first
         end
 
@@ -30,124 +29,123 @@ class DownloadedDatum < ActiveRecord::Base
 
 
         #should it be ex:Facebook-64 or should I just keep it as ex:64?
-        if last_downloaded_data.nil?
-            puts "*****************************"
-            new_bundle = {
-                "prefix"=> {
-                    "ex"=> "http://localhost:3000" #change to sensible url
-                }, 
-                "entity"=>{
-                    "#{data_provider_name}#{self.id.to_s}:bundle"=>{
-                        "prov:type"=> "prov:Bundle"
+        # if last_downloaded_data.nil?
+        #     new_bundle = {
+        #         "prefix"=> {
+        #             "ex"=> "http://localhost:3000" #change to sensible url
+        #         }, 
+        #         "entity"=>{
+        #             "#{data_provider_name}#{self.id.to_s}:bundle"=>{
+        #                 "prov:type"=> "prov:Bundle"
+        #             },
+        #             "ex:#{self.agent}"=>{},
+        #             "#{data_provider_user.user.first_name}"=>{}
+        #         },
+        #         "wasAttributedTo"=> {
+        #             "ex:attr#{self.id.to_s}"=>{
+        #                 "prov:entity"=> "#{data_provider_name}#{self.id.to_s}:bundle", 
+        #                 "prov:agent"=> "#{self.agent}"
+        #             }
+        #         },
+        #         "specializationOf"=>{
+        #             "ex:spec#{self.agent}"=>{
+        #                 "prov:specificEntity"=>"ex:#{self.agent}",
+        #                 "prov:generalEntity"=>"#{data_provider_user.user.first_name}"
+        #             }
+        #         },
+        #         "bundle"=>{
+        #             "#{data_provider_name}#{self.id.to_s}:bundle"=>{
+        #                 "entity"=>{
+        #                     "ex:#{self.id.to_s}"=>{
+
+        #                         },
+        #                     "ex:#{data_provider_name}"=>{
+
+        #                     }
+        #                 }, 
+        #                 "activity"=>{
+        #                     "ex:download#{self.id.to_s}"=>{
+        #                         "startTime"=> ["#{strip_time(Time.now)}", "xsd:dateTime"],
+        #                         #["2011-11-16T16:06:00", "xsd:dateTime"]
+        #                         #it is assumed it takes one second
+        #                         "endTime"=> ["#{strip_time(Time.now+1)}" , "xsd:dateTime"],
+        #                         "prov:type"=>"Download #{self.id}"
+        #                     }
+        #                 },
+
+        #                 "specializationOf"=>{
+        #                     "ex:spec#{self.id.to_s}"=>{
+        #                         "prov:specificEntity"=>"ex:#{self.id.to_s}",
+        #                         "prov:generalEntity"=>"ex:#{data_provider_name}"
+        #                     }
+        #                 },
+        #                 "wasGeneratedBy"=>{
+        #                     "ex:gen#{self.id.to_s}"=>{
+        #                         "prov:entity"=>"ex:#{self.id.to_s}",
+        #                         "prov:activity"=> "ex:download#{self.id.to_s}"
+        #                     }
+        #                 },
+        #             }
+        #         }
+        #     }
+        # else
+        new_bundle = {
+            "prefix"=> {
+                "ex"=> "http://localhost:3000" 
+            }, 
+            "entity"=>{
+                "#{data_provider_name}#{self.id.to_s}:bundle"=>{
+                    "prov:type"=> "prov:Bundle"
+                },
+                "ex:#{self.agent}"=>{},
+                "#{data_provider_user.user.first_name}"=>{}
+            },
+            "specializationOf"=>{
+                "ex:spec#{self.agent}"=>{
+                    "prov:specificEntity"=>"ex:#{self.agent}",
+                    "prov:generalEntity"=>"#{data_provider_user.user.first_name}"
+                }
+            },
+            "bundle"=>{
+                "#{data_provider_name}#{self.id.to_s}:bundle"=>{
+                    "entity"=>{
+                        "ex:#{self.id.to_s}"=>{
+
+                            },
+                        "ex:#{data_provider_name}"=>{
+
+                        }
+                    }, 
+
+                    "activity"=>{
+                        "ex:download#{self.id.to_s}"=>{
+                            "startTime"=> ["#{strip_time(Time.now)}", "xsd:dateTime"],
+                            #["2011-11-16T16:06:00", "xsd:dateTime"]
+                            #it is assumed it takes one second
+                            "endTime"=> ["#{strip_time(Time.now+1)}" , "xsd:dateTime"],
+                            "prov:type"=>"Download #{self.id}"
+                        }
                     },
-                    "ex:#{self.agent}"=>{},
-                    "#{data_provider_user.user.first_name}"=>{}
-                },
-                "wasAttributedTo"=> {
-                    "ex:attr#{self.id.to_s}"=>{
-                        "prov:entity"=> "#{data_provider_name}#{self.id.to_s}:bundle", 
-                        "prov:agent"=> "#{self.agent}"
-                    }
-                },
-                "specializationOf"=>{
-                    "ex:spec#{self.agent}"=>{
-                        "prov:specificEntity"=>"ex:#{self.agent}",
-                        "prov:generalEntity"=>"#{data_provider_user.user.first_name}"
-                    }
-                },
-                "bundle"=>{
-                    "#{data_provider_name}#{self.id.to_s}:bundle"=>{
-                        "entity"=>{
-                            "ex:#{self.id.to_s}"=>{
 
-                                },
-                            "ex:#{data_provider_name}"=>{
-
-                            }
-                        }, 
-                        "activity"=>{
-                            "ex:download#{self.id.to_s}"=>{
-                                "startTime"=> ["#{strip_time(Time.now)}", "xsd:dateTime"],
-                                #["2011-11-16T16:06:00", "xsd:dateTime"]
-                                #it is assumed it takes one second
-                                "endTime"=> ["#{strip_time(Time.now+1)}" , "xsd:dateTime"],
-                                "prov:type"=>"Download #{self.id}"
-                            }
-                        },
-
-                        "specializationOf"=>{
-                            "ex:spec#{self.id.to_s}"=>{
-                                "prov:specificEntity"=>"ex:#{self.id.to_s}",
-                                "prov:generalEntity"=>"ex:#{data_provider_name}"
-                            }
-                        },
-                        "wasGeneratedBy"=>{
-                            "ex:gen#{self.id.to_s}"=>{
-                                "prov:entity"=>"ex:#{self.id.to_s}",
-                                "prov:activity"=> "ex:download#{self.id.to_s}"
-                            }
-                        },
-                    }
+                    "specializationOf"=>{
+                        "ex:spec#{self.id.to_s}"=>{
+                            "prov:specificEntity"=>"ex:#{self.id.to_s}",
+                            "prov:generalEntity"=>"ex:#{data_provider_name}"
+                        }
+                    },
+                    
+                    "wasGeneratedBy"=>{
+                        "ex:gen#{self.id.to_s}"=>{
+                            "prov:entity"=>"ex:#{self.id.to_s}",
+                            "prov:activity"=> "ex:download#{self.id.to_s}"
+                        }
+                    },
                 }
             }
-        else
-            bundle = {
-                "prefix"=> {
-                    "ex"=> "http://localhost:3000" #change to sensible url
-                }, 
-                "entity"=>{
-                    "#{data_provider_name}#{self.id.to_s}:bundle"=>{
-                        "prov:type"=> "prov:Bundle"
-                    },
-                    "ex:#{self.agent}"=>{},
-                    "#{data_provider_user.user.first_name}"=>{}
-                    # "ex:#{data_provider_user.user.first_name}"=>{}
-                },
-                "specializationOf"=>{
-                    "ex:spec#{self.agent}"=>{
-                        "prov:specificEntity"=>"ex:#{self.agent}",
-                        "prov:generalEntity"=>"#{data_provider_user.user.first_name}"
-                    }
-                },
-                "bundle"=>{
-                    "#{data_provider_name}#{self.id.to_s}:bundle"=>{
-                        "entity"=>{
-                            "ex:#{self.id.to_s}"=>{
-
-                                },
-                            "ex:#{data_provider_name}"=>{
-
-                            }
-                        }, 
-
-                        "activity"=>{
-                            "ex:download#{self.id.to_s}"=>{
-                                "startTime"=> ["#{strip_time(Time.now)}", "xsd:dateTime"],
-                                #["2011-11-16T16:06:00", "xsd:dateTime"]
-                                #it is assumed it takes one second
-                                "endTime"=> ["#{strip_time(Time.now+1)}" , "xsd:dateTime"],
-                                "prov:type"=>"Download #{self.id}"
-                            }
-                        },
-
-                        "specializationOf"=>{
-                            "ex:spec#{self.id.to_s}"=>{
-                                "prov:specificEntity"=>"ex:#{self.id.to_s}",
-                                "prov:generalEntity"=>"ex:#{data_provider_name}"
-                            }
-                        },
-                        
-                        "wasGeneratedBy"=>{
-                            "ex:gen#{self.id.to_s}"=>{
-                                "prov:entity"=>"ex:#{self.id.to_s}",
-                                "prov:activity"=> "ex:download#{self.id.to_s}"
-                            }
-                        },
-                    }
-                }
-            } 
+        } 
 
 
+        if !last_downloaded_data.nil?
             # if !self.data_provider_user.micropost?
                 der = {
                     "wasDerivedFrom"=> {
@@ -158,35 +156,8 @@ class DownloadedDatum < ActiveRecord::Base
                         }
                     }
                 }
-                bundle = der.deep_merge(bundle)
-            #if it's a cron job then make it a proxy
-            if cron
-                att =  {
-                        "wasAttributedTo"=> {
-                            "ex:attr#{self.id.to_s}"=>{
-                                "prov:agent"=> "#{self.agent}Proxy",
-                                "prov:entity"=> "#{data_provider_name}#{self.id.to_s}:bundle"
-                            }
-                        },
-                        "actedOnBehalfOf"=>{
-                            "ex:aobo#{self.id.to_s}"=>{
-                                "prov:delegate"=> "#{self.agent}Proxy",
-                                "prov:responsible"=> "#{self.agent}"
-                            }
-                        }
-                     }
-            else
-                att =  {
-                        "wasAttributedTo"=> {
-                            "ex:attr#{self.id.to_s}"=>{
-                                "prov:agent"=> "#{self.agent}",
-                                "prov:entity"=> "#{data_provider_name}#{self.id.to_s}:bundle"
-                            }
-                        }
-                     }                    
-            end
+                new_bundle = der.deep_merge(new_bundle)
 
-            bundle = att.deep_merge(bundle)
 
             #if they've signed in more than once we can add revision!
             if !self.data_provider_user.user.last_sign_in_at.nil?
@@ -205,8 +176,9 @@ class DownloadedDatum < ActiveRecord::Base
                         }
                     }
                 }
-                bundle = revision.deep_merge(bundle)
+                new_bundle = revision.deep_merge(new_bundle)
             end
+
 
 
             #download the the provenance from the last user
@@ -219,13 +191,43 @@ class DownloadedDatum < ActiveRecord::Base
 
             if !old_prov.nil?
                 #deep merge them together
-                new_bundle = old_prov.deep_merge(bundle)
+                new_bundle = old_prov.deep_merge(new_bundle)
             else
                 #if there is no old prov, use the bundle itself
-                new_bundle = bundle
             end
+
         end
 
+
+        #if it's a cron job then make it a proxy
+        if cron
+            att =  {
+                    "wasAttributedTo"=> {
+                        "ex:attr#{self.id.to_s}"=>{
+                            "prov:agent"=> "#{self.agent}Proxy",
+                            "prov:entity"=> "#{data_provider_name}#{self.id.to_s}:bundle"
+                        }
+                    },
+                    "actedOnBehalfOf"=>{
+                        "ex:aobo#{self.agent}Proxy"=>{
+                            "prov:delegate"=> "#{self.agent}Proxy",
+                            "prov:responsible"=> "#{self.agent}"
+                        }
+                    }
+                 }
+        else
+            att =  {
+                    "wasAttributedTo"=> {
+                        "ex:attr#{self.id.to_s}"=>{
+                            "prov:agent"=> "#{self.agent}",
+                            "prov:entity"=> "#{data_provider_name}#{self.id.to_s}:bundle"
+                        }
+                    }
+                 }                    
+        end
+        new_bundle = att.deep_merge(new_bundle)
+
+        
 
         if !ActiveSupport::JSON.decode(self.data)['data'].blank?
             mp = ActiveSupport::JSON.decode(self.data)['data']['has_provenance']
@@ -285,10 +287,9 @@ class DownloadedDatum < ActiveRecord::Base
         self.save
     end
 
-    #this will return the agents name. I.e. "richard-2013-2-1" or "richard-2013-2-1-proxy"
+    #this will return the agents name. I.e. "richard2013-04-08T14:35:39"
     def agent
         return self.data_provider_user.user.first_name+""+strip_time(self.data_provider_user.user.current_sign_in_at)
-        # return "AGENT"
     end
 
 
