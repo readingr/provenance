@@ -86,9 +86,15 @@ class DownloadedDataController < ApplicationController
 
   #this downloads the data to the user
   def download
+    require 'active_support/core_ext/hash/deep_merge'
+
     @downloaded_datum = DownloadedDatum.find(params[:id])
 
-    send_data @downloaded_datum.data,
+    prov = {"has_provenance"=>"#{ENV['PROV_SERVER']}/store/bundles/#{@downloaded_datum.prov_id}"}
+
+    data = ActiveSupport::JSON.decode(@downloaded_datum.data).deep_merge(prov)
+
+    send_data data.to_json,
       :type => 'text',
       :disposition => "attachment; filename=#{@downloaded_datum.data_provider_user.data_provider.name+Time.now.to_s}.txt"
   end
@@ -133,14 +139,8 @@ class DownloadedDataController < ApplicationController
       require 'net/http'
       uri = URI("http://localhost:3001/users/#{@data_provider_user.uid.to_s}/remote_posting")
 
+      params = {'content' => "Post made from Web app, Downloaded Data number #{@downloaded_datum.id}", 'has_provenance' => has_provenance, 'in_reply_to' => ActiveSupport::JSON.decode(@downloaded_datum.data)['data']['id'], 'bundle_number' => @downloaded_datum.id }
 
-      if ActiveSupport::JSON.decode(@downloaded_datum.data)['data'].blank?
-        params = {'content' => "Post made from Web app, Downloaded Data number #{@downloaded_datum.id}", 'has_provenance' => has_provenance}
-
-      else
-        params = {'content' => "Post made from Web app, Downloaded Data number #{@downloaded_datum.id}", 'has_provenance' => has_provenance, 'in_reply_to' => ActiveSupport::JSON.decode(@downloaded_datum.data)['data']['id'], 'bundle_number' => @downloaded_datum.id }
-
-      end
       http = Net::HTTP.new(uri.host, uri.port) 
       request = Net::HTTP::Get.new(uri.path) 
 
@@ -148,11 +148,9 @@ class DownloadedDataController < ApplicationController
 
       response = http.request(request)
 
-      puts response
-
       respond_to do |format|
-          format.html { redirect_to data_provider_user_downloaded_datum_path(@data_provider_user.id, @downloaded_datum.id)}
-      format.json { render json: @downloaded_datum, status: :created, location: @downloaded_datum }
+        format.html { redirect_to data_provider_user_downloaded_datum_path(@data_provider_user.id, @downloaded_datum.id)}
+        format.json { render json: @downloaded_datum, status: :created, location: @downloaded_datum }
       end
     end
   end

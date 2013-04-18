@@ -27,68 +27,6 @@ class DownloadedDatum < ActiveRecord::Base
         #data provider name
         data_provider_name = self.data_provider_user.data_provider.name
 
-
-        #should it be ex:Facebook-64 or should I just keep it as ex:64?
-        # if last_downloaded_data.nil?
-        #     new_bundle = {
-        #         "prefix"=> {
-        #             "ex"=> "http://localhost:3000" #change to sensible url
-        #         }, 
-        #         "entity"=>{
-        #             "#{data_provider_name}#{self.id.to_s}:bundle"=>{
-        #                 "prov:type"=> "prov:Bundle"
-        #             },
-        #             "ex:#{self.agent}"=>{},
-        #             "#{data_provider_user.user.first_name}"=>{}
-        #         },
-        #         "wasAttributedTo"=> {
-        #             "ex:attr#{self.id.to_s}"=>{
-        #                 "prov:entity"=> "#{data_provider_name}#{self.id.to_s}:bundle", 
-        #                 "prov:agent"=> "#{self.agent}"
-        #             }
-        #         },
-        #         "specializationOf"=>{
-        #             "ex:spec#{self.agent}"=>{
-        #                 "prov:specificEntity"=>"ex:#{self.agent}",
-        #                 "prov:generalEntity"=>"#{data_provider_user.user.first_name}"
-        #             }
-        #         },
-        #         "bundle"=>{
-        #             "#{data_provider_name}#{self.id.to_s}:bundle"=>{
-        #                 "entity"=>{
-        #                     "ex:#{self.id.to_s}"=>{
-
-        #                         },
-        #                     "ex:#{data_provider_name}"=>{
-
-        #                     }
-        #                 }, 
-        #                 "activity"=>{
-        #                     "ex:download#{self.id.to_s}"=>{
-        #                         "startTime"=> ["#{strip_time(Time.now)}", "xsd:dateTime"],
-        #                         #["2011-11-16T16:06:00", "xsd:dateTime"]
-        #                         #it is assumed it takes one second
-        #                         "endTime"=> ["#{strip_time(Time.now+1)}" , "xsd:dateTime"],
-        #                         "prov:type"=>"Download #{self.id}"
-        #                     }
-        #                 },
-
-        #                 "specializationOf"=>{
-        #                     "ex:spec#{self.id.to_s}"=>{
-        #                         "prov:specificEntity"=>"ex:#{self.id.to_s}",
-        #                         "prov:generalEntity"=>"ex:#{data_provider_name}"
-        #                     }
-        #                 },
-        #                 "wasGeneratedBy"=>{
-        #                     "ex:gen#{self.id.to_s}"=>{
-        #                         "prov:entity"=>"ex:#{self.id.to_s}",
-        #                         "prov:activity"=> "ex:download#{self.id.to_s}"
-        #                     }
-        #                 },
-        #             }
-        #         }
-        #     }
-        # else
         new_bundle = {
             "prefix"=> {
                 "ex"=> "http://localhost:3000" 
@@ -146,8 +84,7 @@ class DownloadedDatum < ActiveRecord::Base
 
 
         if !last_downloaded_data.nil?
-            # if !self.data_provider_user.micropost?
-                der = {
+                der_bundle = {
                     "wasDerivedFrom"=> {
                         "ex:der#{self.id.to_s}"=> {
                             "prov:usedEntity"=> "#{data_provider_name}#{last_downloaded_data.id.to_s}:bundle",
@@ -156,7 +93,7 @@ class DownloadedDatum < ActiveRecord::Base
                         }
                     }
                 }
-                new_bundle = der.deep_merge(new_bundle)
+                new_bundle = der_bundle.deep_merge(new_bundle)
 
 
             #if they've signed in more than once we can add revision!
@@ -192,8 +129,6 @@ class DownloadedDatum < ActiveRecord::Base
             if !old_prov.nil?
                 #deep merge them together
                 new_bundle = old_prov.deep_merge(new_bundle)
-            else
-                #if there is no old prov, use the bundle itself
             end
 
         end
@@ -236,38 +171,36 @@ class DownloadedDatum < ActiveRecord::Base
                 if !prov_id.nil?
 
 
-                  prov_id = prov_id[1]
-                  # debugger
+                    prov_id = prov_id[1]
 
-                  if !prov_id.blank?
-                    downloaded_prov = ProvRequests.get_request(self.data_provider_user.user.prov_username, self.data_provider_user.user.prov_access_token, prov_id)
-                  
-                    if !downloaded_prov.blank?
-                        old_prov = ActiveSupport::JSON.decode(downloaded_prov)["prov_json"]
+                    if !prov_id.blank?
+                        downloaded_prov = ProvRequests.get_request(self.data_provider_user.user.prov_username, self.data_provider_user.user.prov_access_token, prov_id)
+                      
+                        if !downloaded_prov.blank?
+                            old_prov = ActiveSupport::JSON.decode(downloaded_prov)["prov_json"]
 
-                        if self.data_provider_user.micropost?
-                            id_no = ActiveSupport::JSON.decode(self.data)['data']['id']
-                            derived_from = {
-                                "wasDerivedFrom"=>{
-                                    "ex:rev#{self.agent}#{id_no}#{self.id.to_s}"=>{
-                                        "prov:generatedEntity"=>"#{data_provider_name}#{self.id.to_s}:bundle",
-                                        "prov:usedEntity"=>"ex:Micropost#{id_no}"
+                            #if micropost - code above is there if system is extended in the future.
+                            if self.data_provider_user.micropost?
+                                id_no = ActiveSupport::JSON.decode(self.data)['data']['id']
+                                derived_from = {
+                                    "wasDerivedFrom"=>{
+                                        "ex:rev#{self.agent}#{id_no}#{self.id.to_s}"=>{
+                                            "prov:generatedEntity"=>"#{data_provider_name}#{self.id.to_s}:bundle",
+                                            "prov:usedEntity"=>"ex:Micropost#{id_no}"
+                                        }
                                     }
                                 }
-                            }
 
-                            new_bundle =new_bundle.deep_merge(derived_from)
-                        end
-                        new_bundle = new_bundle.deep_merge(old_prov)
+                                new_bundle =new_bundle.deep_merge(derived_from)
+                            end
+                            new_bundle = new_bundle.deep_merge(old_prov)
+                        end 
                     end
-                    
-                  end
-
                 end
             end
         end
 
-        puts new_bundle.to_json
+        # puts new_bundle.to_json
 
 
         rec_id = self.name + "-" + self.id.to_s

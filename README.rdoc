@@ -20,3 +20,8 @@ To begin the projects, navigate in terminal to this directory and follow the ste
 Warning - As Facebook & Twitter are awkward, if you try to create a new data provider user on 127.0.0.1, and choose facebook, it won't work. You need it to be on Localhost. Twitter is the other way around. 
 
 If you want to host this on a server, you will need to create your own Facebook and Twitter applications.  In addition, you'll need to set the environment variables to match up with the new addresses.
+
+
+
+<RAKE DB CREATE etc>
+<WHENEVER GEM>
