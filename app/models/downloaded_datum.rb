@@ -11,13 +11,6 @@ class DownloadedDatum < ActiveRecord::Base
 
 
         dd = DownloadedDatum.where(data_provider_user_id: self.data_provider_user_id)
-        #*****************
-
-        #remove whitespace at some point: http://stackoverflow.com/questions/1634750/ruby-function-to-remove-all-white-spaces
-        #get has_provenance at some point.
-        #change prov_id to has_provenance location, makes much more sense, or put both. Up to you.
-
-        #*****************
 
         #select the second last downloaded data. 
         if dd.count >= 2

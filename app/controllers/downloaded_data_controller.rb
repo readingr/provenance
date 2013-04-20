@@ -40,22 +40,6 @@ class DownloadedDataController < ApplicationController
   end
 
 
-  # POST /downloaded_data
-  # POST /downloaded_data.json
-  def create
-    @downloaded_datum = DownloadedDatum.new(params[:downloaded_datum])
-
-    respond_to do |format|
-      if @downloaded_datum.save
-        format.html { redirect_to @downloaded_datum, notice: 'Downloaded datum was successfully created.' }
-        format.json { render json: @downloaded_datum, status: :created, location: @downloaded_datum }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @downloaded_datum.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
   # PUT /downloaded_data/1
   # PUT /downloaded_data/1.json
   def update
@@ -66,7 +50,6 @@ class DownloadedDataController < ApplicationController
         format.html { redirect_to @downloaded_datum, notice: 'Downloaded datum was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
         format.json { render json: @downloaded_datum.errors, status: :unprocessable_entity }
       end
     end

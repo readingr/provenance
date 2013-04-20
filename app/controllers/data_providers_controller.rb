@@ -46,7 +46,7 @@ class DataProvidersController < ApplicationController
 
     respond_to do |format|
       if @data_provider.save
-        format.html { redirect_to login_data_provider_user_path, notice: 'Data provider was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Data provider was successfully created.' }
         format.json { render json: @data_provider, status: :created, location: @data_provider }
       else
         format.html { render action: "new" }
