@@ -33,15 +33,7 @@ Provenance::Application.routes.draw do
   end
 
 
-  resources :users do 
-    
-    collection do
-      get :prov_login
-    end
-
-
-  end
-  
+  resources :users  
   root :to => 'data_provider_users#index'
 
   match '*path' => redirect('/')

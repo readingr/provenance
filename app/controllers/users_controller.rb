@@ -85,25 +85,4 @@ class UsersController < ApplicationController
   end
 
 
-  #this creates the provenance when the user logs in and sends it to the store
-  def prov_login
-    require 'ProvRequests'
-
-
-    #if the user has signed up to the prov web service
-    if current_user.prov_username != nil and current_user.prov_access_token != nil
-      # test = ProvRequests.get_request(current_user.prov_username, current_user.prov_access_token, 2)
-    
-      bundle = {'prefix'=>{'ex'=>'http://example'}, 'entity'=>{'ex:e1'=>{}}} 
-      rec_id = "PROV-LOGIN-STUFF"
-      test = ProvRequests.post_request(current_user.prov_username, current_user.prov_access_token, bundle, rec_id)
-    end
-
-    respond_to do |format|
-      format.html { redirect_to root_path }
-      format.json { head :no_content }
-    end
-  end
-
-
 end
