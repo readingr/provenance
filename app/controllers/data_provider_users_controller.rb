@@ -220,4 +220,21 @@ class DataProviderUsersController < ApplicationController
     end
   end
 
+
+  def update_all
+    @dpus = current_user.data_provider_users
+
+    @dpus.each do |dpu|
+
+      downloaded_data = dpu.determine_update
+      downloaded_data.save
+      downloaded_data.generate_provenance(false)
+    end
+
+    respond_to do |format|
+      format.html {redirect_to root_path}
+      format.json { render json: @data_provider_users }
+    end
+  end
+
 end

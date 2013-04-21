@@ -211,6 +211,8 @@ class DownloadedDatum < ActiveRecord::Base
 
         self.prov_id = prov_hash_results["id"]
         self.save
+
+        return new_bundle
     end
 
     #this will return the agents name. I.e. "richard2013-04-08T14:35:39"

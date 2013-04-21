@@ -26,7 +26,7 @@ $.ajax({
 
 
 var user = 'richard'; 
-var pass = '53ba3c6f3f106162f0765424275be7d9461afd4a'; 
+var pass = 'd0ed21f1a31c7a98c565e4d210af0f9e3b1a2006'; 
 var tok = user + ':' + pass; 
 var auth = 'ApiKey ' + tok;
 

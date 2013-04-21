@@ -21,7 +21,8 @@ Provenance::Application.routes.draw do
 
     collection do 
       get :twitter_oauth
-      get :overall_prov          
+      get :overall_prov    
+      get :update_all      
     end
   end
 
