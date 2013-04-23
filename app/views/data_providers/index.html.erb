@@ -1,9 +1,8 @@
 <h1>Listing data_providers</h1>
 
-<table>
+<table class="table">
   <tr>
     <th>Name</th>
-    <th>Url</th>
     <th></th>
     <th></th>
     <th></th>
@@ -12,7 +11,6 @@
 <% @data_providers.each do |data_provider| %>
   <tr>
     <td><%= data_provider.name %></td>
-    <td><%= data_provider.url %></td>
     <td><%= link_to 'Show', data_provider %></td>
     <td><%= link_to 'Edit', edit_data_provider_path(data_provider) %></td>
     <td><%= link_to 'Destroy', data_provider, method: :delete, data: { confirm: 'Are you sure?' } %></td>
