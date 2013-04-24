@@ -59,13 +59,13 @@ class DownloadedDatum < ActiveRecord::Base
                         }
                     },
                     "wasAssociatedWith"=>{
-                        "assoc#{self.id.to_s}"=>{
+                        "bunassoc#{self.id.to_s}"=>{
                             "prov:activity"=> "Download#{self.id.to_s}",
                             "prov:agent"=> "#{data_provider_name}Website"
                         }
                     },
                     "wasGeneratedBy"=>{
-                        "gen#{self.id.to_s}"=>{
+                        "bungen#{self.id.to_s}"=>{
                             "prov:entity"=>"DownloadedData#{self.id.to_s}",
                             "prov:activity"=> "Download#{self.id.to_s}"
                         }
@@ -132,6 +132,9 @@ class DownloadedDatum < ActiveRecord::Base
         #if it's a cron job then make it a proxy
         if cron
             att =  {
+                    "agent"=>{
+                        "#{self.agent}Proxy"=>{}
+                    },
                     "wasAttributedTo"=> {
                         "attr#{self.id.to_s}"=>{
                             "prov:agent"=> "#{self.agent}Proxy",
