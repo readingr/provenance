@@ -21,35 +21,36 @@ class DownloadedDatum < ActiveRecord::Base
         data_provider_name = self.data_provider_user.data_provider.name
 
         new_bundle = {
-            "prefix"=> {
-                "ex"=> "http://localhost:3000" 
-            }, 
             "entity"=>{
                 "#{data_provider_name}#{self.id.to_s}:bundle"=>{
                     "prov:type"=> "prov:Bundle"
-                },
-                "ex:#{self.agent}"=>{},
-                "#{data_provider_user.user.first_name}"=>{}
+                }
+            },
+            "agent"=>{
+                "#{data_provider_user.user.first_name}"=>{},
+                "#{self.agent}"=>{}
             },
             "specializationOf"=>{
-                "ex:spec#{self.agent}"=>{
-                    "prov:specificEntity"=>"ex:#{self.agent}",
+                "spec#{self.agent}"=>{
+                    "prov:specificEntity"=>"#{self.agent}",
                     "prov:generalEntity"=>"#{data_provider_user.user.first_name}"
                 }
             },
             "bundle"=>{
                 "#{data_provider_name}#{self.id.to_s}:bundle"=>{
                     "entity"=>{
-                        "ex:#{self.id.to_s}"=>{
-
-                            },
-                        "ex:#{data_provider_name}"=>{
+                        "DownloadedData#{self.id.to_s}"=>{
 
                         }
                     }, 
 
+                    "agent"=>{
+                        "#{data_provider_name}Website"=>{
+
+                        }
+                    },
                     "activity"=>{
-                        "ex:download#{self.id.to_s}"=>{
+                        "Download#{self.id.to_s}"=>{
                             "startTime"=> ["#{strip_time(Time.now)}", "xsd:dateTime"],
                             #["2011-11-16T16:06:00", "xsd:dateTime"]
                             #it is assumed it takes one second
@@ -57,18 +58,16 @@ class DownloadedDatum < ActiveRecord::Base
                             "prov:type"=>"Download #{self.id}"
                         }
                     },
-
-                    "specializationOf"=>{
-                        "ex:spec#{self.id.to_s}"=>{
-                            "prov:specificEntity"=>"ex:#{self.id.to_s}",
-                            "prov:generalEntity"=>"ex:#{data_provider_name}"
+                    "wasAssociatedWith"=>{
+                        "assoc#{self.id.to_s}"=>{
+                            "prov:activity"=> "Download#{self.id.to_s}",
+                            "prov:agent"=> "#{data_provider_name}Website"
                         }
                     },
-                    
                     "wasGeneratedBy"=>{
-                        "ex:gen#{self.id.to_s}"=>{
-                            "prov:entity"=>"ex:#{self.id.to_s}",
-                            "prov:activity"=> "ex:download#{self.id.to_s}"
+                        "gen#{self.id.to_s}"=>{
+                            "prov:entity"=>"DownloadedData#{self.id.to_s}",
+                            "prov:activity"=> "Download#{self.id.to_s}"
                         }
                     },
                 }
@@ -79,7 +78,7 @@ class DownloadedDatum < ActiveRecord::Base
         if !last_downloaded_data.nil?
                 der_bundle = {
                     "wasDerivedFrom"=> {
-                        "ex:der#{self.id.to_s}"=> {
+                        "der#{self.id.to_s}"=> {
                             "prov:usedEntity"=> "#{data_provider_name}#{last_downloaded_data.id.to_s}:bundle",
                             "prov:generatedEntity"=> "#{data_provider_name}#{self.id.to_s}:bundle",
                             "prov:type"=> "prov:Revision"
@@ -92,16 +91,19 @@ class DownloadedDatum < ActiveRecord::Base
             #if they've signed in more than once we can add revision!
             if !self.data_provider_user.user.last_sign_in_at.nil?
                 revision = {
+                    "agent"=>{
+                        "#{self.data_provider_user.user.first_name}#{strip_time(self.data_provider_user.user.last_sign_in_at)}"=>{}
+                    },
                     "wasDerivedFrom"=>{
-                        "ex:rev#{self.agent}"=>{
-                            "prov:generatedEntity"=>"ex:#{self.data_provider_user.user.first_name}#{strip_time(self.data_provider_user.user.current_sign_in_at)}",
-                            "prov:usedEntity"=>"ex:#{self.data_provider_user.user.first_name}#{strip_time(self.data_provider_user.user.last_sign_in_at)}",
+                        "rev#{self.agent}"=>{
+                            "prov:generatedEntity"=>"#{self.agent}",
+                            "prov:usedEntity"=>"#{self.data_provider_user.user.first_name}#{strip_time(self.data_provider_user.user.last_sign_in_at)}",
                             "prov:type"=> "prov:Revision"
                         }
                     },
                     "specializationOf"=>{
-                        "ex:spec#{self.data_provider_user.user.first_name+""+strip_time(self.data_provider_user.user.last_sign_in_at)}"=>{
-                            "prov:specificEntity"=>"ex:#{self.data_provider_user.user.first_name+""+strip_time(self.data_provider_user.user.last_sign_in_at)}",
+                        "spec#{self.data_provider_user.user.first_name+""+strip_time(self.data_provider_user.user.last_sign_in_at)}"=>{
+                            "prov:specificEntity"=>"#{self.data_provider_user.user.first_name+""+strip_time(self.data_provider_user.user.last_sign_in_at)}",
                             "prov:generalEntity"=>"#{data_provider_user.user.first_name}"
                         }
                     }
@@ -131,13 +133,13 @@ class DownloadedDatum < ActiveRecord::Base
         if cron
             att =  {
                     "wasAttributedTo"=> {
-                        "ex:attr#{self.id.to_s}"=>{
+                        "attr#{self.id.to_s}"=>{
                             "prov:agent"=> "#{self.agent}Proxy",
                             "prov:entity"=> "#{data_provider_name}#{self.id.to_s}:bundle"
                         }
                     },
                     "actedOnBehalfOf"=>{
-                        "ex:aobo#{self.agent}Proxy"=>{
+                        "aobo#{self.agent}Proxy"=>{
                             "prov:delegate"=> "#{self.agent}Proxy",
                             "prov:responsible"=> "#{self.agent}"
                         }
@@ -146,7 +148,7 @@ class DownloadedDatum < ActiveRecord::Base
         else
             att =  {
                     "wasAttributedTo"=> {
-                        "ex:attr#{self.id.to_s}"=>{
+                        "attr#{self.id.to_s}"=>{
                             "prov:agent"=> "#{self.agent}",
                             "prov:entity"=> "#{data_provider_name}#{self.id.to_s}:bundle"
                         }
@@ -177,7 +179,7 @@ class DownloadedDatum < ActiveRecord::Base
                                 id_no = ActiveSupport::JSON.decode(self.data)['data']['id']
                                 derived_from = {
                                     "wasDerivedFrom"=>{
-                                        "ex:rev#{self.agent}#{id_no}#{self.id.to_s}"=>{
+                                        "rev#{self.agent}#{id_no}#{self.id.to_s}"=>{
                                             "prov:generatedEntity"=>"#{data_provider_name}#{self.id.to_s}:bundle",
                                             "prov:usedEntity"=>"ex:Micropost#{id_no}"
                                         }
@@ -198,6 +200,9 @@ class DownloadedDatum < ActiveRecord::Base
 
         rec_id = self.name + "-" + self.id.to_s
 
+        puts new_bundle.to_json
+
+
         #send the request to the prov web service
         prov_json_results = ProvRequests.post_request(self.data_provider_user.user.prov_username, self.data_provider_user.user.prov_access_token, new_bundle, rec_id)
 
@@ -211,6 +216,7 @@ class DownloadedDatum < ActiveRecord::Base
 
         self.prov_id = prov_hash_results["id"]
         self.save
+
 
         return new_bundle
     end
