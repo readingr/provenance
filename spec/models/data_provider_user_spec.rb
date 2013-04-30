@@ -70,6 +70,13 @@ describe DataProviderUser do
 			@dpu.determine_update.should eq("Twitter") 
 		end
 
+		it "should call update micropost method" do
+			DataProviderUser.any_instance.stub(:update_micropost).and_return("Micropost")
+			@dp.name = "Micropost"
+			@dp.save
+			@dpu.determine_update.should eq("Micropost") 
+		end
+
 		it "should raise an error" do
 			@dp.name = "ERROR NAME"
 			@dp.save

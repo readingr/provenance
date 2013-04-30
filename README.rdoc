@@ -3,11 +3,13 @@ Getting Started
 
 To begin the projects, navigate in terminal to this directory and follow the steps below:
 
+0. Create the database using "rake db:create" and "rake db:migrate" in the root folder, and the micropost server folder.
+
 1. use command "Rails server" in the root directory. The access this, go to: http://127.0.0.1:3000/. Before registering:
 
 2. Open up a separate terminal window, and navigate to the server directory. Under here, run the command "python run server". The access this, go to: http://127.0.0.1:8000/ and create an account. Generate an API key.
 
-3. Open up a separate terminal window, and navigate to the sample-app directory. Under here, run the command "rails server -p 3001. "The access this, go to: http://127.0.0.1:3001/. Create an account and enter the API key
+3. Open up a separate terminal window, and navigate to the micropost'server directory. Under here, run the command "rails server -p 3001. "The access this, go to: http://127.0.0.1:3001/. Create an account and enter the API key
 
 4. Go to http://127.0.0.1:3000, create an account and enter the appropriate details.
 
@@ -21,8 +23,12 @@ Warning - As Facebook & Twitter are awkward, if you try to create a new data pro
 
 If you want to host this on a server, you will need to create your own Facebook and Twitter applications.  In addition, you'll need to set the environment variables to match up with the new addresses.
 
+To set up the cron job, you can use the whenever gem using the commands:
 
+"whenever -w" to write the cron job
 
-<RAKE DB CREATE etc>
+"whenever" to start the cron job
 
-<WHENEVER GEM>
+"whenever -c" to clear the cron job
+
+"whenever -h" to get help
