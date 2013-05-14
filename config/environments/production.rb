@@ -65,6 +65,5 @@ Provenance::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
-  ENV['PROV_SERVER'] = 'http://127.0.0.1:8000'
-
+  # ENV['PROV_SERVER'] = 'https://provenance.ecs.soton.ac.uk'
 end
