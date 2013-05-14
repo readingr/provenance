@@ -15,5 +15,15 @@
   <%= @user.email %>
 </p>
 
+<p>
+  <b>Prov Username:</b>
+  <%= @user.prov_username %>
+</p>
+
+<p>
+  <b>Prov Access Token:</b>
+  <%= @user.prov_access_token %>
+</p>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
