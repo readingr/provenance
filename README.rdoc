@@ -1,7 +1,14 @@
 Getting Started
 
 
-To begin the projects, navigate in terminal to this directory and follow the steps below:
+To begin the project, navigate in terminal to this directory and follow the steps below:
+
+Assumed knowledge includes being able to install rails projects. However, Ruby-1.9.3-p327 is needed to run this project,  and follow the link below to install the debugger.
+
+http://stackoverflow.com/questions/10916784/error-installing-debugger-linecache-in-ruby-1-9-3
+
+
+
 
 0. Create the database using "rake db:create" and "rake db:migrate" in the root folder, and the micropost server folder.
 
